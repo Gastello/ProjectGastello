@@ -19,6 +19,48 @@ button,
    cursor: url('../icons/cursorPointer.svg') 6 0, auto;
 }
 
+/*---------------------------Loading-----------------------------------*/
+.container {
+   display: none;
+}
+
+#loading {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 100;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, 0.5);
+
+   .loading__text {
+      font-size: 32px;
+      color: $mainColor;
+   }
+
+   .loading__inner {
+      text-align: center;
+   }
+
+   img {
+      animation: 1.2s linear 0s infinite alternate sword-loading;
+      margin-bottom: 10px;
+   }
+}
+
+@keyframes sword-loading {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
 /*--------------------------Content wrappers------------------------------*/
 body {
    font-family: $fontFamily;

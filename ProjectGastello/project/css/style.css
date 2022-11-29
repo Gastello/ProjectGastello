@@ -94,6 +94,53 @@ button,
 .cursorPointer {
   cursor: url("../icons/cursorPointer.svg") 6 0, auto; }
 
+/*---------------------------Loading-----------------------------------*/
+.container {
+  display: none; }
+
+#loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); }
+  #loading .loading__text {
+    font-size: 32px;
+    color: #EEF6FF; }
+  #loading .loading__inner {
+    text-align: center; }
+  #loading img {
+    -webkit-animation: 1.2s linear 0s infinite alternate sword-loading;
+    animation: 1.2s linear 0s infinite alternate sword-loading;
+    margin-bottom: 10px; }
+
+@-webkit-keyframes sword-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes sword-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
 /*--------------------------Content wrappers------------------------------*/
 body {
   font-family: "Metal Mania";
