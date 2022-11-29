@@ -191,15 +191,8 @@ body {
   top: 0;
   left: 0;
   z-index: 50;
-  width: 100%; }
-  .header::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    width: 100%;
-    height: 100%;
-    content: ""; }
+  width: 100%;
+  padding: 24px 0; }
   .header__body {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -210,45 +203,16 @@ body {
     align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-    height: 60px; }
+    justify-content: space-between; }
   .header__logo {
     z-index: 3;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px; }
-  .header__burger {
-    display: none; }
-  .header__burger.active::before {
-    top: 9px;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg); }
-  .header__burger.active::after {
-    bottom: 9px;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
-  .header__burger.active span {
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    transform: scale(0); }
-  .header__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    z-index: 3; }
-    .header__list li {
-      margin: 0 0 0 20px; }
-
-@media (max-width: 767.98px) {
-  body.lock {
-    overflow: hidden; }
-  .header__list {
-    display: block; }
-  .header__body {
-    height: 50px; }
+    width: 100px;
+    height: 90px; }
+    .header__logo img {
+      max-width: 100%;
+      width: 100%;
+      -webkit-filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
+      filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5)); }
   .header__menu {
     position: fixed;
     top: -100%;
@@ -259,41 +223,44 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto; }
-  .header__menu.active {
+  .header .header__menu.active {
     top: 0;
     -webkit-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
     transition-duration: 0.3s; }
+  .header__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .header__burger {
     display: block;
     position: relative;
     z-index: 3;
-    width: 30px;
-    height: 20px; }
-    .header__burger::after, .header__burger::before {
-      position: absolute;
-      left: 0;
-      -webkit-transition-duration: 0.3s;
-      -o-transition-duration: 0.3s;
-      transition-duration: 0.3s;
-      width: 100%;
-      height: 2px;
-      content: "";
-      background: #000000; }
-    .header__burger::before {
-      top: 0; }
-    .header__burger::after {
-      bottom: 0; }
-    .header__burger span {
-      position: absolute;
-      top: 9px;
-      left: 0;
-      -webkit-transition-duration: 0.3s;
-      -o-transition-duration: 0.3s;
-      transition-duration: 0.3s;
-      width: 100%;
-      height: 2px;
-      background: #000000; } }
+    width: 86px;
+    margin-right: 30px; }
+    .header__burger img {
+      max-width: 100%; }
+  .header__user {
+    z-index: 3;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    background: rgba(0, 0, 0, 0.25);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .header__user img {
+      height: 60px;
+      width: 40px; }
+
+body.lock {
+  overflow: hidden; }
 
 /*------------------------------Log/Reg------------------------------------*/
 .page_log {
@@ -385,7 +352,10 @@ body {
     width: 185px;
     margin: 0 0 40px 0; }
     .login__logo img {
-      max-width: 100%; }
+      max-width: 100%;
+      width: 100%;
+      -webkit-filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
+      filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5)); }
     @media (max-width: 1199.98px) {
       .login__logo {
         width: 140px;
@@ -576,3 +546,8 @@ body {
 
 .swiper-button-disabled {
   display: none; }
+
+/*------------------------------Log/Reg------------------------------------*/
+.page_home {
+  background: url("../images/homeImages/bg.jpg");
+  background-size: cover; }
