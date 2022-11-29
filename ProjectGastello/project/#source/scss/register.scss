@@ -1,6 +1,6 @@
 @import "login.scss";
 
-.reg__inner{
+.reg__inner {
    padding: 40px 0 20px 0;
 }
 
@@ -22,34 +22,60 @@
    width: 340px;
    height: 158px;
    margin-bottom: 53px;
+
+   @media (max-width:374.98px) {
+      margin-bottom: 33px;
+      width: 242px;
+      height: 112px;
+   }
 }
 
 .swiper-slide {
    display: flex;
    justify-content: center;
-   img{
+
+   img {
       max-height: 100%;
    }
 }
 
 .swiper-button-prev {
-   &::after{
-      content: url('../icons/swiperArrow.svg');
+   &::after {
       left: 0;
    }
 
 }
+
 .swiper-button-next {
-   &::after{
-      content: url('../icons/swiperArrow.svg');
+   &::after {
       transform: rotate(180deg);
       right: 0;
    }
 }
-.swiper-button-prev, .swiper-button-next{
+
+.swiper-button-prev,
+.swiper-button-next {
    width: 50px;
-   height: 50px; 
+   height: 50px;
+
+   img {
+      max-width: 100%;
+   }
+
+   &::after {
+      content: '';
+      background: url('../icons/swiperArrow.svg') center no-repeat;
+      background-size: contain;
+      width: 50px;
+      height: 50px;
+
+      @media (max-width:374.98px) {
+         width: 35px;
+         height: 35px;
+      }
+   }
 }
-.swiper-button-disabled{
+
+.swiper-button-disabled {
    display: none;
 }

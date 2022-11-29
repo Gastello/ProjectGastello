@@ -2,6 +2,7 @@
    background: url('../images/logRegImages/logRegBg.jpg');
    background-size: cover;
    user-select: none;
+
    @media (max-width: 979.98px) {
       background-position: center;
    }
@@ -127,6 +128,12 @@
          top: 50%;
          transform: translate(-100%, -50%);
          animation: 1.4s ease-in-out 0s infinite alternate pixy-move;
+
+         @media (max-width:374.98px) {
+            background-size: 45px 60px;
+            width: 45px;
+            height: 60px;
+         }
       }
    }
 
@@ -194,7 +201,7 @@
 
    &__password {
       position: relative;
-       
+
       &::before {
          content: url('../icons/magicScroll.svg');
          position: absolute;
