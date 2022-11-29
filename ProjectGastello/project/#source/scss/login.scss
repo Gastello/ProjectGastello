@@ -1,7 +1,7 @@
 .page_log {
    background: url('../images/logRegImages/logRegBg.jpg');
    background-size: cover;
-
+   user-select: none;
    @media (max-width: 979.98px) {
       background-position: center;
    }
@@ -99,11 +99,6 @@
       margin-bottom: 10px;
       position: relative;
 
-      @media (max-width: 1199.98px) {
-         font-size: 18px;
-         padding: 10px;
-      }
-
       &:hover {
          text-shadow: #b2b2b2 0px 0px 10px;
          transition: .3s ease-in-out text-shadow;
@@ -119,11 +114,6 @@
          width: 20px;
          height: 30px;
          transform: translate(-100%, -50%);
-
-         @media (max-width: 1199.98px) {
-            width: 12px;
-            height: 18px;
-         }
       }
 
       &::after {
@@ -137,12 +127,6 @@
          top: 50%;
          transform: translate(-100%, -50%);
          animation: 1.4s ease-in-out 0s infinite alternate pixy-move;
-
-         @media (max-width: 1199.98px) {
-            background-size: 45px 60px;
-            width: 45px;
-            height: 60px;
-         }
       }
    }
 
@@ -151,6 +135,10 @@
    &__link {
       color: $mainColor;
       text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+
+      @media (max-width: 1199.98px) {
+         font-size: 22px;
+      }
 
       &:hover {
          text-shadow: #b2b2b2 0px 0px 10px;

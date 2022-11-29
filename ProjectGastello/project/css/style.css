@@ -246,6 +246,10 @@ body {
 .page_log {
   background: url("../images/logRegImages/logRegBg.jpg");
   background-size: cover;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   position: relative; }
   @media (max-width: 979.98px) {
     .page_log {
@@ -343,10 +347,6 @@ body {
     padding: 14px;
     margin-bottom: 10px;
     position: relative; }
-    @media (max-width: 1199.98px) {
-      .login__button {
-        font-size: 18px;
-        padding: 10px; } }
     .login__button:hover {
       text-shadow: #b2b2b2 0px 0px 10px;
       -webkit-transition: .3s ease-in-out text-shadow;
@@ -365,10 +365,6 @@ body {
       -webkit-transform: translate(-100%, -50%);
       -ms-transform: translate(-100%, -50%);
       transform: translate(-100%, -50%); }
-      @media (max-width: 1199.98px) {
-        .login__button::before {
-          width: 12px;
-          height: 18px; } }
     .login__button::after {
       content: '';
       background-image: url("../icons/pixy.svg");
@@ -383,14 +379,12 @@ body {
       transform: translate(-100%, -50%);
       -webkit-animation: 1.4s ease-in-out 0s infinite alternate pixy-move;
       animation: 1.4s ease-in-out 0s infinite alternate pixy-move; }
-      @media (max-width: 1199.98px) {
-        .login__button::after {
-          background-size: 45px 60px;
-          width: 45px;
-          height: 60px; } }
   .login__link {
     color: #EEF6FF;
     text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5); }
+    @media (max-width: 1199.98px) {
+      .login__link {
+        font-size: 22px; } }
     .login__link:hover {
       text-shadow: #b2b2b2 0px 0px 10px;
       -webkit-transition: .3s ease-in-out text-shadow;
