@@ -6,10 +6,17 @@
 /*---------------------------------Vars----------------------------------*/
 @import "vars.scss";
 
-/*------------------------------SomeElements-------------------------------*/
+/*--------------------------------Cursor----------------------------------*/
 
-body { 
-   cursor: url('../icons/cursor.svg'), auto;  
+body {
+   cursor: url('../icons/cursor.svg'), auto;
+}
+
+input,
+a,
+button,
+.cursorPointer {
+   cursor: url('../icons/cursorPointer.svg') 6 0, auto;
 }
 
 /*--------------------------Content wrappers------------------------------*/
