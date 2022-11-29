@@ -226,10 +226,11 @@ body {
       -o-transition: transform 0.1s ease-in;
       transition: transform 0.1s ease-in;
       transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; }
-      .header__logo img:hover {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1); }
+      @media (min-width: 767.98px) {
+        .header__logo img:hover {
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1); } }
   .header__menu {
     position: fixed;
     top: -100%;
@@ -262,9 +263,10 @@ body {
     position: absolute; }
   .header__timer, .header__books, .header__home, .header__dictionary, .header__games {
     position: absolute; }
-    .header__timer:hover, .header__books:hover, .header__home:hover, .header__dictionary:hover, .header__games:hover {
-      -webkit-filter: drop-shadow(0px 0px 20px #FFFFFF);
-      filter: drop-shadow(0px 0px 20px #FFFFFF); }
+    @media (min-width: 767.98px) {
+      .header__timer:hover, .header__books:hover, .header__home:hover, .header__dictionary:hover, .header__games:hover {
+        -webkit-filter: drop-shadow(0px 0px 20px #FFFFFF);
+        filter: drop-shadow(0px 0px 20px #FFFFFF); } }
   .header__timer {
     left: 191px;
     top: 75px;
@@ -359,10 +361,11 @@ body {
       -o-transition: transform 0.1s ease-in;
       transition: transform 0.1s ease-in;
       transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; }
-      .header__burger img:hover {
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1); }
+      @media (min-width: 767.98px) {
+        .header__burger img:hover {
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1); } }
   .header__user {
     z-index: 3;
     border-radius: 50%;
