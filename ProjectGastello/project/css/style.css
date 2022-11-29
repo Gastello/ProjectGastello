@@ -45,7 +45,8 @@ input::-ms-clear {
   display: none; }
 
 button {
-  cursor: pointer; }
+  cursor: pointer;
+  background-color: transparent; }
 
 button::-moz-focus-inner {
   padding: 0;
@@ -219,7 +220,16 @@ body {
       max-width: 100%;
       width: 100%;
       -webkit-filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
-      filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5)); }
+      filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
+      -webkit-transition: -webkit-transform 0.1s ease-in;
+      transition: -webkit-transform 0.1s ease-in;
+      -o-transition: transform 0.1s ease-in;
+      transition: transform 0.1s ease-in;
+      transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; }
+      .header__logo img:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1); }
   .header__menu {
     position: fixed;
     top: -100%;
@@ -229,12 +239,96 @@ body {
     transition-duration: 0.3s;
     width: 100%;
     height: 100%;
-    overflow: auto; }
+    overflow: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .header__map {
+    position: relative;
+    max-width: 748px;
+    max-height: 561px; }
+    .header__map > img {
+      max-width: 100%;
+      width: 100%;
+      -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+      filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7)); }
+  .header__timer, .header__books, .header__home, .header__dictionary, .header__games, .header__seamonster, .header__shipLarge, .header__ship {
+    position: absolute; }
+  .header__timer {
+    left: 191px;
+    top: 75px;
+    width: 46px;
+    height: 91px; }
+    .header__timer img {
+      max-width: 100%;
+      width: 100%; }
+  .header__books {
+    right: 207px;
+    top: 112px;
+    width: 84px;
+    height: 100px; }
+    .header__books img {
+      max-width: 100%;
+      width: 100%; }
+  .header__home {
+    right: 179px;
+    bottom: 175px;
+    width: 92px;
+    height: 115px; }
+    .header__home img {
+      max-width: 100%;
+      width: 100%; }
+  .header__dictionary {
+    left: 146px;
+    bottom: 68px;
+    width: 121px;
+    height: 112px; }
+    .header__dictionary img {
+      max-width: 100%;
+      width: 100%; }
+  .header__games {
+    left: 166px;
+    bottom: 239px;
+    width: 67px;
+    height: 83px; }
+    .header__games img {
+      max-width: 100%;
+      width: 100%; }
+  .header__ship {
+    left: 85px;
+    bottom: 130px;
+    width: 53px;
+    height: 59px; }
+    .header__ship img {
+      max-width: 100%;
+      width: 100%; }
+  .header__shipLarge {
+    left: 313px;
+    top: 185px;
+    width: 74px;
+    height: 59px; }
+    .header__shipLarge img {
+      max-width: 100%;
+      width: 100%; }
+  .header__seamonster {
+    right: 284px;
+    bottom: 134px;
+    width: 53px;
+    height: 41px; }
+    .header__seamonster img {
+      max-width: 100%;
+      width: 100%; }
   .header .header__menu.active {
     top: 0;
-    -webkit-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s; }
+    -webkit-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top;
+    -o-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top; }
   .header__nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -254,7 +348,16 @@ body {
       .header__burger {
         margin-right: 10px; } }
     .header__burger img {
-      max-width: 100%; }
+      max-width: 100%;
+      -webkit-transition: -webkit-transform 0.1s ease-in;
+      transition: -webkit-transform 0.1s ease-in;
+      -o-transition: transform 0.1s ease-in;
+      transition: transform 0.1s ease-in;
+      transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; }
+      .header__burger img:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1); }
   .header__user {
     z-index: 3;
     border-radius: 50%;
@@ -572,5 +675,5 @@ body.lock {
 
 /*------------------------------Log/Reg------------------------------------*/
 .page_home {
-  background: url("../images/homeImages/bg.jpg");
+  background: url("../images/homeImages/bg.jpg") top right;
   background-size: cover; }
