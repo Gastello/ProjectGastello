@@ -1,0 +1,21 @@
+$fontFamily:'Metal Mania';
+/*-------------------------------VARIABLES-------------------------------*/
+$paddingContainer: 15;
+$maxWidthContainer: 1180+$paddingContainer * 2;
+
+$md1: $maxWidthContainer+$paddingContainer;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
+$md5: 419.98px;
+$md6: 379.98px;
+
+$mainColor: #EEF6FF;
+/*
+   @media (max-width: $md2) {
+   }
+   @media (max-width: $md3) {
+   }
+   @media (max-width: $md4) {
+   }
+*/
