@@ -234,7 +234,7 @@ body {
     position: fixed;
     z-index: 10;
     overflow: auto;
-    top: 0;
+    top: -100%;
     left: 0;
     -webkit-transition-duration: 0.3s top;
     -o-transition-duration: 0.3s top;
@@ -250,19 +250,28 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; }
-  .header .test {
+    user-select: none;
+    -webkit-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top;
+    -o-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top; }
+  .header__invisible {
     height: 140px;
     width: 100%; }
     @media (max-width: 767.98px) {
-      .header .test {
-        height: 140px; } }
+      .header__invisible {
+        height: 85px; } }
   .header__map {
     position: relative;
     max-width: 748px;
     max-height: 561px;
     padding: 0 10px; }
-    .header__map > img {
+    @media (max-width: 767.98px) {
+      .header__map {
+        max-width: 644px;
+        max-height: 447px; } }
+  .header__elements {
+    position: relative; }
+    .header__elements > img {
       max-width: 100%;
       width: 100%;
       -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
@@ -276,7 +285,7 @@ body {
         -webkit-filter: drop-shadow(0px 0px 20px #FFFFFF);
         filter: drop-shadow(0px 0px 20px #FFFFFF); } }
   .header__timer {
-    left: 191px;
+    left: 185px;
     top: 75px;
     width: 46px;
     height: 91px; }
@@ -284,7 +293,7 @@ body {
       max-width: 100%;
       width: 100%; }
   .header__books {
-    right: 207px;
+    right: 195px;
     top: 112px;
     width: 84px;
     height: 100px; }
@@ -292,7 +301,7 @@ body {
       max-width: 100%;
       width: 100%; }
   .header__home {
-    right: 179px;
+    right: 174px;
     bottom: 175px;
     width: 92px;
     height: 115px; }
@@ -300,7 +309,7 @@ body {
       max-width: 100%;
       width: 100%; }
   .header__dictionary {
-    left: 146px;
+    left: 138px;
     bottom: 68px;
     width: 121px;
     height: 112px; }
@@ -308,16 +317,16 @@ body {
       max-width: 100%;
       width: 100%; }
   .header__games {
-    left: 166px;
-    bottom: 239px;
+    left: 160px;
+    bottom: 230px;
     width: 67px;
     height: 83px; }
     .header__games img {
       max-width: 100%;
       width: 100%; }
   .header__ship {
-    left: 85px;
-    bottom: 130px;
+    left: 80px;
+    bottom: 125px;
     width: 53px;
     height: 59px; }
     .header__ship img {
@@ -325,14 +334,14 @@ body {
       width: 100%; }
   .header__shipLarge {
     left: 313px;
-    top: 185px;
+    top: 180px;
     width: 74px;
     height: 59px; }
     .header__shipLarge img {
       max-width: 100%;
       width: 100%; }
   .header__seamonster {
-    right: 284px;
+    right: 276px;
     bottom: 134px;
     width: 53px;
     height: 41px; }
@@ -340,10 +349,7 @@ body {
       max-width: 100%;
       width: 100%; }
   .header .header__menu.active {
-    top: 0;
-    -webkit-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top;
-    -o-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top;
-    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top; }
+    top: 0; }
   .header__nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -359,7 +365,7 @@ body {
         width: 65px; } }
     @media (max-width: 374.98px) {
       .header__burger {
-        margin-right: 10px; } }
+        margin-right: 20px; } }
     .header__burger img {
       max-width: 100%;
       -webkit-transition: -webkit-transform 0.1s ease-in;
