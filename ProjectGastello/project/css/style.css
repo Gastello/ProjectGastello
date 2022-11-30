@@ -77,14 +77,6 @@ h6 {
 /*-------------------------------Fonts-----------------------------------*/
 /*---------------------------------Vars----------------------------------*/
 /*-------------------------------VARIABLES-------------------------------*/
-/*
-   @media (max-width: $md2) {
-   }
-   @media (max-width: $md3) {
-   }
-   @media (max-width: $md4) {
-   }
-*/
 /*--------------------------------Cursor----------------------------------*/
 body {
   cursor: url("../icons/cursor.svg"), auto; }
@@ -254,6 +246,9 @@ body {
     -webkit-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top;
     -o-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top;
     transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top; }
+  .header__menu.active {
+    top: 0;
+    z-index: 10; }
   .header__invisible {
     height: 140px;
     width: 100%; }
@@ -263,8 +258,7 @@ body {
   .header__map {
     position: relative;
     max-width: 748px;
-    max-height: 561px;
-    padding: 0 10px; }
+    max-height: 561px; }
     @media (max-width: 767.98px) {
       .header__map {
         max-width: 644px;
@@ -285,7 +279,7 @@ body {
         -webkit-filter: drop-shadow(0px 0px 20px #FFFFFF);
         filter: drop-shadow(0px 0px 20px #FFFFFF); } }
   .header__timer {
-    left: 185px;
+    left: 191px;
     top: 75px;
     width: 46px;
     height: 91px; }
@@ -293,7 +287,7 @@ body {
       max-width: 100%;
       width: 100%; }
   .header__books {
-    right: 195px;
+    right: 207px;
     top: 112px;
     width: 84px;
     height: 100px; }
@@ -301,15 +295,15 @@ body {
       max-width: 100%;
       width: 100%; }
   .header__home {
-    right: 174px;
-    bottom: 175px;
+    right: 180px;
+    bottom: 181px;
     width: 92px;
     height: 115px; }
     .header__home img {
       max-width: 100%;
       width: 100%; }
   .header__dictionary {
-    left: 138px;
+    left: 146px;
     bottom: 68px;
     width: 121px;
     height: 112px; }
@@ -317,8 +311,8 @@ body {
       max-width: 100%;
       width: 100%; }
   .header__games {
-    left: 160px;
-    bottom: 230px;
+    left: 166px;
+    bottom: 239px;
     width: 67px;
     height: 83px; }
     .header__games img {
@@ -348,8 +342,6 @@ body {
     .header__seamonster img {
       max-width: 100%;
       width: 100%; }
-  .header .header__menu.active {
-    top: 0; }
   .header__nav {
     display: -webkit-box;
     display: -ms-flexbox;
