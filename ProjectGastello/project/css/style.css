@@ -642,7 +642,9 @@ body {
       transition: -webkit-transform 0.1s ease-in;
       -o-transition: transform 0.1s ease-in;
       transition: transform 0.1s ease-in;
-      transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; }
+      transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in;
+      position: relative;
+      z-index: 51; }
       @media (min-width: 767.98px) {
         .header__burger img:hover {
           -webkit-transform: scale(1.1);

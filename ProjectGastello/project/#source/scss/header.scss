@@ -582,6 +582,8 @@
       img {
          max-width: 100%;
          transition: transform 0.1s ease-in;
+         position: relative;
+         z-index: 51;
 
          @media (min-width: 767.98px) {
             &:hover {
