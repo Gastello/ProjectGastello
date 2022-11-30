@@ -694,6 +694,10 @@ body.lock {
   transform: scale(1.1); }
 
 /*------------------------------Log/Reg------------------------------------*/
+.wrapper_log {
+  background: url("../images/logRegImages/logRegBg.jpg");
+  background-size: cover; }
+
 .page_log {
   background: url("../images/logRegImages/logRegBg.jpg");
   background-size: cover;
@@ -979,6 +983,6 @@ body.lock {
   display: none; }
 
 /*------------------------------Log/Reg------------------------------------*/
-.page_home {
+.wrapper_home {
   background: url("../images/homeImages/bg.jpg") top right;
   background-size: cover; }
