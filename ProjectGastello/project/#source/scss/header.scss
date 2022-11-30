@@ -1,5 +1,5 @@
 .header {
-   position: fixed;
+   position: absolute;
    top: 0;
    left: 0;
    z-index: 50;
@@ -21,8 +21,7 @@
 
    // .header__logo
 
-   &__logo {
-      z-index: 3;
+   &__logo { 
       width: 100px;
       height: 90px;
 
@@ -48,25 +47,26 @@
    // .header__menu
 
    &__menu {
-      position: fixed;
+      position: fixed;  
+      // z-index: 10;
       top: -100%;
       left: 0;
       transition-duration: 0.3s;
       width: 100%;
-      height: 100%;
+      height: 100%; 
       overflow: auto; 
       display: flex;
       justify-content: center;
       align-items: center;
+      user-select: none;
    }
 
    // .header__map
 
    &__map {
-      position: relative;
+      position: relative;  
       max-width: 748px;
       max-height: 561px; 
-
       &>img {
          max-width: 100%;
          width: 100%;
@@ -210,7 +210,6 @@
       }
    }
 
-
    .header__menu.active {
       top: 0;
       transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) top;
@@ -225,9 +224,7 @@
    // .header__burger
 
    &__burger {
-      display: block;
-      position: relative;
-      z-index: 3;
+      display: block; 
       width: 86px;
       margin-right: 30px;
       filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
@@ -254,8 +251,7 @@
 
    // .header__user
 
-   &__user {
-      z-index: 3;
+   &__user { 
       border-radius: 50%;
       width: 75px;
       height: 75px;
@@ -287,8 +283,6 @@ body.lock {
 
 .header__burger.active {
    img {
-      transform: scale(1.2);
+      transform: scale(1.1);
    }
-
-
 }
