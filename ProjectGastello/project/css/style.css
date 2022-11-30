@@ -237,7 +237,7 @@ body {
     position: fixed;
     z-index: 10;
     overflow: auto;
-    top: -100%;
+    top: -200%;
     left: 0;
     -webkit-transition-duration: 0.3s top;
     -o-transition-duration: 0.3s top;
