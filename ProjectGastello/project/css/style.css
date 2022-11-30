@@ -201,12 +201,23 @@ body {
     -ms-flex-pack: justify;
     justify-content: space-between; }
   .header__logo {
+    position: relative;
     width: 100px;
     height: 90px; }
     @media (max-width: 767.98px) {
       .header__logo {
         width: 70px;
         height: 63px; } }
+    .header__logo::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 85px; }
     .header__logo img {
       max-width: 100%;
       width: 100%;
@@ -605,6 +616,7 @@ body {
   .header__burger {
     display: block;
     width: 86px;
+    position: relative;
     margin-right: 30px;
     -webkit-filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
     filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5)); }
@@ -614,6 +626,16 @@ body {
     @media (max-width: 374.98px) {
       .header__burger {
         margin-right: 20px; } }
+    .header__burger::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 90px;
+      height: 85px; }
     .header__burger img {
       max-width: 100%;
       -webkit-transition: -webkit-transform 0.1s ease-in;
@@ -639,11 +661,22 @@ body {
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
     @media (max-width: 767.98px) {
       .header__user {
         width: 65px;
         height: 65px; } }
+    .header__user::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 85px; }
     .header__user img {
       height: 60px;
       width: 40px; }
