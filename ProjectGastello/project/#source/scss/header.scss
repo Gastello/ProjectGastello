@@ -79,12 +79,32 @@
 
    &__map {
       position: relative;
-      max-width: 748px;
-      max-height: 561px;
+      max-width: $mapWidth;
+      max-height: $mapHeight;
 
       @media (max-width: 767.98px) {
-         max-width: 644px;
-         max-height: 447px;
+         max-width: 0.86*$mapWidth;
+         max-height: 0.86*$mapHeight;
+      }
+
+      @media (max-width: 659.98px) {
+         max-width: 0.7*$mapWidth;
+         max-height: 0.7*$mapHeight;
+      }
+
+      @media (max-width: 539.98px) {
+         max-width: 0.55*$mapWidth;
+         max-height: 0.55*$mapHeight;
+      }
+
+      @media (max-width: 424.98px) {
+         max-width: 0.5*$mapWidth;
+         max-height: 0.5*$mapHeight;
+      }
+
+      @media (max-width: 384.98px) {
+         max-width: 0.4*$mapWidth;
+         max-height: 0.4*$mapHeight;
       }
    }
 
@@ -126,10 +146,45 @@
    // .header__timer
 
    &__timer {
-      left: 191px;
-      top: 75px;
-      width: 46px;
-      height: 91px;
+      left: $timerLeft;
+      top: $timerTop;
+      width: $timerWidth;
+      height: $timerHeight;
+
+      @media (max-width: 767.98px) {
+         left: 0.86*$timerLeft;
+         top: 0.86*$timerTop;
+         width: 0.86*$timerWidth;
+         height: 0.86*$timerHeight;
+      }
+
+      @media (max-width: 659.98px) {
+         left: 0.7*$timerLeft;
+         top: 0.7*$timerTop;
+         width: 0.7*$timerWidth;
+         height: 0.7*$timerHeight;
+      }
+
+      @media (max-width: 539.98px) {
+         left: 0.55*$timerLeft;
+         top: 0.55*$timerTop;
+         width: 0.55*$timerWidth;
+         height: 0.55*$timerHeight;
+      }
+
+      @media (max-width: 424.98px) {
+         left: 0.5*$timerLeft;
+         top: 0.5*$timerTop;
+         width: 0.5*$timerWidth;
+         height: 0.5*$timerHeight;
+      }
+
+      @media (max-width: 384.98px) {
+         left: 0.4*$timerLeft;
+         top: 0.4*$timerTop;
+         width: 0.4*$timerWidth;
+         height: 0.4*$timerHeight;
+      }
 
       img {
          max-width: 100%;
@@ -140,10 +195,45 @@
    // .header__books
 
    &__books {
-      right: 207px;
-      top: 112px;
-      width: 84px;
-      height: 100px;
+      right: $booksRight;
+      top: $booksTop;
+      width: $booksWidth;
+      height: $booksHeight;
+
+      @media (max-width: 767.98px) {
+         right: 0.86*$booksRight;
+         top: 0.86*$booksTop;
+         width: 0.86*$booksWidth;
+         height: 0.86*$booksHeight;
+      }
+
+      @media (max-width: 659.98px) {
+         right: 0.7*$booksRight;
+         top: 0.7*$booksTop;
+         width: 0.7*$booksWidth;
+         height: 0.7*$booksHeight;
+      }
+
+      @media (max-width: 539.98px) {
+         right: 0.55*$booksRight;
+         top: 0.55*$booksTop;
+         width: 0.55*$booksWidth;
+         height: 0.55*$booksHeight;
+      }
+
+      @media (max-width: 424.98px) {
+         right: 0.5*$booksRight;
+         top: 0.5*$booksTop;
+         width: 0.5*$booksWidth;
+         height: 0.5*$booksHeight;
+      }
+
+      @media (max-width: 384.98px) {
+         right: 0.4*$booksRight;
+         top: 0.4*$booksTop;
+         width: 0.4*$booksWidth;
+         height: 0.4*$booksHeight;
+      }
 
       img {
          max-width: 100%;
@@ -154,10 +244,45 @@
    // .header__home
 
    &__home {
-      right: 180px;
-      bottom: 181px;
-      width: 92px;
-      height: 115px;
+      right: $homeRight;
+      bottom: $homeBottom;
+      width: $homeWidth;
+      height: $homeHeight;
+
+      @media (max-width: 767.98px) {
+         right: 0.86*$homeRight;
+         bottom: 0.86*$homeBottom;
+         width: 0.86*$homeWidth;
+         height: 0.86*$homeHeight;
+      }
+
+      @media (max-width: 659.98px) {
+         right: 0.7*$homeRight;
+         bottom: 0.7*$homeBottom;
+         width: 0.7*$homeWidth;
+         height: 0.7*$homeHeight;
+      }
+
+      @media (max-width: 539.98px) {
+         right: 0.55*$homeRight;
+         bottom: 0.55*$homeBottom;
+         width: 0.55*$homeWidth;
+         height: 0.55*$homeHeight;
+      }
+
+      @media (max-width: 424.98px) {
+         right: 0.5*$homeRight;
+         bottom: 0.5*$homeBottom;
+         width: 0.5*$homeWidth;
+         height: 0.5*$homeHeight;
+      }
+
+      @media (max-width: 384.98px) {
+         right: 0.4*$homeRight;
+         bottom: 0.4*$homeBottom;
+         width: 0.4*$homeWidth;
+         height: 0.4*$homeHeight;
+      }
 
       img {
          max-width: 100%;
@@ -168,10 +293,45 @@
    // .header__dictionary
 
    &__dictionary {
-      left: 146px;
-      bottom: 68px;
-      width: 121px;
-      height: 112px;
+      left: $dictionaryLeft;
+      bottom: $dictionaryBottom;
+      width: $dictionaryWidth;
+      height: $dictionaryHeight;
+
+      @media (max-width: 767.98px) {
+         left: 0.86*$dictionaryLeft;
+         bottom: 0.86*$dictionaryBottom;
+         width: 0.86*$dictionaryWidth;
+         height: 0.86*$dictionaryHeight;
+      }
+
+      @media (max-width: 659.98px) {
+         left: 0.7*$dictionaryLeft;
+         bottom: 0.7*$dictionaryBottom;
+         width: 0.7*$dictionaryWidth;
+         height: 0.7*$dictionaryHeight;
+      }
+
+      @media (max-width: 539.98px) {
+         left: 0.55*$dictionaryLeft;
+         bottom: 0.55*$dictionaryBottom;
+         width: 0.55*$dictionaryWidth;
+         height: 0.55*$dictionaryHeight;
+      }
+
+      @media (max-width: 424.98px) {
+         left: 0.5*$dictionaryLeft;
+         bottom: 0.5*$dictionaryBottom;
+         width: 0.5*$dictionaryWidth;
+         height: 0.5*$dictionaryHeight;
+      }
+
+      @media (max-width: 384.98px) {
+         left: 0.4*$dictionaryLeft;
+         bottom: 0.4*$dictionaryBottom;
+         width: 0.4*$dictionaryWidth;
+         height: 0.4*$dictionaryHeight;
+      }
 
       img {
          max-width: 100%;
@@ -182,10 +342,45 @@
    // .header__games
 
    &__games {
-      left: 166px;
-      bottom: 239px;
-      width: 67px;
-      height: 83px;
+      left: $gamesLeft;
+      bottom: $gamesBottom;
+      width: $gamesWidth;
+      height: $gamesHeight;
+
+      @media (max-width: 767.98px) {
+         left: 0.86*$gamesLeft;
+         bottom: 0.86*$gamesBottom;
+         width: 0.86*$gamesWidth;
+         height: 0.86*$gamesHeight;
+      }
+
+      @media (max-width: 659.98px) {
+         left: 0.7*$gamesLeft;
+         bottom: 0.7*$gamesBottom;
+         width: 0.7*$gamesWidth;
+         height: 0.7*$gamesHeight;
+      }
+
+      @media (max-width: 539.98px) {
+         left: 0.55*$gamesLeft;
+         bottom: 0.55*$gamesBottom;
+         width: 0.55*$gamesWidth;
+         height: 0.55*$gamesHeight;
+      }
+
+      @media (max-width: 424.98px) {
+         left: 0.5*$gamesLeft;
+         bottom: 0.5*$gamesBottom;
+         width: 0.5*$gamesWidth;
+         height: 0.5*$gamesHeight;
+      }
+
+      @media (max-width: 384.98px) {
+         left: 0.4*$gamesLeft;
+         bottom: 0.4*$gamesBottom;
+         width: 0.4*$gamesWidth;
+         height: 0.4*$gamesHeight;
+      }
 
       img {
          max-width: 100%;
@@ -196,10 +391,45 @@
    // .header__ship
 
    &__ship {
-      left: 80px;
-      bottom: 125px;
-      width: 53px;
-      height: 59px;
+      left: $shipLeft;
+      bottom: $shipBottom;
+      width: $shipWidth;
+      height: $shipHeight;
+
+      @media (max-width: 767.98px) {
+         left: 0.86*$shipLeft;
+         bottom: 0.86*$shipBottom;
+         width: 0.86*$shipWidth;
+         height: 0.86*$shipHeight;
+      }
+
+      @media (max-width: 659.98px) {
+         left: 0.7*$shipLeft;
+         bottom: 0.7*$shipBottom;
+         width: 0.7*$shipWidth;
+         height: 0.7*$shipHeight;
+      }
+
+      @media (max-width: 539.98px) {
+         left: 0.55*$shipLeft;
+         bottom: 0.55*$shipBottom;
+         width: 0.55*$shipWidth;
+         height: 0.55*$shipHeight;
+      }
+
+      @media (max-width: 424.98px) {
+         left: 0.5*$shipLeft;
+         bottom: 0.5*$shipBottom;
+         width: 0.5*$shipWidth;
+         height: 0.5*$shipHeight;
+      }
+
+      @media (max-width: 384.98px) {
+         left: 0.4*$shipLeft;
+         bottom: 0.4*$shipBottom;
+         width: 0.4*$shipWidth;
+         height: 0.4*$shipHeight;
+      }
 
       img {
          max-width: 100%;
@@ -210,10 +440,45 @@
    // .header__shipLarge
 
    &__shipLarge {
-      left: 313px;
-      top: 180px;
-      width: 74px;
-      height: 59px;
+      left: $shipLargeLeft;
+      top: $shipLargeTop;
+      width: $shipLargeWidth;
+      height: $shipLargeHeight;
+
+      @media (max-width: 767.98px) {
+         left: 0.86*$shipLargeLeft;
+         top: 0.86*$shipLargeTop;
+         width: 0.86*$shipLargeWidth;
+         height: 0.86*$shipLargeHeight;
+      }
+
+      @media (max-width: 659.98px) {
+         left: 0.7*$shipLargeLeft;
+         top: 0.7*$shipLargeTop;
+         width: 0.7*$shipLargeWidth;
+         height: 0.7*$shipLargeHeight;
+      }
+
+      @media (max-width: 539.98px) {
+         left: 0.55*$shipLargeLeft;
+         top: 0.55*$shipLargeTop;
+         width: 0.55*$shipLargeWidth;
+         height: 0.55*$shipLargeHeight;
+      }
+
+      @media (max-width: 424.98px) {
+         left: 0.5*$shipLargeLeft;
+         top: 0.5*$shipLargeTop;
+         width: 0.5*$shipLargeWidth;
+         height: 0.5*$shipLargeHeight;
+      }
+
+      @media (max-width: 384.98px) {
+         left: 0.4*$shipLargeLeft;
+         top: 0.4*$shipLargeTop;
+         width: 0.4*$shipLargeWidth;
+         height: 0.4*$shipLargeHeight;
+      }
 
       img {
          max-width: 100%;
@@ -224,10 +489,45 @@
    // .header__seamonster
 
    &__seamonster {
-      right: 276px;
-      bottom: 134px;
-      width: 53px;
-      height: 41px;
+      right: $seamonsterRight;
+      bottom: $seamonsterBottom;
+      width: $seamonsterWidth;
+      height: $seamonsterHeight;
+
+      @media (max-width: 767.98px) {
+         right: 0.86*$seamonsterRight;
+         bottom: 0.86*$seamonsterBottom;
+         width: 0.86*$seamonsterWidth;
+         height: 0.86*$seamonsterHeight;
+      }
+
+      @media (max-width: 659.98px) {
+         right: 0.7*$seamonsterRight;
+         bottom: 0.7*$seamonsterBottom;
+         width: 0.7*$seamonsterWidth;
+         height: 0.7*$seamonsterHeight;
+      }
+
+      @media (max-width: 539.98px) {
+         right: 0.55*$seamonsterRight;
+         bottom: 0.55*$seamonsterBottom;
+         width: 0.55*$seamonsterWidth;
+         height: 0.55*$seamonsterHeight;
+      }
+
+      @media (max-width: 424.98px) {
+         right: 0.5*$seamonsterRight;
+         bottom: 0.5*$seamonsterBottom;
+         width: 0.5*$seamonsterWidth;
+         height: 0.5*$seamonsterHeight;
+      }
+
+      @media (max-width: 384.98px) {
+         right: 0.4*$seamonsterRight;
+         bottom: 0.4*$seamonsterBottom;
+         width: 0.4*$seamonsterWidth;
+         height: 0.4*$seamonsterHeight;
+      }
 
       img {
          max-width: 100%;
