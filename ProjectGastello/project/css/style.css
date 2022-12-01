@@ -674,6 +674,25 @@ body {
       .header__user {
         width: 65px;
         height: 65px; } }
+    @media (min-width: 767.98px) {
+      .header__user:hover {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+        -webkit-transition: -webkit-transform 0.1s ease-in;
+        transition: -webkit-transform 0.1s ease-in;
+        -o-transition: transform 0.1s ease-in;
+        transition: transform 0.1s ease-in;
+        transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; }
+        .header__user:hover img {
+          -webkit-transform: scale(1.4);
+          -ms-transform: scale(1.4);
+          transform: scale(1.4);
+          -webkit-transition: -webkit-transform 0.1s ease-in;
+          transition: -webkit-transform 0.1s ease-in;
+          -o-transition: transform 0.1s ease-in;
+          transition: transform 0.1s ease-in;
+          transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; } }
     .header__user::before {
       content: '';
       position: absolute;
