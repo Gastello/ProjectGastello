@@ -636,12 +636,13 @@
       }
 
       img {
-         height: 60px;
-         width: 40px;
+         max-height: 60px;
+         // max-width: 40px;
+         height: 100%;
 
          @media (max-width: 767.98px) {
-            height: 48px;
-            width: 32px;
+            max-height: 48px;
+            // width: 32px;
          }
       }
    }
