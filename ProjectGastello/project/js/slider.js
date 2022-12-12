@@ -4,6 +4,7 @@ const swiper_2 = new Swiper('.swiper_2', {
    effect: 'slide',
    speed: 0,
    allowTouchMove: false,
+   autoHeight: true,
 }
 
 );
