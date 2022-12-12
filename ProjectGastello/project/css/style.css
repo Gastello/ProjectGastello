@@ -166,6 +166,62 @@ body {
   -ms-flex: 1 1 100%;
   flex: 1 1 100%; }
 
+/*-----------------------------ScrollToTop--------------------------------*/
+.scroll_top {
+  position: fixed;
+  z-index: 2;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.6));
+  -webkit-animation: none;
+  animation: none; }
+  .scroll_top_anim {
+    -webkit-animation: 1s ease-in 0s 1 normal scroll-top;
+    animation: 1s ease-in 0s 1 normal scroll-top; }
+  @media (min-width: 767.98px) {
+    .scroll_top:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transition: -webkit-transform 0.1s ease-in;
+      transition: -webkit-transform 0.1s ease-in;
+      -o-transition: transform 0.1s ease-in;
+      transition: transform 0.1s ease-in;
+      transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; } }
+  .scroll_top img {
+    max-width: 100%;
+    width: 100%; }
+
+@-webkit-keyframes scroll-top {
+  0% {
+    bottom: 20px;
+    right: 20px; }
+  90% {
+    bottom: 110%;
+    right: 20px; }
+  91% {
+    bottom: -100px;
+    right: 20px; }
+  100% {
+    bottom: 20px;
+    right: 20px; } }
+
+@keyframes scroll-top {
+  0% {
+    bottom: 20px;
+    right: 20px; }
+  90% {
+    bottom: 110%;
+    right: 20px; }
+  91% {
+    bottom: -100px;
+    right: 20px; }
+  100% {
+    bottom: 20px;
+    right: 20px; } }
+
 /*-----------------------------Scroll-bar---------------------------------*/
 ::-webkit-scrollbar {
   width: 7px; }
