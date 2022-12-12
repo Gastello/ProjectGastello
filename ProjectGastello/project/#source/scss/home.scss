@@ -1,6 +1,7 @@
 .wrapper_home {
-   background: url('../images/homeImages/bg.jpg') top right;
+   background: url('../images/homeImages/bg.jpg') top right no-repeat;
    background-size: cover;
+   background-attachment: fixed;
 }
 
 .swiper__next_wrapper {
@@ -37,10 +38,10 @@
    }
 
    &__pixy_2 {
-      margin-bottom: 40px;
+      margin-bottom: 100px;
 
       @media (max-width: 767.98px) {
-         margin-bottom: 20px;
+         margin-bottom: 50px;
       }
    }
 

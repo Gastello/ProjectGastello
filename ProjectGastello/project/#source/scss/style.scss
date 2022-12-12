@@ -92,6 +92,23 @@ body {
    flex: 1 1 100%;
 }
 
+/*-----------------------------Scroll-bar---------------------------------*/
+
+::-webkit-scrollbar {
+   width: 7px;
+}
+
+::-webkit-scrollbar-track {
+   background: rgba(0, 0, 0, 0);
+   background: #90AAEC;
+}
+
+::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   background: #CEDEFF;
+
+}
+
 /*-----------------------------Custom text----------------------------------*/
 .text_convert {
    display: inline-block;
