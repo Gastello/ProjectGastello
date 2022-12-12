@@ -181,7 +181,7 @@ body {
   left: 0;
   top: 0;
   -webkit-text-stroke-width: 0.125em;
-  -webkit-text-stroke-color: #484848;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.6);
   text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5); }
 
 /*------------------------------Header------------------------------------*/
@@ -1010,6 +1010,58 @@ body.lock {
 .wrapper_home {
   background: url("../images/homeImages/bg.jpg") top right;
   background-size: cover; }
+
+.home__greetings {
+  margin: 40px 0; }
+
+.home__pixy_left {
+  -webkit-animation: 1.4s ease-in-out 0s infinite alternate pixy-fly;
+  animation: 1.4s ease-in-out 0s infinite alternate pixy-fly; }
+
+.home__pixy_right {
+  -webkit-animation: 1.4s ease-in-out 0s infinite alternate pixy-fly-flipped;
+  animation: 1.4s ease-in-out 0s infinite alternate pixy-fly-flipped; }
+
+.home__logo {
+  margin: 0 auto 40px auto;
+  width: 240px;
+  -webkit-filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.7)); }
+  .home__logo img {
+    max-width: 100%;
+    width: 100%; }
+
+@-webkit-keyframes pixy-fly {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px); }
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px); } }
+
+@keyframes pixy-fly {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px); }
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px); } }
+
+@-webkit-keyframes pixy-fly-flipped {
+  0% {
+    -webkit-transform: translateY(-8px) scaleX(-1);
+    transform: translateY(-8px) scaleX(-1); }
+  100% {
+    -webkit-transform: translateY(8px) scaleX(-1);
+    transform: translateY(8px) scaleX(-1); } }
+
+@keyframes pixy-fly-flipped {
+  0% {
+    -webkit-transform: translateY(-8px) scaleX(-1);
+    transform: translateY(-8px) scaleX(-1); }
+  100% {
+    -webkit-transform: translateY(8px) scaleX(-1);
+    transform: translateY(8px) scaleX(-1); } }
 
 /*------------------------------Dialogs------------------------------------*/
 .dialog_left {
