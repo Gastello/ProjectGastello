@@ -1032,6 +1032,12 @@ body.lock {
     .home__pixy_1 {
       margin-bottom: 20px; } }
 
+.home__pixy_2 {
+  margin-bottom: 40px; }
+  @media (max-width: 767.98px) {
+    .home__pixy_2 {
+      margin-bottom: 20px; } }
+
 .home__pixy_left {
   -webkit-animation: 1.4s ease-in-out 0s infinite alternate pixy-fly;
   animation: 1.4s ease-in-out 0s infinite alternate pixy-fly; }
@@ -1052,6 +1058,19 @@ body.lock {
     .home__logo {
       margin: 0 auto 20px auto;
       width: 160px; } }
+
+.home__map {
+  -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+  width: 256px;
+  margin: 0 auto 40px auto; }
+  @media (max-width: 767.98px) {
+    .home__map {
+      width: 150px;
+      margin: 0 auto 20px auto; } }
+  .home__map img {
+    max-width: 100%;
+    width: 100%; }
 
 @-webkit-keyframes pixy-fly {
   0% {
@@ -1091,7 +1110,8 @@ body.lock {
     .slide_home {
       margin-bottom: 20px; } }
   .slide_home__image {
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     margin: 0 auto 40px auto; }
     @media (max-width: 767.98px) {
       .slide_home__image {
@@ -1132,11 +1152,19 @@ body.lock {
     font-size: 22px;
     line-height: 1.22727;
     text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
-    max-width: 884px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 884px;
+    flex: 0 1 884px;
     padding: 12px 14px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     position: relative; }
+    @media (max-width: 767.98px) {
+      .dialog_left__text {
+        font-size: 18px; } }
+    @media (max-width: 474.98px) {
+      .dialog_left__text {
+        font-size: 16px; } }
     .dialog_left__text::before {
       content: '';
       position: absolute;
@@ -1150,12 +1178,6 @@ body.lock {
       width: 15px;
       height: 26px;
       background: rgba(0, 0, 0, 0.5); }
-    @media (max-width: 767.98px) {
-      .dialog_left__text {
-        font-size: 18px; } }
-    @media (max-width: 474.98px) {
-      .dialog_left__text {
-        font-size: 16px; } }
 
 .dialog_right {
   display: -webkit-box;
@@ -1189,11 +1211,19 @@ body.lock {
     font-size: 22px;
     line-height: 1.22727;
     text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
-    max-width: 884px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 884px;
+    flex: 0 1 884px;
     padding: 12px 14px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     position: relative; }
+    @media (max-width: 767.98px) {
+      .dialog_right__text {
+        font-size: 18px; } }
+    @media (max-width: 474.98px) {
+      .dialog_right__text {
+        font-size: 16px; } }
     .dialog_right__text::before {
       content: '';
       position: absolute;

@@ -3,6 +3,7 @@ const swiper_2 = new Swiper('.swiper_2', {
    loop: false,
    effect: 'slide',
    speed: 0,
+   allowTouchMove: false,
 }
 
 );
