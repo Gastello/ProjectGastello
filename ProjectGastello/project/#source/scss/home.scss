@@ -9,6 +9,10 @@
 
    &__greetings {
       margin: 40px 0;
+
+      @media (max-width: 767.98px) {
+         margin: 20px 0;
+      }
    }
 
    // .home__pixy_left
@@ -33,6 +37,11 @@
       img {
          max-width: 100%;
          width: 100%;
+      }
+
+      @media (max-width: 767.98px) {
+         margin: 0 auto 20px auto;
+         width: 160px;
       }
    }
 

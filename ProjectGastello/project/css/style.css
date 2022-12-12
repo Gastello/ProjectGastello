@@ -1013,6 +1013,9 @@ body.lock {
 
 .home__greetings {
   margin: 40px 0; }
+  @media (max-width: 767.98px) {
+    .home__greetings {
+      margin: 20px 0; } }
 
 .home__pixy_left {
   -webkit-animation: 1.4s ease-in-out 0s infinite alternate pixy-fly;
@@ -1030,6 +1033,10 @@ body.lock {
   .home__logo img {
     max-width: 100%;
     width: 100%; }
+  @media (max-width: 767.98px) {
+    .home__logo {
+      margin: 0 auto 20px auto;
+      width: 160px; } }
 
 @-webkit-keyframes pixy-fly {
   0% {
@@ -1075,12 +1082,19 @@ body.lock {
   -ms-flex-pack: center;
   justify-content: center; }
   .dialog_left__img {
-    width: 72px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 72px;
+    flex: 0 0 72px;
     -webkit-filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
     filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
     margin-right: 15px; }
     .dialog_left__img img {
       max-width: 100%; }
+    @media (max-width: 474.98px) {
+      .dialog_left__img {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 60px;
+        flex: 0 0 60px; } }
   .dialog_left__text {
     font-size: 22px;
     line-height: 1.22727;
@@ -1103,6 +1117,12 @@ body.lock {
       width: 15px;
       height: 26px;
       background: rgba(0, 0, 0, 0.5); }
+    @media (max-width: 767.98px) {
+      .dialog_left__text {
+        font-size: 18px; } }
+    @media (max-width: 474.98px) {
+      .dialog_left__text {
+        font-size: 16px; } }
 
 .dialog_right {
   display: -webkit-box;
@@ -1115,7 +1135,9 @@ body.lock {
   -ms-flex-pack: center;
   justify-content: center; }
   .dialog_right__img {
-    width: 72px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 72px;
+    flex: 0 0 72px;
     -webkit-filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
     filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
     margin-left: 15px;
@@ -1125,6 +1147,11 @@ body.lock {
     .dialog_right__img img {
       max-width: 100%;
       width: 100%; }
+    @media (max-width: 474.98px) {
+      .dialog_right__img {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 60px;
+        flex: 0 0 60px; } }
   .dialog_right__text {
     font-size: 22px;
     line-height: 1.22727;
