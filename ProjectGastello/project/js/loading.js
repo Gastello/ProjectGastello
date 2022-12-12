@@ -8,7 +8,10 @@ function onReady(callback) {
 }
 
 function setVisible(selector, visible) {
-   document.querySelector(selector).style.display = visible ? 'block' : 'none';
+   let selectors = document.querySelectorAll(selector);
+   for (let el of selectors) {
+      el.style.display = visible ? 'block' : 'none';
+   }
 }
 
 onReady(function () {
