@@ -225,7 +225,7 @@ body {
         width: 70px;
         height: 63px; } }
     .header__logo::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -319,8 +319,8 @@ body {
     position: absolute; }
     @media (min-width: 767.98px) {
       .header__timer:hover, .header__books:hover, .header__home:hover, .header__dictionary:hover, .header__games:hover {
-        -webkit-filter: drop-shadow(0px 0px 20px #FFFFFF);
-        filter: drop-shadow(0px 0px 20px #FFFFFF); } }
+        -webkit-filter: drop-shadow(0px 0px 20px #ffffff);
+        filter: drop-shadow(0px 0px 20px #ffffff); } }
   .header__timer {
     left: 191px;
     top: 75px;
@@ -643,7 +643,7 @@ body {
       .header__burger {
         margin-right: 20px; } }
     .header__burger::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -705,7 +705,7 @@ body {
           transition: transform 0.1s ease-in;
           transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; } }
     .header__user::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -1030,8 +1030,19 @@ body.lock {
 
 .swiper__next,
 .swiper__prev {
-  -webkit-filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.5));
-  filter: drop-shadow(0px 0px 1px rgba(255, 255, 255, 0.5)); }
+  -webkit-filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4)); }
+  @media (min-width: 767.98px) {
+    .swiper__next:hover,
+    .swiper__prev:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transition: -webkit-transform 0.1s ease-in;
+      transition: -webkit-transform 0.1s ease-in;
+      -o-transition: transform 0.1s ease-in;
+      transition: transform 0.1s ease-in;
+      transition: transform 0.1s ease-in, -webkit-transform 0.1s ease-in; } }
 
 .home__greetings {
   margin: 40px 0; }
@@ -1125,7 +1136,9 @@ body.lock {
   .slide_home__image {
     max-width: 600px;
     width: 100%;
-    margin: 0 auto 40px auto; }
+    margin: 0 auto 40px auto;
+    -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7)); }
     @media (max-width: 767.98px) {
       .slide_home__image {
         margin: 0 auto 20px auto; } }

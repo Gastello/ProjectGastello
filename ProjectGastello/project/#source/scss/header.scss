@@ -30,7 +30,7 @@
       }
 
       &::before {
-         content: '';
+         content: "";
          position: absolute;
          top: 50%;
          left: 50%;
@@ -92,35 +92,35 @@
       max-height: $mapHeight;
 
       @media (max-width: 767.98px) {
-         max-width: 0.86*$mapWidth;
-         max-height: 0.86*$mapHeight;
+         max-width: 0.86 * $mapWidth;
+         max-height: 0.86 * $mapHeight;
       }
 
       @media (max-width: 659.98px) {
-         max-width: 0.7*$mapWidth;
-         max-height: 0.7*$mapHeight;
+         max-width: 0.7 * $mapWidth;
+         max-height: 0.7 * $mapHeight;
       }
 
       @media (max-width: 539.98px) {
-         max-width: 0.55*$mapWidth;
-         max-height: 0.55*$mapHeight;
+         max-width: 0.55 * $mapWidth;
+         max-height: 0.55 * $mapHeight;
       }
 
       @media (max-width: 424.98px) {
-         max-width: 0.5*$mapWidth;
-         max-height: 0.5*$mapHeight;
+         max-width: 0.5 * $mapWidth;
+         max-height: 0.5 * $mapHeight;
       }
 
       @media (max-width: 384.98px) {
-         max-width: 0.4*$mapWidth;
-         max-height: 0.4*$mapHeight;
+         max-width: 0.4 * $mapWidth;
+         max-height: 0.4 * $mapHeight;
       }
    }
 
    &__elements {
       position: relative;
 
-      &>img {
+      & > img {
          max-width: 100%;
          width: 100%;
          filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
@@ -147,7 +147,7 @@
 
       @media (min-width: 767.98px) {
          &:hover {
-            filter: drop-shadow(0px 0px 20px #FFFFFF);
+            filter: drop-shadow(0px 0px 20px #ffffff);
          }
       }
    }
@@ -161,38 +161,38 @@
       height: $timerHeight;
 
       @media (max-width: 767.98px) {
-         left: 0.86*$timerLeft;
-         top: 0.86*$timerTop;
-         width: 0.86*$timerWidth;
-         height: 0.86*$timerHeight;
+         left: 0.86 * $timerLeft;
+         top: 0.86 * $timerTop;
+         width: 0.86 * $timerWidth;
+         height: 0.86 * $timerHeight;
       }
 
       @media (max-width: 659.98px) {
-         left: 0.7*$timerLeft;
-         top: 0.7*$timerTop;
-         width: 0.7*$timerWidth;
-         height: 0.7*$timerHeight;
+         left: 0.7 * $timerLeft;
+         top: 0.7 * $timerTop;
+         width: 0.7 * $timerWidth;
+         height: 0.7 * $timerHeight;
       }
 
       @media (max-width: 539.98px) {
-         left: 0.55*$timerLeft;
-         top: 0.55*$timerTop;
-         width: 0.55*$timerWidth;
-         height: 0.55*$timerHeight;
+         left: 0.55 * $timerLeft;
+         top: 0.55 * $timerTop;
+         width: 0.55 * $timerWidth;
+         height: 0.55 * $timerHeight;
       }
 
       @media (max-width: 424.98px) {
-         left: 0.5*$timerLeft;
-         top: 0.5*$timerTop;
-         width: 0.5*$timerWidth;
-         height: 0.5*$timerHeight;
+         left: 0.5 * $timerLeft;
+         top: 0.5 * $timerTop;
+         width: 0.5 * $timerWidth;
+         height: 0.5 * $timerHeight;
       }
 
       @media (max-width: 384.98px) {
-         left: 0.4*$timerLeft;
-         top: 0.4*$timerTop;
-         width: 0.4*$timerWidth;
-         height: 0.4*$timerHeight;
+         left: 0.4 * $timerLeft;
+         top: 0.4 * $timerTop;
+         width: 0.4 * $timerWidth;
+         height: 0.4 * $timerHeight;
       }
 
       img {
@@ -210,38 +210,38 @@
       height: $booksHeight;
 
       @media (max-width: 767.98px) {
-         right: 0.86*$booksRight;
-         top: 0.86*$booksTop;
-         width: 0.86*$booksWidth;
-         height: 0.86*$booksHeight;
+         right: 0.86 * $booksRight;
+         top: 0.86 * $booksTop;
+         width: 0.86 * $booksWidth;
+         height: 0.86 * $booksHeight;
       }
 
       @media (max-width: 659.98px) {
-         right: 0.7*$booksRight;
-         top: 0.7*$booksTop;
-         width: 0.7*$booksWidth;
-         height: 0.7*$booksHeight;
+         right: 0.7 * $booksRight;
+         top: 0.7 * $booksTop;
+         width: 0.7 * $booksWidth;
+         height: 0.7 * $booksHeight;
       }
 
       @media (max-width: 539.98px) {
-         right: 0.55*$booksRight;
-         top: 0.55*$booksTop;
-         width: 0.55*$booksWidth;
-         height: 0.55*$booksHeight;
+         right: 0.55 * $booksRight;
+         top: 0.55 * $booksTop;
+         width: 0.55 * $booksWidth;
+         height: 0.55 * $booksHeight;
       }
 
       @media (max-width: 424.98px) {
-         right: 0.5*$booksRight;
-         top: 0.5*$booksTop;
-         width: 0.5*$booksWidth;
-         height: 0.5*$booksHeight;
+         right: 0.5 * $booksRight;
+         top: 0.5 * $booksTop;
+         width: 0.5 * $booksWidth;
+         height: 0.5 * $booksHeight;
       }
 
       @media (max-width: 384.98px) {
-         right: 0.4*$booksRight;
-         top: 0.4*$booksTop;
-         width: 0.4*$booksWidth;
-         height: 0.4*$booksHeight;
+         right: 0.4 * $booksRight;
+         top: 0.4 * $booksTop;
+         width: 0.4 * $booksWidth;
+         height: 0.4 * $booksHeight;
       }
 
       img {
@@ -259,38 +259,38 @@
       height: $homeHeight;
 
       @media (max-width: 767.98px) {
-         right: 0.86*$homeRight;
-         bottom: 0.86*$homeBottom;
-         width: 0.86*$homeWidth;
-         height: 0.86*$homeHeight;
+         right: 0.86 * $homeRight;
+         bottom: 0.86 * $homeBottom;
+         width: 0.86 * $homeWidth;
+         height: 0.86 * $homeHeight;
       }
 
       @media (max-width: 659.98px) {
-         right: 0.7*$homeRight;
-         bottom: 0.7*$homeBottom;
-         width: 0.7*$homeWidth;
-         height: 0.7*$homeHeight;
+         right: 0.7 * $homeRight;
+         bottom: 0.7 * $homeBottom;
+         width: 0.7 * $homeWidth;
+         height: 0.7 * $homeHeight;
       }
 
       @media (max-width: 539.98px) {
-         right: 0.55*$homeRight;
-         bottom: 0.55*$homeBottom;
-         width: 0.55*$homeWidth;
-         height: 0.55*$homeHeight;
+         right: 0.55 * $homeRight;
+         bottom: 0.55 * $homeBottom;
+         width: 0.55 * $homeWidth;
+         height: 0.55 * $homeHeight;
       }
 
       @media (max-width: 424.98px) {
-         right: 0.5*$homeRight;
-         bottom: 0.5*$homeBottom;
-         width: 0.5*$homeWidth;
-         height: 0.5*$homeHeight;
+         right: 0.5 * $homeRight;
+         bottom: 0.5 * $homeBottom;
+         width: 0.5 * $homeWidth;
+         height: 0.5 * $homeHeight;
       }
 
       @media (max-width: 384.98px) {
-         right: 0.4*$homeRight;
-         bottom: 0.4*$homeBottom;
-         width: 0.4*$homeWidth;
-         height: 0.4*$homeHeight;
+         right: 0.4 * $homeRight;
+         bottom: 0.4 * $homeBottom;
+         width: 0.4 * $homeWidth;
+         height: 0.4 * $homeHeight;
       }
 
       img {
@@ -308,38 +308,38 @@
       height: $dictionaryHeight;
 
       @media (max-width: 767.98px) {
-         left: 0.86*$dictionaryLeft;
-         bottom: 0.86*$dictionaryBottom;
-         width: 0.86*$dictionaryWidth;
-         height: 0.86*$dictionaryHeight;
+         left: 0.86 * $dictionaryLeft;
+         bottom: 0.86 * $dictionaryBottom;
+         width: 0.86 * $dictionaryWidth;
+         height: 0.86 * $dictionaryHeight;
       }
 
       @media (max-width: 659.98px) {
-         left: 0.7*$dictionaryLeft;
-         bottom: 0.7*$dictionaryBottom;
-         width: 0.7*$dictionaryWidth;
-         height: 0.7*$dictionaryHeight;
+         left: 0.7 * $dictionaryLeft;
+         bottom: 0.7 * $dictionaryBottom;
+         width: 0.7 * $dictionaryWidth;
+         height: 0.7 * $dictionaryHeight;
       }
 
       @media (max-width: 539.98px) {
-         left: 0.55*$dictionaryLeft;
-         bottom: 0.55*$dictionaryBottom;
-         width: 0.55*$dictionaryWidth;
-         height: 0.55*$dictionaryHeight;
+         left: 0.55 * $dictionaryLeft;
+         bottom: 0.55 * $dictionaryBottom;
+         width: 0.55 * $dictionaryWidth;
+         height: 0.55 * $dictionaryHeight;
       }
 
       @media (max-width: 424.98px) {
-         left: 0.5*$dictionaryLeft;
-         bottom: 0.5*$dictionaryBottom;
-         width: 0.5*$dictionaryWidth;
-         height: 0.5*$dictionaryHeight;
+         left: 0.5 * $dictionaryLeft;
+         bottom: 0.5 * $dictionaryBottom;
+         width: 0.5 * $dictionaryWidth;
+         height: 0.5 * $dictionaryHeight;
       }
 
       @media (max-width: 384.98px) {
-         left: 0.4*$dictionaryLeft;
-         bottom: 0.4*$dictionaryBottom;
-         width: 0.4*$dictionaryWidth;
-         height: 0.4*$dictionaryHeight;
+         left: 0.4 * $dictionaryLeft;
+         bottom: 0.4 * $dictionaryBottom;
+         width: 0.4 * $dictionaryWidth;
+         height: 0.4 * $dictionaryHeight;
       }
 
       img {
@@ -357,38 +357,38 @@
       height: $gamesHeight;
 
       @media (max-width: 767.98px) {
-         left: 0.86*$gamesLeft;
-         bottom: 0.86*$gamesBottom;
-         width: 0.86*$gamesWidth;
-         height: 0.86*$gamesHeight;
+         left: 0.86 * $gamesLeft;
+         bottom: 0.86 * $gamesBottom;
+         width: 0.86 * $gamesWidth;
+         height: 0.86 * $gamesHeight;
       }
 
       @media (max-width: 659.98px) {
-         left: 0.7*$gamesLeft;
-         bottom: 0.7*$gamesBottom;
-         width: 0.7*$gamesWidth;
-         height: 0.7*$gamesHeight;
+         left: 0.7 * $gamesLeft;
+         bottom: 0.7 * $gamesBottom;
+         width: 0.7 * $gamesWidth;
+         height: 0.7 * $gamesHeight;
       }
 
       @media (max-width: 539.98px) {
-         left: 0.55*$gamesLeft;
-         bottom: 0.55*$gamesBottom;
-         width: 0.55*$gamesWidth;
-         height: 0.55*$gamesHeight;
+         left: 0.55 * $gamesLeft;
+         bottom: 0.55 * $gamesBottom;
+         width: 0.55 * $gamesWidth;
+         height: 0.55 * $gamesHeight;
       }
 
       @media (max-width: 424.98px) {
-         left: 0.5*$gamesLeft;
-         bottom: 0.5*$gamesBottom;
-         width: 0.5*$gamesWidth;
-         height: 0.5*$gamesHeight;
+         left: 0.5 * $gamesLeft;
+         bottom: 0.5 * $gamesBottom;
+         width: 0.5 * $gamesWidth;
+         height: 0.5 * $gamesHeight;
       }
 
       @media (max-width: 384.98px) {
-         left: 0.4*$gamesLeft;
-         bottom: 0.4*$gamesBottom;
-         width: 0.4*$gamesWidth;
-         height: 0.4*$gamesHeight;
+         left: 0.4 * $gamesLeft;
+         bottom: 0.4 * $gamesBottom;
+         width: 0.4 * $gamesWidth;
+         height: 0.4 * $gamesHeight;
       }
 
       img {
@@ -406,38 +406,38 @@
       height: $shipHeight;
 
       @media (max-width: 767.98px) {
-         left: 0.86*$shipLeft;
-         bottom: 0.86*$shipBottom;
-         width: 0.86*$shipWidth;
-         height: 0.86*$shipHeight;
+         left: 0.86 * $shipLeft;
+         bottom: 0.86 * $shipBottom;
+         width: 0.86 * $shipWidth;
+         height: 0.86 * $shipHeight;
       }
 
       @media (max-width: 659.98px) {
-         left: 0.7*$shipLeft;
-         bottom: 0.7*$shipBottom;
-         width: 0.7*$shipWidth;
-         height: 0.7*$shipHeight;
+         left: 0.7 * $shipLeft;
+         bottom: 0.7 * $shipBottom;
+         width: 0.7 * $shipWidth;
+         height: 0.7 * $shipHeight;
       }
 
       @media (max-width: 539.98px) {
-         left: 0.55*$shipLeft;
-         bottom: 0.55*$shipBottom;
-         width: 0.55*$shipWidth;
-         height: 0.55*$shipHeight;
+         left: 0.55 * $shipLeft;
+         bottom: 0.55 * $shipBottom;
+         width: 0.55 * $shipWidth;
+         height: 0.55 * $shipHeight;
       }
 
       @media (max-width: 424.98px) {
-         left: 0.5*$shipLeft;
-         bottom: 0.5*$shipBottom;
-         width: 0.5*$shipWidth;
-         height: 0.5*$shipHeight;
+         left: 0.5 * $shipLeft;
+         bottom: 0.5 * $shipBottom;
+         width: 0.5 * $shipWidth;
+         height: 0.5 * $shipHeight;
       }
 
       @media (max-width: 384.98px) {
-         left: 0.4*$shipLeft;
-         bottom: 0.4*$shipBottom;
-         width: 0.4*$shipWidth;
-         height: 0.4*$shipHeight;
+         left: 0.4 * $shipLeft;
+         bottom: 0.4 * $shipBottom;
+         width: 0.4 * $shipWidth;
+         height: 0.4 * $shipHeight;
       }
 
       img {
@@ -455,38 +455,38 @@
       height: $shipLargeHeight;
 
       @media (max-width: 767.98px) {
-         left: 0.86*$shipLargeLeft;
-         top: 0.86*$shipLargeTop;
-         width: 0.86*$shipLargeWidth;
-         height: 0.86*$shipLargeHeight;
+         left: 0.86 * $shipLargeLeft;
+         top: 0.86 * $shipLargeTop;
+         width: 0.86 * $shipLargeWidth;
+         height: 0.86 * $shipLargeHeight;
       }
 
       @media (max-width: 659.98px) {
-         left: 0.7*$shipLargeLeft;
-         top: 0.7*$shipLargeTop;
-         width: 0.7*$shipLargeWidth;
-         height: 0.7*$shipLargeHeight;
+         left: 0.7 * $shipLargeLeft;
+         top: 0.7 * $shipLargeTop;
+         width: 0.7 * $shipLargeWidth;
+         height: 0.7 * $shipLargeHeight;
       }
 
       @media (max-width: 539.98px) {
-         left: 0.55*$shipLargeLeft;
-         top: 0.55*$shipLargeTop;
-         width: 0.55*$shipLargeWidth;
-         height: 0.55*$shipLargeHeight;
+         left: 0.55 * $shipLargeLeft;
+         top: 0.55 * $shipLargeTop;
+         width: 0.55 * $shipLargeWidth;
+         height: 0.55 * $shipLargeHeight;
       }
 
       @media (max-width: 424.98px) {
-         left: 0.5*$shipLargeLeft;
-         top: 0.5*$shipLargeTop;
-         width: 0.5*$shipLargeWidth;
-         height: 0.5*$shipLargeHeight;
+         left: 0.5 * $shipLargeLeft;
+         top: 0.5 * $shipLargeTop;
+         width: 0.5 * $shipLargeWidth;
+         height: 0.5 * $shipLargeHeight;
       }
 
       @media (max-width: 384.98px) {
-         left: 0.4*$shipLargeLeft;
-         top: 0.4*$shipLargeTop;
-         width: 0.4*$shipLargeWidth;
-         height: 0.4*$shipLargeHeight;
+         left: 0.4 * $shipLargeLeft;
+         top: 0.4 * $shipLargeTop;
+         width: 0.4 * $shipLargeWidth;
+         height: 0.4 * $shipLargeHeight;
       }
 
       img {
@@ -504,38 +504,38 @@
       height: $seamonsterHeight;
 
       @media (max-width: 767.98px) {
-         right: 0.86*$seamonsterRight;
-         bottom: 0.86*$seamonsterBottom;
-         width: 0.86*$seamonsterWidth;
-         height: 0.86*$seamonsterHeight;
+         right: 0.86 * $seamonsterRight;
+         bottom: 0.86 * $seamonsterBottom;
+         width: 0.86 * $seamonsterWidth;
+         height: 0.86 * $seamonsterHeight;
       }
 
       @media (max-width: 659.98px) {
-         right: 0.7*$seamonsterRight;
-         bottom: 0.7*$seamonsterBottom;
-         width: 0.7*$seamonsterWidth;
-         height: 0.7*$seamonsterHeight;
+         right: 0.7 * $seamonsterRight;
+         bottom: 0.7 * $seamonsterBottom;
+         width: 0.7 * $seamonsterWidth;
+         height: 0.7 * $seamonsterHeight;
       }
 
       @media (max-width: 539.98px) {
-         right: 0.55*$seamonsterRight;
-         bottom: 0.55*$seamonsterBottom;
-         width: 0.55*$seamonsterWidth;
-         height: 0.55*$seamonsterHeight;
+         right: 0.55 * $seamonsterRight;
+         bottom: 0.55 * $seamonsterBottom;
+         width: 0.55 * $seamonsterWidth;
+         height: 0.55 * $seamonsterHeight;
       }
 
       @media (max-width: 424.98px) {
-         right: 0.5*$seamonsterRight;
-         bottom: 0.5*$seamonsterBottom;
-         width: 0.5*$seamonsterWidth;
-         height: 0.5*$seamonsterHeight;
+         right: 0.5 * $seamonsterRight;
+         bottom: 0.5 * $seamonsterBottom;
+         width: 0.5 * $seamonsterWidth;
+         height: 0.5 * $seamonsterHeight;
       }
 
       @media (max-width: 384.98px) {
-         right: 0.4*$seamonsterRight;
-         bottom: 0.4*$seamonsterBottom;
-         width: 0.4*$seamonsterWidth;
-         height: 0.4*$seamonsterHeight;
+         right: 0.4 * $seamonsterRight;
+         bottom: 0.4 * $seamonsterBottom;
+         width: 0.4 * $seamonsterWidth;
+         height: 0.4 * $seamonsterHeight;
       }
 
       img {
@@ -568,7 +568,7 @@
       }
 
       &::before {
-         content: '';
+         content: "";
          position: absolute;
          top: 50%;
          left: 50%;
@@ -616,7 +616,6 @@
             img {
                transform: scale(1.4);
                transition: transform 0.1s ease-in;
-
             }
          }
       }
@@ -624,7 +623,7 @@
       position: relative;
 
       &::before {
-         content: '';
+         content: "";
          position: absolute;
          top: 50%;
          left: 50%;
