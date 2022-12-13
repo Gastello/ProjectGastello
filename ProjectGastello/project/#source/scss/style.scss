@@ -6,17 +6,19 @@
 /*---------------------------------Vars----------------------------------*/
 @import "vars.scss";
 
+/*----------------------------------Fav-Ico-------------------------------*/
+
 /*--------------------------------Cursor----------------------------------*/
 
 body {
-   cursor: url('../icons/cursor.svg'), auto;
+   cursor: url("../icons/cursor.svg"), auto;
 }
 
 input,
 a,
 button,
 .cursorPointer {
-   cursor: url('../icons/cursorPointer.svg') 6 0, auto;
+   cursor: url("../icons/cursorPointer.svg") 6 0, auto;
 }
 
 /*---------------------------Loading-----------------------------------*/
@@ -69,7 +71,7 @@ body {
    font-style: normal;
    font-weight: 400;
    font-size: 16px;
-   line-height: 20/16*1;
+   line-height: 20/16 * 1;
    color: #787878;
    height: 100vh;
 }
@@ -100,13 +102,12 @@ body {
 
 ::-webkit-scrollbar-track {
    background: rgba(0, 0, 0, 0);
-   background: #90AAEC;
+   background: #90aaec;
 }
 
 ::-webkit-scrollbar-thumb {
    border-radius: 10px;
-   background: #CEDEFF;
-
+   background: #cedeff;
 }
 
 /*-----------------------------Custom text----------------------------------*/
@@ -164,7 +165,7 @@ body {
 
    &__text {
       font-size: 22px;
-      line-height: 27/22*1;
+      line-height: 27/22 * 1;
       text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
       flex: 0 1 884px;
       padding: 12px 14px;
@@ -181,7 +182,7 @@ body {
       }
 
       &::before {
-         content: '';
+         content: "";
          position: absolute;
          top: 50%;
          left: -15px;
@@ -221,7 +222,7 @@ body {
 
    &__text {
       font-size: 22px;
-      line-height: 27/22*1;
+      line-height: 27/22 * 1;
       text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
       flex: 0 1 884px;
       padding: 12px 14px;
@@ -238,7 +239,7 @@ body {
       }
 
       &::before {
-         content: '';
+         content: "";
          position: absolute;
          top: 50%;
          right: -15px;
