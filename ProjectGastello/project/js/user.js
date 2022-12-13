@@ -1,5 +1,8 @@
-let userIco = document.querySelector('.header__user');
-
+let userProfile = document.querySelector('.header__user');
+let userIco = userProfile.children[0];
+console.log(userProfile);
+console.log(userIco);
 userIco.onclick = function () {
-   userIco.classList.toggle('active');
+   userProfile.classList.toggle('active');
+   console.log(1)
 }
