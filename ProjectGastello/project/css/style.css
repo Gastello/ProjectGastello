@@ -1250,6 +1250,23 @@ body.lock {
     .dictionary__translator_wrapper {
       padding: 0 10px; } }
 
+.dictionary__dialog {
+  margin-bottom: 100px; }
+  .dictionary__dialog > *:not(:last-child) {
+    margin-bottom: 40px; }
+    @media (max-width: 767.98px) {
+      .dictionary__dialog > *:not(:last-child) {
+        margin-bottom: 20px; } }
+
+.dictionary__example {
+  max-width: 600px;
+  margin: 0 auto;
+  -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7)); }
+  .dictionary__example img {
+    max-width: 100%;
+    width: 100%; }
+
 .translator_dictionary {
   background: url("../images/dictionary/paper.jpg") no-repeat;
   background-size: cover;
@@ -1268,6 +1285,8 @@ body.lock {
       margin: 20px auto; } }
   .translator_dictionary::after {
     content: "";
+    -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
     position: absolute;
     top: -25px;
     right: -130px;
@@ -1387,6 +1406,14 @@ body.lock {
       font-size: 20px;
       line-height: 1.25;
       color: #000000; }
+      @media (min-width: 767.98px) {
+        .translator_dictionary__switch button:hover {
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1);
+          -webkit-transition: all 0.1s ease-in;
+          -o-transition: all 0.1s ease-in;
+          transition: all 0.1s ease-in; } }
 
 /*------------------------------Dialogs------------------------------------*/
 .dialog_left {

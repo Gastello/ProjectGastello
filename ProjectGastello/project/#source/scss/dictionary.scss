@@ -16,6 +16,25 @@
          padding: 0 10px;
       }
    }
+
+   &__dialog {
+      margin-bottom: 100px;
+      & > *:not(:last-child) {
+         margin-bottom: 40px;
+         @media (max-width: 767.98px) {
+            margin-bottom: 20px;
+         }
+      }
+   }
+   &__example {
+      max-width: 600px;
+      margin: 0 auto;
+      filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+      img {
+         max-width: 100%;
+         width: 100%;
+      }
+   }
 }
 .translator_dictionary {
    background: url("../images/dictionary/paper.jpg") no-repeat;
@@ -34,6 +53,7 @@
    }
    &::after {
       content: "";
+      filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
       position: absolute;
       top: -25px;
       right: -130px;
@@ -144,6 +164,12 @@
          font-size: 20px;
          line-height: 25/20 * 1;
          color: #000000;
+         @media (min-width: 767.98px) {
+            &:hover {
+               transform: scale(1.1);
+               transition: all 0.1s ease-in;
+            }
+         }
       }
    }
 }
