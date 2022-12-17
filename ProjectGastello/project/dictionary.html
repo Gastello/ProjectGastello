@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Project Gastello - Dictionary</title>
+   <script src="./js/loading.js"></script>
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="icon" type="image/x-icon" href="./icons/logo.svg">
+</head>
+
+<body>
+   <audio class="music" loop="true">
+      <source src="./music/track1.mp3" />
+   </audio>
+   <div class="wrapper wrapper_dictionary">
+      <header class="header">
+         <div class="container">
+            <div class="header__body">
+               <a href="" class="header__logo">
+                  <img src="./icons/logo.svg" alt="ProjectGastelloLogo">
+               </a>
+               <div class="header__menu">
+                  <div class="header__map">
+                     <div class="header__invisible"></div>
+                     <div class="header__elements">
+                        <img src="./images/main/map.png" alt="ProjectGastelloMap">
+                        <a href="" class="header__timer">
+                           <img src="./images/main/timerButton.png" alt="timerButton">
+                        </a>
+                        <a href="" class="header__books">
+                           <img src="./images/main/booksButton.png" alt="booksButton">
+                        </a>
+                        <a href="home.html" class="header__home">
+                           <img src="./images/main/homeButton.png" alt="homeButton">
+                        </a>
+                        <a href="" class="header__dictionary">
+                           <img src="./images/main/dictionaryButton.png" alt="dictionaryButton">
+                        </a>
+                        <a href="" class="header__games">
+                           <img src="./images/main/gamesButton.png" alt="gamesButton">
+                        </a>
+                        <div class="header__ship">
+                           <img src="./images/main/ship.png" alt="ship">
+                        </div>
+                        <div class="header__shipLarge">
+                           <img src="./images/main/shipLarge.png" alt="shipLarge">
+                        </div>
+                        <div class="header__seamonster">
+                           <img src="./images/main/seaMonster.png" alt="seaMonster">
+                        </div>
+                     </div>
+                     <div class="header__invisible"></div>
+                  </div>
+               </div>
+               <div class="header__nav">
+                  <button class="header__burger">
+                     <img src="./icons/questMap.svg" alt="">
+                  </button>
+                  <div class="header__account">
+                     <button class="header__user">
+                        <img class="header__ico" src="./icons/avatars/dwarfViking.svg" alt="">
+                        <div class="header__controls">
+                           <div class="user_header__music">
+                              Music Off
+                           </div>
+                           <div class="user_header__logout">
+                              Log out
+                           </div>
+                        </div>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <main class="page">
+         <div id="loading">
+            <div class="loading__inner">
+               <img src="../project/icons/loadingSword.svg" alt="loadingSword">
+               <div class="loading__text">Loading...</div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="dictionary">
+               <div class="dictionary__translator_wrapper">
+                  <div class="dictionary__translator translator_dictionary">
+                     <div class="translator_dictionary__row">
+                        <div class="translator_dictionary__text">
+                           <textarea class="cursorPointer" name="" id=""
+                              placeholder="Centaurs, or centaurs - in ancient Greek mythology - whimsical creatures, half-human, half-horse."></textarea>
+                        </div>
+                        <div class="translator_dictionary__translate">
+                           <textarea class="cursorPointer" name="" id=""
+                              placeholder="Кента́ври, або цента́ври — у давньогрецькій міфології — химерні істоти, напівлюди-напівконі."></textarea>
+                        </div>
+                     </div>
+                     <div class="translator_dictionary__switch">
+                        <button id="translator_switch">Switch languages</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <footer class="footer">
+         <div class="container container_footer">
+
+         </div>
+      </footer>
+   </div>
+   <script src="./js/text.js"></script>
+   <script src="./js/map.js"></script>
+   <script src="./js/user.js"></script>
+   <script src="./js/music.js"></script>
+</body>
+
+</html>

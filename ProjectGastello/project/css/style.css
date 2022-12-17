@@ -817,11 +817,11 @@ body.lock {
 
 /*------------------------------Log/Reg------------------------------------*/
 .wrapper_log {
-  background: url("../images/logRegImages/logRegBg.jpg");
+  background: url("../images/logReg/logRegBg.jpg");
   background-size: cover; }
 
 .page_log {
-  background: url("../images/logRegImages/logRegBg.jpg");
+  background: url("../images/logReg/logRegBg.jpg");
   background-size: cover;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -833,7 +833,7 @@ body.lock {
       background-position: center; } }
   @media (max-width: 767.98px) {
     .page_log::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -879,15 +879,15 @@ body.lock {
     -webkit-transform: translateX(0px);
     -ms-transform: translateX(0px);
     transform: translateX(0px);
-    -webkit-transition: .5s ease-in-out transform;
-    -o-transition: .5s ease-in-out transform;
-    transition: .5s ease-in-out transform; }
+    -webkit-transition: 0.5s ease-in-out transform;
+    -o-transition: 0.5s ease-in-out transform;
+    transition: 0.5s ease-in-out transform; }
     @media (max-width: 1199.98px) {
       .login__inner {
         padding: 60px 0 60px 0;
         min-width: 400px; } }
     .login__inner::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;
@@ -929,11 +929,11 @@ body.lock {
     position: relative; }
     .login__button:hover {
       text-shadow: #b2b2b2 0px 0px 10px;
-      -webkit-transition: .3s ease-in-out text-shadow;
-      -o-transition: .3s ease-in-out text-shadow;
-      transition: .3s ease-in-out text-shadow; }
+      -webkit-transition: 0.3s ease-in-out text-shadow;
+      -o-transition: 0.3s ease-in-out text-shadow;
+      transition: 0.3s ease-in-out text-shadow; }
     .login__button::before {
-      content: '';
+      content: "";
       background: rgba(0, 0, 0, 0.75);
       -webkit-clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
       clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
@@ -946,7 +946,7 @@ body.lock {
       -ms-transform: translate(-100%, -50%);
       transform: translate(-100%, -50%); }
     .login__button::after {
-      content: '';
+      content: "";
       background-image: url("../icons/pixy.svg");
       position: absolute;
       background-size: 60px 80px;
@@ -972,9 +972,9 @@ body.lock {
         font-size: 22px; } }
     .login__link:hover {
       text-shadow: #b2b2b2 0px 0px 10px;
-      -webkit-transition: .3s ease-in-out text-shadow;
-      -o-transition: .3s ease-in-out text-shadow;
-      transition: .3s ease-in-out text-shadow; }
+      -webkit-transition: 0.3s ease-in-out text-shadow;
+      -o-transition: 0.3s ease-in-out text-shadow;
+      transition: 0.3s ease-in-out text-shadow; }
 
 .inputs_login {
   margin-bottom: 38px;
@@ -989,19 +989,19 @@ body.lock {
   .inputs_login__username input, .inputs_login__password input, .inputs_login__password_repeat input {
     width: 100%;
     padding: 7px 15px;
-    background: #FFFFFF;
+    background: #ffffff;
     -webkit-box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
     border-radius: 21px;
-    color: #5475B7; }
+    color: #5475b7; }
     .inputs_login__username input::-webkit-input-placeholder, .inputs_login__password input::-webkit-input-placeholder, .inputs_login__password_repeat input::-webkit-input-placeholder {
-      color: #5475B7; }
+      color: #5475b7; }
     .inputs_login__username input:-ms-input-placeholder, .inputs_login__password input:-ms-input-placeholder, .inputs_login__password_repeat input:-ms-input-placeholder {
-      color: #5475B7; }
+      color: #5475b7; }
     .inputs_login__username input::-ms-input-placeholder, .inputs_login__password input::-ms-input-placeholder, .inputs_login__password_repeat input::-ms-input-placeholder {
-      color: #5475B7; }
+      color: #5475b7; }
     .inputs_login__username input::placeholder, .inputs_login__password input::placeholder, .inputs_login__password_repeat input::placeholder {
-      color: #5475B7; }
+      color: #5475b7; }
   .inputs_login__username {
     position: relative;
     margin-bottom: 20px; }
@@ -1099,9 +1099,9 @@ body.lock {
       width: 242px;
       height: 112px; } }
 
-/*------------------------------Log/Reg------------------------------------*/
+/*-------------------------------Home------------------------------------*/
 .wrapper_home {
-  background: url("../images/homeImages/bg.jpg") top right no-repeat;
+  background: url("../images/home/bg.jpg") top right no-repeat;
   background-size: cover;
   background-attachment: fixed; }
 
@@ -1234,6 +1234,159 @@ body.lock {
 
 .swiper_2 {
   overflow: hidden; }
+
+/*----------------------------Dictionary------------------------------------*/
+.wrapper_dictionary {
+  background: url("../images/dictionary/bg.jpg") bottom center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.dictionary__translator_wrapper {
+  padding: 0 130px; }
+  @media (max-width: 924.98px) {
+    .dictionary__translator_wrapper {
+      padding: 0 100px; } }
+  @media (max-width: 767.98px) {
+    .dictionary__translator_wrapper {
+      padding: 0 10px; } }
+
+.translator_dictionary {
+  background: url("../images/dictionary/paper.jpg") no-repeat;
+  background-size: cover;
+  max-width: 800px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 20px 0px 10px 0px;
+  font-family: "Marck Script";
+  font-style: normal;
+  color: #000000;
+  -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+  position: relative; }
+  @media (max-width: 767.98px) {
+    .translator_dictionary {
+      margin: 20px auto; } }
+  .translator_dictionary::after {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: -130px;
+    background: url("../images/dictionary/pen.png") no-repeat;
+    background-size: cover;
+    width: 163px;
+    height: 451px; }
+    @media (max-width: 924.98px) {
+      .translator_dictionary::after {
+        width: 122.25px;
+        height: 338.25px;
+        top: 25px;
+        right: -95px; } }
+    @media (max-width: 767.98px) {
+      .translator_dictionary::after {
+        width: 61.125px;
+        height: 169.125px;
+        top: auto;
+        bottom: -60px;
+        right: 30px;
+        -webkit-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+        transform: rotate(60deg); } }
+    @media (max-width: 524.98px) {
+      .translator_dictionary::after {
+        display: none; } }
+  .translator_dictionary__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 10px; }
+    @media (max-width: 767.98px) {
+      .translator_dictionary__row {
+        height: auto;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 30px; } }
+  .translator_dictionary__text, .translator_dictionary__translate {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%; }
+    .translator_dictionary__text ::-webkit-scrollbar, .translator_dictionary__translate ::-webkit-scrollbar {
+      width: 5px; }
+    .translator_dictionary__text ::-webkit-scrollbar-track, .translator_dictionary__translate ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0); }
+    .translator_dictionary__text ::-webkit-scrollbar-thumb, .translator_dictionary__translate ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #4a3931; }
+    .translator_dictionary__text textarea,
+    .translator_dictionary__text textarea::-webkit-input-placeholder, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea::-webkit-input-placeholder {
+      background: transparent;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.22222;
+      color: #000000; }
+    .translator_dictionary__text textarea,
+    .translator_dictionary__text textarea:-ms-input-placeholder, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea:-ms-input-placeholder {
+      background: transparent;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.22222;
+      color: #000000; }
+    .translator_dictionary__text textarea,
+    .translator_dictionary__text textarea::-ms-input-placeholder, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea::-ms-input-placeholder {
+      background: transparent;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.22222;
+      color: #000000; }
+    .translator_dictionary__text textarea,
+    .translator_dictionary__text textarea::placeholder, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea::placeholder {
+      background: transparent;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.22222;
+      color: #000000; }
+    .translator_dictionary__text textarea, .translator_dictionary__translate textarea {
+      resize: none;
+      width: 100%;
+      height: 348px; }
+      @media (max-width: 767.98px) {
+        .translator_dictionary__text textarea, .translator_dictionary__translate textarea {
+          height: 150px; } }
+  .translator_dictionary__text {
+    margin-right: 10px; }
+    .translator_dictionary__text textarea {
+      padding: 0px 5px 0px 40px; }
+    @media (max-width: 767.98px) {
+      .translator_dictionary__text {
+        margin-right: 0px;
+        margin-bottom: 20px; }
+        .translator_dictionary__text textarea {
+          padding: 0px 20px; } }
+  .translator_dictionary__translate {
+    margin-right: 35px; }
+    .translator_dictionary__translate textarea {
+      padding: 0px 5px 0px 15px; }
+    @media (max-width: 767.98px) {
+      .translator_dictionary__translate {
+        margin-right: 0px; }
+        .translator_dictionary__translate textarea {
+          padding: 0px 20px; } }
+  .translator_dictionary__switch {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .translator_dictionary__switch button {
+      font-size: 20px;
+      line-height: 1.25;
+      color: #000000; }
 
 /*------------------------------Dialogs------------------------------------*/
 .dialog_left {

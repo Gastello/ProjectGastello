@@ -1,0 +1,149 @@
+.wrapper_dictionary {
+   background: url("../images/dictionary/bg.jpg") bottom center no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+}
+
+.dictionary {
+   // .dictionary__translator_wrapper
+
+   &__translator_wrapper {
+      padding: 0 130px;
+      @media (max-width: 924.98px) {
+         padding: 0 100px;
+      }
+      @media (max-width: 767.98px) {
+         padding: 0 10px;
+      }
+   }
+}
+.translator_dictionary {
+   background: url("../images/dictionary/paper.jpg") no-repeat;
+   background-size: cover;
+   max-width: 800px;
+   width: 100%;
+   margin: 40px auto;
+   padding: 20px 0px 10px 0px;
+   font-family: "Marck Script";
+   font-style: normal;
+   color: #000000;
+   filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+   position: relative;
+   @media (max-width: 767.98px) {
+      margin: 20px auto;
+   }
+   &::after {
+      content: "";
+      position: absolute;
+      top: -25px;
+      right: -130px;
+      background: url("../images/dictionary/pen.png") no-repeat;
+      background-size: cover;
+      width: 163px;
+      height: 451px;
+      @media (max-width: 924.98px) {
+         width: 122.25px;
+         height: 338.25px;
+         top: 25px;
+         right: -95px;
+      }
+      @media (max-width: 767.98px) {
+         width: 61.125px;
+         height: 169.125px;
+         top: auto;
+         bottom: -60px;
+         right: 30px;
+         transform: rotate(60deg);
+      }
+      @media (max-width: 524.98px) {
+         display: none;
+      }
+   }
+
+   // .translator_dictionary__row
+
+   &__row {
+      display: flex;
+      margin-bottom: 10px;
+      @media (max-width: 767.98px) {
+         height: auto;
+         flex-direction: column;
+         margin-bottom: 30px;
+      }
+   }
+   &__text,
+   &__translate {
+      flex: 0 1 50%;
+      ::-webkit-scrollbar {
+         width: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+         background: rgba(0, 0, 0, 0);
+      }
+
+      ::-webkit-scrollbar-thumb {
+         border-radius: 10px;
+         background: #4a3931;
+      }
+
+      textarea,
+      textarea::placeholder {
+         background: transparent;
+         font-weight: 400;
+         font-size: 18px;
+         line-height: 22/18 * 1;
+         color: #000000;
+      }
+      textarea {
+         resize: none;
+         width: 100%;
+         height: 348px;
+         @media (max-width: 767.98px) {
+            height: 150px;
+         }
+      }
+   }
+   // .translator_dictionary__text
+
+   &__text {
+      margin-right: 10px;
+      textarea {
+         padding: 0px 5px 0px 40px;
+      }
+      @media (max-width: 767.98px) {
+         margin-right: 0px;
+         margin-bottom: 20px;
+         textarea {
+            padding: 0px 20px;
+         }
+      }
+   }
+
+   // .translator_dictionary__translate
+
+   &__translate {
+      margin-right: 35px;
+      textarea {
+         padding: 0px 5px 0px 15px;
+      }
+      @media (max-width: 767.98px) {
+         margin-right: 0px;
+         textarea {
+            padding: 0px 20px;
+         }
+      }
+   }
+
+   // .translator_dictionary__switch
+
+   &__switch {
+      display: flex;
+      justify-content: center;
+      button {
+         font-size: 20px;
+         line-height: 25/20 * 1;
+         color: #000000;
+      }
+   }
+}

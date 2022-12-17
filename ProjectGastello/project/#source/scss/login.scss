@@ -1,10 +1,10 @@
 .wrapper_log {
-   background: url('../images/logRegImages/logRegBg.jpg');
+   background: url("../images/logReg/logRegBg.jpg");
    background-size: cover;
 }
 
 .page_log {
-   background: url('../images/logRegImages/logRegBg.jpg');
+   background: url("../images/logReg/logRegBg.jpg");
    background-size: cover;
    user-select: none;
 
@@ -16,7 +16,7 @@
 
    &::before {
       @media (max-width: 767.98px) {
-         content: '';
+         content: "";
          position: absolute;
          top: 0;
          left: 0;
@@ -53,7 +53,7 @@
       }
 
       &::before {
-         content: '';
+         content: "";
          position: absolute;
          left: 0;
          top: 0;
@@ -67,13 +67,11 @@
          }
       }
 
-      transition: .5s ease-in-out transform;
+      transition: 0.5s ease-in-out transform;
 
       &_animation {
          transform: translateX(-30%);
       }
-
-
    }
 
    // .login__logo
@@ -98,7 +96,7 @@
 
    &__button {
       font-size: 22px;
-      line-height: 27/22*1;
+      line-height: 27/22 * 1;
       color: $mainColor;
       text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
       background: rgba(0, 0, 0, 0.75);
@@ -109,11 +107,11 @@
 
       &:hover {
          text-shadow: #b2b2b2 0px 0px 10px;
-         transition: .3s ease-in-out text-shadow;
+         transition: 0.3s ease-in-out text-shadow;
       }
 
       &::before {
-         content: '';
+         content: "";
          background: rgba(0, 0, 0, 0.75);
          clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
          position: absolute;
@@ -125,8 +123,8 @@
       }
 
       &::after {
-         content: '';
-         background-image: url('../icons/pixy.svg');
+         content: "";
+         background-image: url("../icons/pixy.svg");
          position: absolute;
          background-size: 60px 80px;
          width: 60px;
@@ -136,7 +134,7 @@
          transform: translate(-100%, -50%);
          animation: 1.4s ease-in-out 0s infinite alternate pixy-move;
 
-         @media (max-width:374.98px) {
+         @media (max-width: 374.98px) {
             background-size: 45px 60px;
             width: 45px;
             height: 60px;
@@ -156,7 +154,7 @@
 
       &:hover {
          text-shadow: #b2b2b2 0px 0px 10px;
-         transition: .3s ease-in-out text-shadow;
+         transition: 0.3s ease-in-out text-shadow;
       }
    }
 }
@@ -177,13 +175,13 @@
       input {
          width: 100%;
          padding: 7px 15px;
-         background: #FFFFFF;
+         background: #ffffff;
          box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
          border-radius: 21px;
-         color: #5475B7;
+         color: #5475b7;
 
          &::placeholder {
-            color: #5475B7;
+            color: #5475b7;
          }
       }
    }
@@ -195,7 +193,7 @@
       margin-bottom: 20px;
 
       &::before {
-         content: url('../icons/steelHelm.svg');
+         content: url("../icons/steelHelm.svg");
          position: absolute;
          height: 30px;
          width: 21px;
@@ -210,7 +208,7 @@
       position: relative;
 
       &::before {
-         content: url('../icons/magicScroll.svg');
+         content: url("../icons/magicScroll.svg");
          position: absolute;
          height: 30px;
          width: 31px;

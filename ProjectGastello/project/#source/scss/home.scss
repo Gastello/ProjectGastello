@@ -1,5 +1,5 @@
 .wrapper_home {
-   background: url('../images/homeImages/bg.jpg') top right no-repeat;
+   background: url("../images/home/bg.jpg") top right no-repeat;
    background-size: cover;
    background-attachment: fixed;
 }
@@ -15,7 +15,7 @@
    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
 
    @media (min-width: 767.98px) {
-      &:hover{
+      &:hover {
          transform: scale(1.1);
          transition: transform 0.1s ease-in;
       }
@@ -23,7 +23,6 @@
 }
 
 .home {
-
    // .home__greetings
 
    &__greetings {
@@ -129,11 +128,10 @@
    // .slide_home__image
 
    @media (max-width: 767.98px) {
-      margin-bottom: 20px;  
+      margin-bottom: 20px;
    }
 
    &__image {
-
       max-width: 600px;
       width: 100%;
       margin: 0 auto 40px auto;
@@ -148,10 +146,6 @@
          width: 100%;
       }
    }
-
-   // .slide_home__dialog
-
-   &__dialog {}
 }
 
 .swiper_2 {
