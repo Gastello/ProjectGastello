@@ -3,9 +3,19 @@
    background-size: cover;
    background-attachment: fixed;
 }
-
+.books {
+   padding: 40px 0 100px 0;
+   &__dialogs {
+      & > *:not(:last-child) {
+         margin-bottom: 40px;
+         @media (max-width: 767.98px) {
+            margin-bottom: 20px;
+         }
+      }
+   }
+}
 .libbrary_books {
-   margin: 40px 0px;
+   margin-bottom: 40px;
    & > *:not(:last-child) {
       margin-bottom: 20px;
    }
@@ -154,6 +164,10 @@
 }
 .swiper_3 {
    overflow: hidden;
+   margin-bottom: 40px;
+   @media (max-width: 767.98px) {
+      margin-bottom: 20px;
+   }
    &__nav {
       display: flex;
       justify-content: center;
