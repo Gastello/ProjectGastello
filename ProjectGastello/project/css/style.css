@@ -82,6 +82,12 @@ h6 {
   opacity: 0;
   position: absolute; }
 
+/*---------------------------------Selection------------------------------*/
+*::-moz-selection {
+  background: #224281; }
+*::selection {
+  background: #224281; }
+
 /*--------------------------------Cursor----------------------------------*/
 body {
   cursor: url("../icons/cursor.svg"), auto; }
@@ -1425,26 +1431,27 @@ body.lock {
   margin: 40px 0px; }
   .libbrary_books > *:not(:last-child) {
     margin-bottom: 20px; }
-  .libbrary_books > *:nth-child(odd) > * > *:hover {
-    margin-left: calc(50% - 195px); }
   @media (max-width: 767.98px) {
     .libbrary_books > *:nth-child(odd) > * {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; } }
+  @media (min-width: 767.98px) {
+    .libbrary_books > *:nth-child(odd) > *:hover > * {
+      margin-left: calc(50% - 195px); } }
   .libbrary_books > *:nth-child(odd) > *:nth-child(odd) > * > *:first-child {
     background: url("../icons/magicTomb.svg") no-repeat;
     background-size: cover; }
   .libbrary_books > *:nth-child(odd) > *:nth-child(even) > * > *:first-child {
     background: url("../icons/harryTomb.svg") no-repeat;
     background-size: cover; }
-  @media (min-width: 767.98px) {
-    .libbrary_books > *:nth-child(even) > * > *:hover {
-      margin-right: calc(50% - 195px); } }
   .libbrary_books > *:nth-child(even) > * {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: end; }
+    @media (min-width: 767.98px) {
+      .libbrary_books > *:nth-child(even) > *:hover > * {
+        margin-right: calc(50% - 195px); } }
   @media (max-width: 767.98px) {
     .libbrary_books > *:nth-child(even) > * {
       -webkit-box-pack: center;
@@ -1528,6 +1535,53 @@ body.lock {
     font-size: 14px;
     line-height: 1.21429;
     color: #ffffff; }
+
+.swiper_3 {
+  overflow: hidden; }
+  .swiper_3__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #eef6ff;
+    text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+    font-size: 32px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .swiper_3__prev, .swiper_3__next {
+    padding: 0 5px; }
+  .swiper_3 .swiper-pagination {
+    position: relative;
+    bottom: inherit;
+    width: auto; }
+  .swiper_3 .swiper-pagination-bullet-active,
+  .swiper_3 .swiper-pagination-bullet,
+  .swiper_3 .swiper-pagination-bullettext_convert {
+    height: auto;
+    width: auto;
+    background: none;
+    color: #eef6ff;
+    text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+    font-size: 28px;
+    line-height: 1.25;
+    cursor: url("../icons/cursorPointer.svg") 6 0, auto; }
+  .swiper_3 .swiper-pagination-bullet {
+    opacity: 0.7; }
+  .swiper_3 .swiper-pagination-bullet-active {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1); }
+  .swiper_3 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+    padding: 0 5px; }
 
 /*------------------------------Dialogs------------------------------------*/
 .dialog_left {

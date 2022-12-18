@@ -6,7 +6,6 @@ const swiper_2 = new Swiper('.swiper_2', {
    allowTouchMove: false,
    autoHeight: true,
 }
-
 );
 
 let swiperNextArr = document.querySelectorAll('.swiper__next');
