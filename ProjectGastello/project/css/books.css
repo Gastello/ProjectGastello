@@ -1,0 +1,4 @@
+.wrapper_books {
+  background: url("../images/books/bg.jpg") bottom center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }

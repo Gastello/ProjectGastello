@@ -1415,6 +1415,120 @@ body.lock {
           -o-transition: all 0.1s ease-in;
           transition: all 0.1s ease-in; } }
 
+/*-------------------------------Books------------------------------------*/
+.wrapper_books {
+  background: url("../images/books/bg.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.libbrary_books {
+  margin: 40px 0px; }
+  .libbrary_books > *:not(:last-child) {
+    margin-bottom: 20px; }
+  .libbrary_books > *:nth-child(odd) > * > *:hover {
+    margin-left: calc(50% - 195px); }
+  @media (max-width: 767.98px) {
+    .libbrary_books > *:nth-child(odd) > * {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
+  .libbrary_books > *:nth-child(odd) > *:nth-child(odd) > * > *:first-child {
+    background: url("../icons/magicTomb.svg") no-repeat;
+    background-size: cover; }
+  .libbrary_books > *:nth-child(odd) > *:nth-child(even) > * > *:first-child {
+    background: url("../icons/harryTomb.svg") no-repeat;
+    background-size: cover; }
+  @media (min-width: 767.98px) {
+    .libbrary_books > *:nth-child(even) > * > *:hover {
+      margin-right: calc(50% - 195px); } }
+  .libbrary_books > *:nth-child(even) > * {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end; }
+  @media (max-width: 767.98px) {
+    .libbrary_books > *:nth-child(even) > * {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
+  .libbrary_books > *:nth-child(even) > *:nth-child(even) > * > *:first-child {
+    background: url("../icons/magicTomb.svg") no-repeat;
+    background-size: cover; }
+  .libbrary_books > *:nth-child(even) > *:nth-child(odd) > * > *:first-child {
+    background: url("../icons/harryTomb.svg") no-repeat;
+    background-size: cover; }
+  @media (max-width: 767.98px) {
+    .libbrary_books > *:nth-child(even) > *:nth-child(even) > * > *:first-child {
+      background: url("../icons/magicTomb.svg") no-repeat;
+      background-size: cover; }
+    .libbrary_books > *:nth-child(even) > *:nth-child(odd) > * > *:first-child {
+      background: url("../icons/harryTomb.svg") no-repeat;
+      background-size: cover; }
+    .libbrary_books > *:nth-child(odd) > *:nth-child(even) > * > *:first-child {
+      background: url("../icons/magicTomb.svg") no-repeat;
+      background-size: cover; }
+    .libbrary_books > *:nth-child(odd) > *:nth-child(odd) > * > *:first-child {
+      background: url("../icons/harryTomb.svg") no-repeat;
+      background-size: cover; } }
+  .libbrary_books__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    @media (max-width: 767.98px) {
+      .libbrary_books__row {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    @media (max-width: 767.98px) {
+      .libbrary_books__row > *:not(:last-child) {
+        margin-bottom: 20px; } }
+  .libbrary_books__el {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .libbrary_books__el_inner {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 30px;
+      padding: 14px 20px;
+      max-width: 390px;
+      width: 100%;
+      -webkit-transition: all 1s ease-in-out;
+      -o-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out; }
+      @media (max-width: 999.98px) {
+        .libbrary_books__el_inner {
+          max-width: 300px; } }
+      @media (max-width: 767.98px) {
+        .libbrary_books__el_inner {
+          max-width: 100%; } }
+  .libbrary_books__img {
+    -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.5));
+    height: 92px;
+    margin-right: 20px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 60px;
+    flex: 0 0 60px; }
+  .libbrary_books__info > *:not(:last-child) {
+    margin-bottom: 5px; }
+  .libbrary_books__name {
+    font-size: 18px;
+    line-height: 1.22222;
+    color: #ffffff; }
+  .libbrary_books__author, .libbrary_books__year, .libbrary_books__genre {
+    font-size: 14px;
+    line-height: 1.21429;
+    color: #ffffff; }
+
 /*------------------------------Dialogs------------------------------------*/
 .dialog_left {
   display: -webkit-box;

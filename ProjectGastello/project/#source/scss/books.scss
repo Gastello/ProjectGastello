@@ -1,0 +1,156 @@
+.wrapper_books {
+   background: url("../images/books/bg.jpg") center center no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+}
+
+.libbrary_books {
+   margin: 40px 0px;
+   & > *:not(:last-child) {
+      margin-bottom: 20px;
+   }
+
+   & > *:nth-child(odd) {
+      & > * > * {
+         &:hover {
+            margin-left: calc(50% - 195px);
+         }
+      }
+      & > * {
+         @media (max-width: 767.98px) {
+            justify-content: center;
+         }
+      }
+      & > *:nth-child(odd) > * > *:first-child {
+         background: url("../icons/magicTomb.svg") no-repeat;
+         background-size: cover;
+      }
+      & > *:nth-child(even) > * > *:first-child {
+         background: url("../icons/harryTomb.svg") no-repeat;
+         background-size: cover;
+      }
+   }
+   & > *:nth-child(even) {
+      & > * > * {
+         @media (min-width: 767.98px) {
+            &:hover {
+               margin-right: calc(50% - 195px);
+            }
+         }
+      }
+      & > * {
+         justify-content: end;
+      }
+
+      & > * {
+         @media (max-width: 767.98px) {
+            justify-content: center;
+         }
+      }
+
+      & > *:nth-child(even) > * > *:first-child {
+         background: url("../icons/magicTomb.svg") no-repeat;
+         background-size: cover;
+      }
+      & > *:nth-child(odd) > * > *:first-child {
+         background: url("../icons/harryTomb.svg") no-repeat;
+         background-size: cover;
+      }
+   }
+
+   @media (max-width: 767.98px) {
+      & > *:nth-child(even) {
+         & > *:nth-child(even) > * > *:first-child {
+            background: url("../icons/magicTomb.svg") no-repeat;
+            background-size: cover;
+         }
+         & > *:nth-child(odd) > * > *:first-child {
+            background: url("../icons/harryTomb.svg") no-repeat;
+            background-size: cover;
+         }
+      }
+      & > *:nth-child(odd) {
+         & > *:nth-child(even) > * > *:first-child {
+            background: url("../icons/magicTomb.svg") no-repeat;
+            background-size: cover;
+         }
+         & > *:nth-child(odd) > * > *:first-child {
+            background: url("../icons/harryTomb.svg") no-repeat;
+            background-size: cover;
+         }
+      }
+   }
+
+   // .libbrary_books__row
+
+   &__row {
+      display: flex;
+      @media (max-width: 767.98px) {
+         flex-direction: column;
+      }
+      @media (max-width: 767.98px) {
+         & > *:not(:last-child) {
+            margin-bottom: 20px;
+         }
+      }
+   }
+
+   // .libbrary_books__el
+
+   &__el {
+      flex: 0 0 50%;
+      display: flex;
+      &_inner {
+         display: flex;
+         align-items: center;
+         background: rgba(0, 0, 0, 0.5);
+         border-radius: 30px;
+         padding: 14px 20px;
+         max-width: 390px;
+         width: 100%;
+         transition: all 1s ease-in-out;
+         @media (max-width: 999.98px) {
+            max-width: 300px;
+         }
+         @media (max-width: 767.98px) {
+            max-width: 100%;
+         }
+      }
+   }
+
+   // .libbrary_books__img
+
+   &__img {
+      filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.5));
+      height: 92px;
+      margin-right: 20px;
+      flex: 0 0 60px;
+   }
+
+   // .libbrary_books__info
+
+   &__info {
+      & > *:not(:last-child) {
+         margin-bottom: 5px;
+      }
+   }
+
+   // .libbrary_books__name
+
+   &__name {
+      font-size: 18px;
+      line-height: 22/18 * 1;
+      color: #ffffff;
+   }
+
+   // .libbrary_books__author
+   // .libbrary_books__genre
+   // .libbrary_books__year
+   &__author,
+   &__year,
+   &__genre {
+      font-size: 14px;
+      line-height: 17/14 * 1;
+      color: #ffffff;
+   }
+}
