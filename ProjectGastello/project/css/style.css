@@ -1577,6 +1577,18 @@ body.lock {
     margin: 0;
     padding: 0 5px; }
 
+/*-------------------------------Timer------------------------------------*/
+.wrapper_timer {
+  background: url("../images/timer/bg.jpg") top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+/*-------------------------------Games------------------------------------*/
+.wrapper_games {
+  background: url("../images/games/bg.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
 /*------------------------------Dialogs------------------------------------*/
 .dialog_left {
   display: -webkit-box;
