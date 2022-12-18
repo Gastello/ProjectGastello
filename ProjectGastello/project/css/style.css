@@ -1188,38 +1188,6 @@ body.lock {
     max-width: 100%;
     width: 100%; }
 
-@-webkit-keyframes pixy-fly {
-  0% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px); }
-  100% {
-    -webkit-transform: translateY(8px);
-    transform: translateY(8px); } }
-
-@keyframes pixy-fly {
-  0% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px); }
-  100% {
-    -webkit-transform: translateY(8px);
-    transform: translateY(8px); } }
-
-@-webkit-keyframes pixy-fly-flipped {
-  0% {
-    -webkit-transform: translateY(-8px) scaleX(-1);
-    transform: translateY(-8px) scaleX(-1); }
-  100% {
-    -webkit-transform: translateY(8px) scaleX(-1);
-    transform: translateY(8px) scaleX(-1); } }
-
-@keyframes pixy-fly-flipped {
-  0% {
-    -webkit-transform: translateY(-8px) scaleX(-1);
-    transform: translateY(-8px) scaleX(-1); }
-  100% {
-    -webkit-transform: translateY(8px) scaleX(-1);
-    transform: translateY(8px) scaleX(-1); } }
-
 .slide_home {
   margin-bottom: 40px; }
   @media (max-width: 767.98px) {
@@ -1246,6 +1214,14 @@ body.lock {
   background: url("../images/dictionary/bg.jpg") bottom center no-repeat;
   background-size: cover;
   background-attachment: fixed; }
+
+.dictionary__pixy_right {
+  -webkit-animation: 1.4s ease-in-out 0s infinite alternate pixy-fly-flipped;
+  animation: 1.4s ease-in-out 0s infinite alternate pixy-fly-flipped; }
+
+.dictionary__centaur_left {
+  -webkit-animation: 0.8s ease-in-out 0s infinite alternate centaur-anim;
+  animation: 0.8s ease-in-out 0s infinite alternate centaur-anim; }
 
 .dictionary__translator_wrapper {
   padding: 0 130px; }
@@ -1434,6 +1410,12 @@ body.lock {
     @media (max-width: 767.98px) {
       .books__dialogs > *:not(:last-child) {
         margin-bottom: 20px; } }
+  .books__pixy_left {
+    -webkit-animation: 1.4s ease-in-out 0s infinite alternate pixy-fly;
+    animation: 1.4s ease-in-out 0s infinite alternate pixy-fly; }
+  .books__treant_right {
+    -webkit-animation: 3s ease-in-out 0s infinite alternate tree-anim-flipped;
+    animation: 3s ease-in-out 0s infinite alternate tree-anim-flipped; }
 
 .libbrary_books {
   margin-bottom: 40px; }
@@ -1731,3 +1713,66 @@ body.lock {
       </div>
    </div>
 */
+/*-----------------------------Animations-------------------------------*/
+@-webkit-keyframes pixy-fly {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px); }
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px); } }
+@keyframes pixy-fly {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px); }
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px); } }
+
+@-webkit-keyframes pixy-fly-flipped {
+  0% {
+    -webkit-transform: translateY(-8px) scaleX(-1);
+    transform: translateY(-8px) scaleX(-1); }
+  100% {
+    -webkit-transform: translateY(8px) scaleX(-1);
+    transform: translateY(8px) scaleX(-1); } }
+
+@keyframes pixy-fly-flipped {
+  0% {
+    -webkit-transform: translateY(-8px) scaleX(-1);
+    transform: translateY(-8px) scaleX(-1); }
+  100% {
+    -webkit-transform: translateY(8px) scaleX(-1);
+    transform: translateY(8px) scaleX(-1); } }
+
+@-webkit-keyframes centaur-anim {
+  0% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg); }
+  100% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); } }
+
+@keyframes centaur-anim {
+  0% {
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg); }
+  100% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); } }
+
+@-webkit-keyframes tree-anim-flipped {
+  0% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg); }
+  100% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg); } }
+
+@keyframes tree-anim-flipped {
+  0% {
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg); }
+  100% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg); } }
