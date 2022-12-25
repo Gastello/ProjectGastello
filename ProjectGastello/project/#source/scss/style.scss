@@ -335,13 +335,62 @@ body {
    }
 }
 
-// animation: 3s ease-in-out 0s infinite alternate tree-anim-flipped;
-@keyframes tree-anim-flipped {
+// animation: 3s ease-in-out 0s infinite alternate tree-anim;
+@keyframes tree-anim {
    0% {
       transform: rotate(-2deg);
    }
 
    100% {
       transform: rotate(2deg);
+   }
+}
+
+// animation: 3s ease-in-out 0s infinite alternate tree-anim-flipped;
+@keyframes tree-anim-flipped {
+   0% {
+      transform: rotate(-2deg) scaleX(-1);
+   }
+
+   100% {
+      transform: rotate(2deg) scaleX(-1);
+   }
+}
+
+// animation: 2.5s ease-in-out 0s infinite alternate spider-anim;
+@keyframes spider-anim {
+   0% {
+      transform: translateX(-4px);
+   }
+   25% {
+      transform: translateX(-3px) rotate(-1deg);
+   }
+   50% {
+      transform: translateX(-2px) rotate(1deg);
+   }
+   75% {
+      transform: translateX(-1px) rotate(-1deg);
+   }
+   100% {
+      transform: translateX(0px) rotate(1deg);
+   }
+}
+
+// animation: 2.5s ease-in-out 0s infinite alternate spider-anim-flipped;
+@keyframes spider-anim-flipped {
+   0% {
+      transform: translateX(4px) scaleX(-1);
+   }
+   25% {
+      transform: translateX(3px) rotate(-1deg) scaleX(-1);
+   }
+   50% {
+      transform: translateX(2px) rotate(1deg) scaleX(-1);
+   }
+   75% {
+      transform: translateX(1px) rotate(-1deg) scaleX(-1);
+   }
+   100% {
+      transform: translateX(0px) rotate(1deg) scaleX(-1);
    }
 }

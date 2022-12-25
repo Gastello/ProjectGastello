@@ -238,3 +238,24 @@
       }
    }
 }
+
+.timer_pixy__right {
+   animation: 1.4s ease-in-out 0s infinite alternate pixy-fly-flipped;
+}
+
+.timer_pixy__left {
+   animation: 1.4s ease-in-out 0s infinite alternate pixy-fly;
+}
+.timer_skeleton__left {
+   animation: 3s ease-in-out 0s infinite alternate tree-anim;
+}
+.timer_skeleton__right {
+   animation: 3s ease-in-out 0s infinite alternate tree-anim-flipped;
+}
+
+.timer_spider__right {
+   animation: 2.5s ease-in-out 0s infinite alternate spider-anim-flipped;
+}
+.timer_spider__left {
+   animation: 2.5s ease-in-out 0s infinite alternate spider-anim;
+}
