@@ -1601,6 +1601,11 @@ body.lock {
       width: 317px;
       height: 538px;
       padding-top: 134px; } }
+  @media (max-width: 349.98px) {
+    .tomb_timer {
+      width: 301px;
+      height: 510px;
+      padding-top: 134px; } }
   .tomb_timer__nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1616,6 +1621,10 @@ body.lock {
     @media (max-width: 374.98px) {
       .tomb_timer__nav {
         gap: 92px; } }
+    @media (max-width: 349.98px) {
+      .tomb_timer__nav {
+        gap: 82px;
+        margin: 0 auto 15px auto; } }
   .tomb_timer__play {
     width: 26px;
     position: relative; }
@@ -1677,11 +1686,17 @@ body.lock {
     line-height: 86%;
     text-align: center;
     margin-bottom: 10px; }
+    @media (max-width: 349.98px) {
+      .tomb_timer__time {
+        font-size: 50px; } }
   .tomb_timer__label1 {
     font-size: 22px;
     line-height: 91%;
     text-align: center;
     margin-bottom: 10px; }
+    @media (max-width: 349.98px) {
+      .tomb_timer__label1 {
+        font-size: 20px; } }
   .tomb_timer__session {
     font-size: 36px;
     line-height: 83%;
@@ -1698,6 +1713,9 @@ body.lock {
     line-height: 91%;
     text-align: center;
     margin-bottom: 10px; }
+    @media (max-width: 349.98px) {
+      .tomb_timer__label2 {
+        font-size: 20px; } }
   .tomb_timer__break {
     font-size: 36px;
     line-height: 83%;
