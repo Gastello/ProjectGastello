@@ -1853,6 +1853,9 @@ body.lock {
       width: 15px;
       height: 26px;
       background: rgba(0, 0, 0, 0.5); }
+      @media (max-width: 767.98px) {
+        .dialog_left__text::before {
+          height: 20px; } }
 
 .dialog_right {
   display: -webkit-box;
@@ -1912,6 +1915,9 @@ body.lock {
       width: 15px;
       height: 26px;
       background: rgba(0, 0, 0, 0.5); }
+      @media (max-width: 767.98px) {
+        .dialog_right__text::before {
+          height: 20px; } }
 
 /* 
    <div class="dialog_left">

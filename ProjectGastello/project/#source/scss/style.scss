@@ -212,6 +212,9 @@ body {
          width: 15px;
          height: 26px;
          background: rgba(0, 0, 0, 0.5);
+         @media (max-width: 767.98px) {
+            height: 20px;
+         }
       }
    }
 }
@@ -269,6 +272,9 @@ body {
          width: 15px;
          height: 26px;
          background: rgba(0, 0, 0, 0.5);
+         @media (max-width: 767.98px) {
+            height: 20px;
+         }
       }
    }
 }
