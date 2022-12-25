@@ -18,6 +18,12 @@
    color: #4b4e49;
    filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
 
+   @media (max-width: 374.98px) {
+      width: 317px;
+      height: 538px;
+      padding-top: 134px;
+   }
+
    // .tomb_timer__nav
 
    &__nav {
@@ -26,6 +32,9 @@
       justify-content: center;
       gap: 100px;
       margin: 0 auto 20px auto;
+      @media (max-width: 374.98px) {
+         gap: 92px;
+      }
    }
 
    // .tomb_timer__play
@@ -42,6 +51,18 @@
             filter: drop-shadow(2px 0px 3px #000000);
          }
       }
+      position: relative;
+      @media (max-width: 767.98px) {
+         &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, -50%);
+         }
+      }
    }
 
    // .tomb_timer__restart
@@ -56,6 +77,18 @@
          &:hover {
             transform: translateY(2px);
             filter: drop-shadow(2px 0px 3px #000000);
+         }
+      }
+      position: relative;
+      @media (max-width: 767.98px) {
+         &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, -50%);
          }
       }
    }
@@ -119,6 +152,16 @@
          transition: all 0.1s linear;
          transform: scale(1.1);
       }
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: 50px;
+         height: 50px;
+         transform: translate(-50%, -50%);
+      }
    }
 }
 .break_timer {
@@ -130,6 +173,16 @@
       &:hover {
          transition: all 0.1s linear;
          transform: scale(1.1);
+      }
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: 50px;
+         height: 50px;
+         transform: translate(-50%, -50%);
       }
    }
 }
