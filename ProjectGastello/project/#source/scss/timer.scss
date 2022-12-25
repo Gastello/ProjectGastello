@@ -3,3 +3,133 @@
    background-size: cover;
    background-attachment: fixed;
 }
+
+// .timer
+.timer {
+   padding: 40px 0px 100px 0px;
+}
+.tomb_timer {
+   width: 350px;
+   height: 594px;
+   margin: 0 auto;
+   padding-top: 148px;
+   background: url("../images/timer/tomb.png") no-repeat;
+   background-size: cover;
+   color: #4b4e49;
+   filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
+
+   // .tomb_timer__nav
+
+   &__nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 100px;
+      margin: 0 auto 20px auto;
+   }
+
+   // .tomb_timer__play
+
+   &__play {
+      width: 26px;
+      img {
+         max-width: 100%;
+         width: 100%;
+         filter: drop-shadow(2px 2px 3px #000000);
+         transition: all 0.3s linear;
+         &:hover {
+            transform: translateY(2px);
+            filter: drop-shadow(2px 0px 3px #000000);
+         }
+      }
+   }
+
+   // .tomb_timer__restart
+
+   &__restart {
+      width: 26px;
+      img {
+         max-width: 100%;
+         width: 100%;
+         filter: drop-shadow(2px 2px 3px #000000);
+         transition: all 0.3s linear;
+         &:hover {
+            transform: translateY(2px);
+            filter: drop-shadow(2px 0px 3px #000000);
+         }
+      }
+   }
+
+   // .tomb_timer__time
+
+   &__time {
+      font-size: 56px;
+      line-height: 86%;
+      text-align: center;
+      margin-bottom: 10px;
+   }
+
+   // .tomb_timer__label1
+
+   &__label1 {
+      font-size: 22px;
+      line-height: 91%;
+      text-align: center;
+      margin-bottom: 10px;
+   }
+
+   // .tomb_timer__session
+
+   &__session {
+      font-size: 36px;
+      line-height: 83%;
+      display: flex;
+      gap: 11px;
+      justify-content: center;
+      margin-bottom: 10px;
+   }
+
+   // .tomb_timer__label2
+
+   &__label2 {
+      font-size: 22px;
+      line-height: 91%;
+      text-align: center;
+      margin-bottom: 10px;
+   }
+
+   // .tomb_timer__break
+
+   &__break {
+      font-size: 36px;
+      line-height: 83%;
+      display: flex;
+      gap: 11px;
+      justify-content: center;
+   }
+}
+
+.session_timer {
+   // .session_timer__left
+   // .session_timer__right
+
+   &__left,
+   &__right {
+      &:hover {
+         transition: all 0.1s linear;
+         transform: scale(1.1);
+      }
+   }
+}
+.break_timer {
+   // .break_timer__left
+   // .break_timer__right
+
+   &__left,
+   &__right {
+      &:hover {
+         transition: all 0.1s linear;
+         transform: scale(1.1);
+      }
+   }
+}

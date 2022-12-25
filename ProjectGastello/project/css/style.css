@@ -1583,6 +1583,116 @@ body.lock {
   background-size: cover;
   background-attachment: fixed; }
 
+.timer {
+  padding: 40px 0px 100px 0px; }
+
+.tomb_timer {
+  width: 350px;
+  height: 594px;
+  margin: 0 auto;
+  padding-top: 148px;
+  background: url("../images/timer/tomb.png") no-repeat;
+  background-size: cover;
+  color: #4b4e49;
+  -webkit-filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5)); }
+  .tomb_timer__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 100px;
+    margin: 0 auto 20px auto; }
+  .tomb_timer__play {
+    width: 26px; }
+    .tomb_timer__play img {
+      max-width: 100%;
+      width: 100%;
+      -webkit-filter: drop-shadow(2px 2px 3px #000000);
+      filter: drop-shadow(2px 2px 3px #000000);
+      -webkit-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear; }
+      .tomb_timer__play img:hover {
+        -webkit-transform: translateY(2px);
+        -ms-transform: translateY(2px);
+        transform: translateY(2px);
+        -webkit-filter: drop-shadow(2px 0px 3px #000000);
+        filter: drop-shadow(2px 0px 3px #000000); }
+  .tomb_timer__restart {
+    width: 26px; }
+    .tomb_timer__restart img {
+      max-width: 100%;
+      width: 100%;
+      -webkit-filter: drop-shadow(2px 2px 3px #000000);
+      filter: drop-shadow(2px 2px 3px #000000);
+      -webkit-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear; }
+      .tomb_timer__restart img:hover {
+        -webkit-transform: translateY(2px);
+        -ms-transform: translateY(2px);
+        transform: translateY(2px);
+        -webkit-filter: drop-shadow(2px 0px 3px #000000);
+        filter: drop-shadow(2px 0px 3px #000000); }
+  .tomb_timer__time {
+    font-size: 56px;
+    line-height: 86%;
+    text-align: center;
+    margin-bottom: 10px; }
+  .tomb_timer__label1 {
+    font-size: 22px;
+    line-height: 91%;
+    text-align: center;
+    margin-bottom: 10px; }
+  .tomb_timer__session {
+    font-size: 36px;
+    line-height: 83%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 11px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 10px; }
+  .tomb_timer__label2 {
+    font-size: 22px;
+    line-height: 91%;
+    text-align: center;
+    margin-bottom: 10px; }
+  .tomb_timer__break {
+    font-size: 36px;
+    line-height: 83%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 11px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+
+.session_timer__left:hover, .session_timer__right:hover {
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
+
+.break_timer__left:hover, .break_timer__right:hover {
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
+
 /*-------------------------------Games------------------------------------*/
 .wrapper_games {
   background: url("../images/games/bg.jpg") center center no-repeat;
