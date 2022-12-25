@@ -1585,17 +1585,28 @@ body.lock {
 
 .timer {
   padding: 40px 0px 100px 0px; }
+  @media (max-width: 767.98px) {
+    .timer {
+      padding: 20px 0px 100px 0px; } }
+  .timer__dialogs > * {
+    margin-bottom: 40px; }
+    @media (max-width: 767.98px) {
+      .timer__dialogs > * {
+        margin-bottom: 20px; } }
 
 .tomb_timer {
   width: 350px;
   height: 594px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   padding-top: 148px;
   background: url("../images/timer/tomb.png") no-repeat;
   background-size: cover;
   color: #4b4e49;
   -webkit-filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
   filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5)); }
+  @media (max-width: 767.98px) {
+    .tomb_timer {
+      margin: 0 auto 20px auto; } }
   @media (max-width: 374.98px) {
     .tomb_timer {
       width: 317px;
@@ -1603,9 +1614,9 @@ body.lock {
       padding-top: 134px; } }
   @media (max-width: 349.98px) {
     .tomb_timer {
-      width: 301px;
-      height: 510px;
-      padding-top: 134px; } }
+      width: 289.9px;
+      height: 492px;
+      padding-top: 125px; } }
   .tomb_timer__nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1766,6 +1777,20 @@ body.lock {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+
+.swiper_4 {
+  overflow: hidden; }
+  .swiper_4 .slide__image {
+    width: 236px;
+    margin: 0 auto 40px auto; }
+    @media (max-width: 767.98px) {
+      .swiper_4 .slide__image {
+        margin: 0 auto 20px auto; } }
+    .swiper_4 .slide__image img {
+      max-width: 100%;
+      width: 100%;
+      -webkit-filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
+      filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5)); }
 
 /*-------------------------------Games------------------------------------*/
 .wrapper_games {

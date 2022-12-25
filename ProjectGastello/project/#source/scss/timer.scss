@@ -7,26 +7,43 @@
 // .timer
 .timer {
    padding: 40px 0px 100px 0px;
+   @media (max-width: 767.98px) {
+      padding: 20px 0px 100px 0px;
+   }
+
+   // .timer__dialogs
+
+   &__dialogs {
+      & > * {
+         margin-bottom: 40px;
+         @media (max-width: 767.98px) {
+            margin-bottom: 20px;
+         }
+      }
+   }
 }
 .tomb_timer {
    width: 350px;
    height: 594px;
-   margin: 0 auto;
+   margin: 0 auto 40px auto;
    padding-top: 148px;
    background: url("../images/timer/tomb.png") no-repeat;
    background-size: cover;
    color: #4b4e49;
    filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
 
+   @media (max-width: 767.98px) {
+      margin: 0 auto 20px auto;
+   }
    @media (max-width: 374.98px) {
       width: 317px;
       height: 538px;
       padding-top: 134px;
    }
    @media (max-width: 349.98px) {
-      width: 301px;
-      height: 510px;
-      padding-top: 134px;
+      width: 289.9px;
+      height: 492px;
+      padding-top: 125px;
    }
 
    // .tomb_timer__nav
@@ -201,6 +218,23 @@
          width: 50px;
          height: 50px;
          transform: translate(-50%, -50%);
+      }
+   }
+}
+
+// .swiper_4
+.swiper_4 {
+   overflow: hidden;
+   .slide__image {
+      width: 236px;
+      margin: 0 auto 40px auto;
+      @media (max-width: 767.98px) {
+         margin: 0 auto 20px auto;
+      }
+      img {
+         max-width: 100%;
+         width: 100%;
+         filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.5));
       }
    }
 }
