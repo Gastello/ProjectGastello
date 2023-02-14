@@ -1,10 +1,10 @@
 .wrapper_log {
-   background: url("../images/logReg/logRegBg.jpg");
+   background: url("../images/logReg/log-reg-bg.jpg");
    background-size: cover;
 }
 
 .page_log {
-   background: url("../images/logReg/logRegBg.jpg");
+   background: url("../images/logReg/log-reg-bg.jpg");
    background-size: cover;
    user-select: none;
 
@@ -193,7 +193,7 @@
       margin-bottom: 20px;
 
       &::before {
-         content: url("../icons/steelHelm.svg");
+         content: url("../icons/steel-helm.svg");
          position: absolute;
          height: 30px;
          width: 21px;
@@ -208,7 +208,7 @@
       position: relative;
 
       &::before {
-         content: url("../icons/magicScroll.svg");
+         content: url("../icons/magic-scroll.svg");
          position: absolute;
          height: 30px;
          width: 31px;

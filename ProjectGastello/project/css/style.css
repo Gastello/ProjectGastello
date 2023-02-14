@@ -96,7 +96,7 @@ input,
 a,
 button,
 .cursorPointer {
-  cursor: url("../icons/cursorPointer.svg") 6 0, auto; }
+  cursor: url("../icons/cursor-pointer.svg") 6 0, auto; }
 
 /*---------------------------Loading-----------------------------------*/
 .container {
@@ -823,11 +823,11 @@ body.lock {
 
 /*------------------------------Log/Reg------------------------------------*/
 .wrapper_log {
-  background: url("../images/logReg/logRegBg.jpg");
+  background: url("../images/logReg/log-reg-bg.jpg");
   background-size: cover; }
 
 .page_log {
-  background: url("../images/logReg/logRegBg.jpg");
+  background: url("../images/logReg/log-reg-bg.jpg");
   background-size: cover;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1012,7 +1012,7 @@ body.lock {
     position: relative;
     margin-bottom: 20px; }
     .inputs_login__username::before {
-      content: url("../icons/steelHelm.svg");
+      content: url("../icons/steel-helm.svg");
       position: absolute;
       height: 30px;
       width: 21px;
@@ -1021,7 +1021,7 @@ body.lock {
   .inputs_login__password {
     position: relative; }
     .inputs_login__password::before {
-      content: url("../icons/magicScroll.svg");
+      content: url("../icons/magic-scroll.svg");
       position: absolute;
       height: 30px;
       width: 31px;
@@ -1051,7 +1051,7 @@ body.lock {
   position: relative;
   margin-top: 20px; }
   .inputs_login__password_repeat::before {
-    content: url("../icons/magicScroll.svg");
+    content: url("../icons/magic-scroll.svg");
     position: absolute;
     height: 30px;
     width: 31px;
@@ -1088,7 +1088,7 @@ body.lock {
     .swiper .swiper-button-prev::after,
     .swiper .swiper-button-next::after {
       content: '';
-      background: url("../icons/swiperArrow.svg") center no-repeat;
+      background: url("../icons/swiper-arrow.svg") center no-repeat;
       background-size: contain;
       width: 50px;
       height: 50px; }
@@ -1430,10 +1430,10 @@ body.lock {
     .libbrary_books > *:nth-child(odd) > *:hover > * {
       margin-left: calc(50% - 195px); } }
   .libbrary_books > *:nth-child(odd) > *:nth-child(odd) > * > *:first-child {
-    background: url("../icons/magicTomb.svg") no-repeat;
+    background: url("../icons/magic-tomb.svg") no-repeat;
     background-size: cover; }
   .libbrary_books > *:nth-child(odd) > *:nth-child(even) > * > *:first-child {
-    background: url("../icons/harryTomb.svg") no-repeat;
+    background: url("../icons/harry-tomb.svg") no-repeat;
     background-size: cover; }
   .libbrary_books > *:nth-child(even) > * {
     -webkit-box-pack: end;
@@ -1448,23 +1448,23 @@ body.lock {
       -ms-flex-pack: center;
       justify-content: center; } }
   .libbrary_books > *:nth-child(even) > *:nth-child(even) > * > *:first-child {
-    background: url("../icons/magicTomb.svg") no-repeat;
+    background: url("../icons/magic-tomb.svg") no-repeat;
     background-size: cover; }
   .libbrary_books > *:nth-child(even) > *:nth-child(odd) > * > *:first-child {
-    background: url("../icons/harryTomb.svg") no-repeat;
+    background: url("../icons/harry-tomb.svg") no-repeat;
     background-size: cover; }
   @media (max-width: 767.98px) {
     .libbrary_books > *:nth-child(even) > *:nth-child(even) > * > *:first-child {
-      background: url("../icons/magicTomb.svg") no-repeat;
+      background: url("../icons/magic-tomb.svg") no-repeat;
       background-size: cover; }
     .libbrary_books > *:nth-child(even) > *:nth-child(odd) > * > *:first-child {
-      background: url("../icons/harryTomb.svg") no-repeat;
+      background: url("../icons/harry-tomb.svg") no-repeat;
       background-size: cover; }
     .libbrary_books > *:nth-child(odd) > *:nth-child(even) > * > *:first-child {
-      background: url("../icons/magicTomb.svg") no-repeat;
+      background: url("../icons/magic-tomb.svg") no-repeat;
       background-size: cover; }
     .libbrary_books > *:nth-child(odd) > *:nth-child(odd) > * > *:first-child {
-      background: url("../icons/harryTomb.svg") no-repeat;
+      background: url("../icons/harry-tomb.svg") no-repeat;
       background-size: cover; } }
   .libbrary_books__row {
     display: -webkit-box;
@@ -1565,7 +1565,7 @@ body.lock {
     text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
     font-size: 28px;
     line-height: 1.25;
-    cursor: url("../icons/cursorPointer.svg") 6 0, auto; }
+    cursor: url("../icons/cursor-pointer.svg") 6 0, auto; }
   .swiper_3 .swiper-pagination-bullet {
     opacity: 0.7; }
   .swiper_3 .swiper-pagination-bullet-active {
