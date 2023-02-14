@@ -394,3 +394,24 @@ body {
       transform: translateX(0px) rotate(1deg) scaleX(-1);
    }
 }
+
+// animation: 3s ease-in-out 0s infinite alternate dragon-anim;
+@keyframes dragon-anim {
+   0% {
+      transform: rotate(-7deg);
+   }
+
+   100% {
+      transform: rotate(7deg);
+   }
+}
+// animation: 3s ease-in-out 0s infinite alternate dragon-anim-flipped;
+@keyframes dragon-anim-flipped {
+   0% {
+      transform: rotate(-7deg) scaleX(-1);
+   }
+
+   100% {
+      transform: rotate(7deg) scaleX(-1);
+   }
+}

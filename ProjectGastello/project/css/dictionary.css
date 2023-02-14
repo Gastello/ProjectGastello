@@ -1,0 +1,186 @@
+.wrapper_dictionary {
+  background: url("../images/dictionary/bg.jpg") bottom center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.dictionary__pixy_right {
+  -webkit-animation: 1.4s ease-in-out 0s infinite alternate pixy-fly-flipped;
+  animation: 1.4s ease-in-out 0s infinite alternate pixy-fly-flipped; }
+
+.dictionary__centaur_left {
+  -webkit-animation: 0.8s ease-in-out 0s infinite alternate centaur-anim;
+  animation: 0.8s ease-in-out 0s infinite alternate centaur-anim; }
+
+.dictionary__translator_wrapper {
+  padding: 0 130px; }
+  @media (max-width: 924.98px) {
+    .dictionary__translator_wrapper {
+      padding: 0 100px; } }
+  @media (max-width: 767.98px) {
+    .dictionary__translator_wrapper {
+      padding: 0 10px; } }
+
+.dictionary__dialog {
+  margin-bottom: 100px; }
+  .dictionary__dialog > *:not(:last-child) {
+    margin-bottom: 40px; }
+    @media (max-width: 767.98px) {
+      .dictionary__dialog > *:not(:last-child) {
+        margin-bottom: 20px; } }
+
+.dictionary__example {
+  max-width: 600px;
+  margin: 0 auto;
+  -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7)); }
+  .dictionary__example img {
+    max-width: 100%;
+    width: 100%; }
+
+.translator_dictionary {
+  background: url("../images/dictionary/paper.jpg") no-repeat;
+  background-size: cover;
+  max-width: 800px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 20px 0px 10px 0px;
+  font-family: "Marck Script";
+  font-style: normal;
+  color: #000000;
+  -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+  position: relative; }
+  @media (max-width: 767.98px) {
+    .translator_dictionary {
+      margin: 20px auto; } }
+  .translator_dictionary::after {
+    content: "";
+    -webkit-filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.7));
+    position: absolute;
+    top: -25px;
+    right: -130px;
+    background: url("../images/dictionary/pen.png") no-repeat;
+    background-size: cover;
+    width: 163px;
+    height: 451px; }
+    @media (max-width: 924.98px) {
+      .translator_dictionary::after {
+        width: 122.25px;
+        height: 338.25px;
+        top: 25px;
+        right: -95px; } }
+    @media (max-width: 767.98px) {
+      .translator_dictionary::after {
+        width: 61.125px;
+        height: 169.125px;
+        top: auto;
+        bottom: -60px;
+        right: 30px;
+        -webkit-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+        transform: rotate(60deg); } }
+    @media (max-width: 524.98px) {
+      .translator_dictionary::after {
+        display: none; } }
+  .translator_dictionary__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 10px; }
+    @media (max-width: 767.98px) {
+      .translator_dictionary__row {
+        height: auto;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 30px; } }
+  .translator_dictionary__text, .translator_dictionary__translate {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%; }
+    .translator_dictionary__text ::-webkit-scrollbar, .translator_dictionary__translate ::-webkit-scrollbar {
+      width: 5px; }
+    .translator_dictionary__text ::-webkit-scrollbar-track, .translator_dictionary__translate ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0); }
+    .translator_dictionary__text ::-webkit-scrollbar-thumb, .translator_dictionary__translate ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #4a3931; }
+    .translator_dictionary__text textarea,
+    .translator_dictionary__text textarea::-webkit-input-placeholder, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea::-webkit-input-placeholder {
+      background: transparent;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.22222;
+      color: #000000; }
+    .translator_dictionary__text textarea,
+    .translator_dictionary__text textarea:-ms-input-placeholder, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea:-ms-input-placeholder {
+      background: transparent;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.22222;
+      color: #000000; }
+    .translator_dictionary__text textarea,
+    .translator_dictionary__text textarea::-ms-input-placeholder, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea::-ms-input-placeholder {
+      background: transparent;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.22222;
+      color: #000000; }
+    .translator_dictionary__text textarea,
+    .translator_dictionary__text textarea::placeholder, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea::placeholder {
+      background: transparent;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.22222;
+      color: #000000; }
+    .translator_dictionary__text textarea, .translator_dictionary__translate textarea {
+      resize: none;
+      width: 100%;
+      height: 348px; }
+      @media (max-width: 767.98px) {
+        .translator_dictionary__text textarea, .translator_dictionary__translate textarea {
+          height: 150px; } }
+  .translator_dictionary__text {
+    margin-right: 10px; }
+    .translator_dictionary__text textarea {
+      padding: 0px 5px 0px 40px; }
+    @media (max-width: 767.98px) {
+      .translator_dictionary__text {
+        margin-right: 0px;
+        margin-bottom: 20px; }
+        .translator_dictionary__text textarea {
+          padding: 0px 20px; } }
+  .translator_dictionary__translate {
+    margin-right: 35px; }
+    .translator_dictionary__translate textarea {
+      padding: 0px 5px 0px 15px; }
+    @media (max-width: 767.98px) {
+      .translator_dictionary__translate {
+        margin-right: 0px; }
+        .translator_dictionary__translate textarea {
+          padding: 0px 20px; } }
+  .translator_dictionary__switch {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .translator_dictionary__switch button {
+      font-size: 20px;
+      line-height: 1.25;
+      color: #000000; }
+      @media (min-width: 767.98px) {
+        .translator_dictionary__switch button:hover {
+          -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          transform: scale(1.1);
+          -webkit-transition: all 0.1s ease-in;
+          -o-transition: all 0.1s ease-in;
+          transition: all 0.1s ease-in; } }

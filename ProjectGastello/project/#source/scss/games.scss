@@ -3,3 +3,50 @@
    background-size: cover;
    background-attachment: fixed;
 }
+.games {
+   padding: 40px 0 100px 0;
+   &__cards {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 40px;
+   }
+   &__card {
+      position: relative;
+      width: 283px;
+      height: 400px;
+      & > img:nth-child(1) {
+         transform: rotateY(180deg);
+      }
+      img {
+         position: absolute;
+         top: 0;
+         left: 0;
+         backface-visibility: hidden;
+         transition: all 0.5s linear;
+      }
+      &:hover {
+         & > img:nth-child(1) {
+            transform: rotateY(0deg);
+         }
+         & > img:nth-child(2) {
+            transform: rotateY(180deg);
+         }
+      }
+   }
+   &__dialogs{
+      &>*:not(:last-child){
+         margin-bottom: 40px;
+      }
+   }
+}
+
+.games__pixy_right {
+   animation: 1.4s ease-in-out 0s infinite alternate pixy-fly-flipped;
+}
+.games__dragon_left{
+   animation: 3s ease-in-out 0s infinite alternate dragon-anim;
+}
+.games__dragon_right{
+   animation: 3s ease-in-out 0s infinite alternate dragon-anim-flipped;
+}
