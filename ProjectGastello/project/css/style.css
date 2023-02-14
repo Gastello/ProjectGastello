@@ -1833,6 +1833,15 @@ body.lock {
     justify-content: center;
     gap: 40px;
     margin-bottom: 40px; }
+    @media (max-width: 474.98px) {
+      .games__cards {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; } }
   .games__card {
     position: relative;
     width: 283px;
@@ -1848,13 +1857,26 @@ body.lock {
       backface-visibility: hidden;
       -webkit-transition: all 0.5s linear;
       -o-transition: all 0.5s linear;
-      transition: all 0.5s linear; }
+      transition: all 0.5s linear;
+      width: 100%; }
     .games__card:hover > img:nth-child(1) {
       -webkit-transform: rotateY(0deg);
       transform: rotateY(0deg); }
     .games__card:hover > img:nth-child(2) {
       -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg); }
+    @media (max-width: 971.98px) {
+      .games__card {
+        width: 169.8px;
+        height: 240px; } }
+    @media (max-width: 649.98px) {
+      .games__card {
+        width: 113.2px;
+        height: 160px; } }
+    @media (max-width: 474.98px) {
+      .games__card {
+        width: 198.1px;
+        height: 280px; } }
   .games__dialogs > *:not(:last-child) {
     margin-bottom: 40px; }
 
