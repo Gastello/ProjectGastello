@@ -10,6 +10,10 @@
       justify-content: center;
       gap: 40px;
       margin-bottom: 40px;
+      @media (max-width: 474.98px) {
+         flex-direction: column;
+         align-items: center;
+      }
    }
    &__card {
       position: relative;
@@ -24,6 +28,7 @@
          left: 0;
          backface-visibility: hidden;
          transition: all 0.5s linear;
+         width: 100%; 
       }
       &:hover {
          & > img:nth-child(1) {
@@ -33,9 +38,21 @@
             transform: rotateY(180deg);
          }
       }
+      @media (max-width: 971.98px) {
+         width: 169.8px;
+         height: 240px;
+      }
+      @media (max-width: 649.98px) {
+         width: 113.2px;
+         height: 160px;
+      } 
+      @media (max-width: 474.98px) {
+         width: 198.1px;
+         height: 280px;
+      } 
    }
-   &__dialogs{
-      &>*:not(:last-child){
+   &__dialogs {
+      & > *:not(:last-child) {
          margin-bottom: 40px;
       }
    }
@@ -44,9 +61,9 @@
 .games__pixy_right {
    animation: 1.4s ease-in-out 0s infinite alternate pixy-fly-flipped;
 }
-.games__dragon_left{
+.games__dragon_left {
    animation: 3s ease-in-out 0s infinite alternate dragon-anim;
 }
-.games__dragon_right{
+.games__dragon_right {
    animation: 3s ease-in-out 0s infinite alternate dragon-anim-flipped;
 }
