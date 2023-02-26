@@ -28,7 +28,7 @@
          left: 0;
          backface-visibility: hidden;
          transition: all 0.5s linear;
-         width: 100%; 
+         width: 100%;
       }
       &:hover {
          & > img:nth-child(1) {
@@ -45,11 +45,11 @@
       @media (max-width: 649.98px) {
          width: 113.2px;
          height: 160px;
-      } 
+      }
       @media (max-width: 474.98px) {
          width: 198.1px;
          height: 280px;
-      } 
+      }
    }
    &__dialogs {
       & > *:not(:last-child) {
@@ -66,4 +66,289 @@
 }
 .games__dragon_right {
    animation: 3s ease-in-out 0s infinite alternate dragon-anim-flipped;
+}
+
+.games-learning {
+   padding-bottom: 40px;
+}
+.quiz {
+   margin: 0 auto;
+   border-radius: 10px;
+   filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+   max-width: 1007px;
+   min-height: 605px;
+   width: 100%;
+   padding: 15px 0 30px 0;
+   background-image: url("../images/games/games-quiz-title.jpg");
+   // .quiz__wrapper
+
+   &__wrapper {
+      display: flex;
+   }
+
+   // .quiz__info
+
+   &__info {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
+      padding: 10px 30px;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      @media (max-width: 767.98px) {
+         padding: 10px 10px;
+      }
+      @media (max-width: 424.98px) {
+         flex-wrap: wrap;
+      }
+   }
+
+   // .quiz__dragon
+
+   &__dragon {
+      flex: 0 0 98px;
+      filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
+      @media (max-width: 767.98px) {
+         flex: 0 0 60px;
+      }
+      @media (max-width: 424.98px) {
+         order: 1;
+      }
+      img {
+         max-width: 100%;
+         width: 100%;
+      }
+   }
+
+   // .quiz__answer
+
+   &__answer {
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 59/48 * 1;
+      text-align: center;
+      color: #eef6ff;
+      text-shadow: 0px 0px 15px #000000;
+      overflow-wrap: anywhere;
+      @media (max-width: 767.98px) {
+         font-size: 24px;
+      }
+      @media (max-width: 424.98px) {
+         font-size: 20px;
+         order: 3;
+         flex: 0 0 100%;
+      }
+   }
+
+   // .quiz__gear
+
+   &__gear {
+      flex: 0 0 56px;
+      filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.7));
+      transition: all 0.4s linear;
+      @media (min-width: 767.98px) {
+         &:hover {
+            filter: drop-shadow(0px -6px 4px rgba(0, 0, 0, 0.7));
+            transform: rotate(180deg);
+         }
+      }
+      @media (max-width: 767.98px) {
+         flex: 0 0 48px;
+      }
+      @media (max-width: 424.98px) {
+         order: 2;
+      }
+      img {
+         max-width: 100%;
+         width: 100%;
+      }
+   }
+
+   // .quiz__form
+
+   &__form {
+      display: flex;
+      gap: 30px;
+      padding: 0 30px;
+      margin-bottom: 40px;
+      @media (max-width: 767.98px) {
+         padding: 0 10px;
+         gap: 20px;
+      }
+      @media (max-width: 424.98px) { 
+         gap: 10px;
+      }
+   }
+
+   // .quiz__input
+
+   &__input {
+      font-family: "Poiret One";
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 33/28 * 1;
+      color: #ffffff;
+      text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
+      border-radius: 21px;
+      padding: 6px 15px;
+      width: 100%;
+      @media (max-width: 374.98px) {
+         font-size: 18px;
+      }
+      &::placeholder {
+         font-family: "Poiret One";
+         font-weight: 400;
+         font-size: 28px;
+         line-height: 33/28 * 1;
+         color: #ffffff;
+         text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+         @media (max-width: 374.98px) {
+            font-size: 18px;
+         }
+      }
+   }
+
+   // .quiz__button
+
+   &__button {
+      flex: 0 0 92px;
+      filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.7));
+      width: 100%;
+      @media (max-width: 767.98px) {
+         flex: 0 0 80px;
+      }
+      @media (max-width: 424.98px) {
+         flex: 0 0 70px;
+      }
+      @media (min-width: 767.98px) {
+         &:hover {
+            transform: scale(1.05);
+            transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+         }
+      }
+      &:active {
+         transform: translateY(3px);
+         filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.7));
+         transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      img {
+         width: 100%;
+         max-width: 100%;
+      }
+   }
+
+   // .quiz__results
+
+   &__results {
+      overflow-y: scroll;
+      height: 334px;
+      @media (max-width: 767.98px) {
+         padding: 0 10px;
+      }
+      &::-webkit-scrollbar {
+         width: 7px;
+      }
+
+      &::-webkit-scrollbar-track {
+         background: rgba(0, 0, 0, 0);
+         background: #00000084;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         border-radius: 10px;
+         background: linear-gradient(180deg, #747776 0%, #4c4e4d 100%);
+      }
+      & > *:not(:last-child) {
+         margin-bottom: 20px;
+      }
+   }
+}
+.result-quiz {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   font-size: 24px;
+   line-height: 30/24 * 1;
+   padding: 5px 30px;
+   background: rgba(0, 0, 0, 0.5);
+   box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
+   @media (max-width: 767.98px) {
+      flex-wrap: wrap;
+   }
+   @media (max-width: 424.98px) {
+      font-size: 18px;
+   }
+
+   // .result-quiz__image
+
+   &__image {
+      flex: 0 0 21px;
+      height: 30px;
+      img {
+         max-width: 100%;
+         width: 100%;
+      }
+      @media (max-width: 767.98px) {
+         order: 1;
+      }
+   }
+
+   // .result-quiz__answer .result-quiz__question
+
+   &__question,
+   &__answer {
+      overflow-wrap: anywhere;
+   }
+   &__question {
+      text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.7);
+      @media (max-width: 767.98px) {
+         order: 3;
+      }
+   }
+   &__answer {
+      text-shadow: 0px 6px 4px rgba(0, 0, 0, 1);
+      font-family: "Poiret One";
+      @media (max-width: 767.98px) {
+         order: 5;
+      }
+   }
+
+   // .result-quiz__splitter
+   &__splitter {
+      font-family: "Poiret One";
+      @media (max-width: 767.98px) {
+         order: 4;
+      }
+   }
+   // .result-quiz__res
+
+   &__res {
+      margin-left: auto;
+      @media (max-width: 767.98px) {
+         margin: 0;
+         order: 2;
+         width: calc(100% - 31px);
+      }
+   }
+
+   &_correct {
+      .result-quiz__res {
+         color: #9ede76;
+      }
+      .result-quiz__image {
+         background: url("../icons/green-magic-potion.svg") no-repeat;
+      }
+   }
+   &_wrong {
+      .result-quiz__res {
+         color: #db5454;
+      }
+      .result-quiz__image {
+         background: url("../icons/red-magic-potion.svg") no-repeat;
+      }
+   }
 }

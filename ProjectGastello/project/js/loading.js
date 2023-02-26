@@ -11,14 +11,11 @@ function onReady(callback) {
    });
 }
 
-function setVisible(selector, visible) {
-   let selectors = document.querySelectorAll(selector);
-   for (let el of selectors) {
-      el.style.display = visible ? 'block' : 'none';
-   }
-}
-
 onReady(function () {
-   setVisible('.container', true);
-   setVisible('#loading', false);
+   const containerLoad = document.querySelectorAll('.container');
+   const swordLoad = document.querySelector('#loading'); 
+   for (let el of containerLoad) {
+      el.style.opacity = 1;
+   } 
+   swordLoad.style.display = 'none';
 });
