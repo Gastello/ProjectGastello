@@ -2174,13 +2174,6 @@ body.lock {
         -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
         order: 5; } }
-  .result-quiz__splitter {
-    font-family: "Poiret One"; }
-    @media (max-width: 767.98px) {
-      .result-quiz__splitter {
-        -webkit-box-ordinal-group: 5;
-        -ms-flex-order: 4;
-        order: 4; } }
   .result-quiz__res {
     margin-left: auto; }
     @media (max-width: 767.98px) {
