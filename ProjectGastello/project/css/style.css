@@ -2302,7 +2302,8 @@ body.lock {
     flex-direction: column; }
   .flash-card__translation {
     -webkit-transform: rotateY(180deg) scaleX(-1);
-    transform: rotateY(180deg) scaleX(-1); }
+    transform: rotateY(180deg) scaleX(-1);
+    font-family: "Poiret One"; }
   .flash-card__translation, .flash-card__word {
     position: absolute;
     top: 0;
@@ -2317,7 +2318,7 @@ body.lock {
     -o-transition: transform 0.3s linear;
     transition: transform 0.3s linear;
     transition: transform 0.3s linear, -webkit-transform 0.3s linear;
-    background-image: url("../images/games/games-quiz-title.jpg");
+    background-image: url("../images/games/games-quiz-title-dark.jpg");
     -webkit-box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
     border-radius: 10px; }
@@ -2333,11 +2334,6 @@ body.lock {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 98px;
     flex: 0 0 98px; }
-    @media (max-width: 767.98px) {
-      .flash-card__dragon {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 60px;
-        flex: 0 0 60px; } }
     .flash-card__dragon img {
       max-width: 100%;
       width: 100%; }
@@ -2357,11 +2353,6 @@ body.lock {
         -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
         transform: rotate(180deg); } }
-    @media (max-width: 767.98px) {
-      .flash-card__gear {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 48px;
-        flex: 0 0 48px; } }
     .flash-card__gear img {
       max-width: 100%;
       width: 100%; }
@@ -2376,9 +2367,6 @@ body.lock {
     text-shadow: 0px 0px 15px #000000;
     overflow-wrap: anywhere;
     padding: 55px 15px 20px 15px; }
-    @media (max-width: 767.98px) {
-      .flash-card__text {
-        padding: 95px 15px 20px 15px; } }
 
 /*------------------------------Dialogs------------------------------------*/
 .dialog_left {

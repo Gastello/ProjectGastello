@@ -6,7 +6,7 @@ const swiper_4 = new Swiper('.swiper_4', {
       prevEl: '.swiper-button-prev',
    },
    breakpoints: { 
-      767.98: {
+      649.98: {
          allowTouchMove: false,
       }, 
   }
