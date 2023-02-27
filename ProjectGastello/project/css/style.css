@@ -1824,6 +1824,16 @@ body.lock {
 
 .games {
   padding: 40px 0 100px 0; }
+  .games__scroll::-webkit-scrollbar {
+    width: 7px; }
+  .games__scroll::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+    background: #00000084; }
+  .games__scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#747776), to(#4c4e4d));
+    background: -webkit-linear-gradient(top, #747776 0%, #4c4e4d 100%);
+    background: linear-gradient(180deg, #747776 0%, #4c4e4d 100%); }
   .games__cards {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1892,7 +1902,9 @@ body.lock {
   -webkit-animation: 3s ease-in-out 0s infinite alternate dragon-anim-flipped;
   animation: 3s ease-in-out 0s infinite alternate dragon-anim-flipped; }
 
-.games-learning {
+.games-learning,
+.games-true-false,
+.games-flash-cards {
   padding-bottom: 40px; }
 
 .quiz {
@@ -1951,7 +1963,7 @@ body.lock {
     .quiz__dragon img {
       max-width: 100%;
       width: 100%; }
-  .quiz__answer {
+  .quiz__question {
     font-weight: 400;
     font-size: 32px;
     line-height: 1.22917;
@@ -1960,10 +1972,10 @@ body.lock {
     text-shadow: 0px 0px 15px #000000;
     overflow-wrap: anywhere; }
     @media (max-width: 767.98px) {
-      .quiz__answer {
+      .quiz__question {
         font-size: 24px; } }
     @media (max-width: 424.98px) {
-      .quiz__answer {
+      .quiz__question {
         font-size: 20px;
         -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
@@ -2110,16 +2122,6 @@ body.lock {
     @media (max-width: 767.98px) {
       .quiz__results {
         padding: 0 10px; } }
-    .quiz__results::-webkit-scrollbar {
-      width: 7px; }
-    .quiz__results::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0);
-      background: #00000084; }
-    .quiz__results::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background: -webkit-gradient(linear, left top, left bottom, from(#747776), to(#4c4e4d));
-      background: -webkit-linear-gradient(top, #747776 0%, #4c4e4d 100%);
-      background: linear-gradient(180deg, #747776 0%, #4c4e4d 100%); }
     .quiz__results > *:not(:last-child) {
       margin-bottom: 20px; }
   .quiz__true-false {
@@ -2146,9 +2148,9 @@ body.lock {
     border-radius: 21px;
     max-width: 459px;
     width: 100%;
-    -webkit-transition: all .7s linear;
-    -o-transition: all .7s linear;
-    transition: all .7s linear; }
+    -webkit-transition: all 0.7s linear;
+    -o-transition: all 0.7s linear;
+    transition: all 0.7s linear; }
   .quiz__true {
     color: #9ede76;
     background: rgba(17, 44, 1, 0.5); }
@@ -2234,6 +2236,150 @@ body.lock {
     color: #db5454; }
   .result-quiz_wrong .result-quiz__image {
     background: url("../icons/red-magic-potion.svg") no-repeat; }
+
+.games-flash-cards .swiper_4 {
+  max-width: 710px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0; }
+
+.games-flash-cards .swiper-button-prev,
+.games-flash-cards .swiper-button-next {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  top: 50%; }
+  .games-flash-cards .swiper-button-prev img,
+  .games-flash-cards .swiper-button-next img {
+    max-width: 100%; }
+  .games-flash-cards .swiper-button-prev::after,
+  .games-flash-cards .swiper-button-next::after {
+    content: "";
+    background: url("../icons/swiper-arrow.svg") center no-repeat;
+    background-size: contain;
+    width: 75px;
+    height: 75px; }
+    @media (max-width: 374.98px) {
+      .games-flash-cards .swiper-button-prev::after,
+      .games-flash-cards .swiper-button-next::after {
+        width: 50px;
+        height: 50px; } }
+
+.games-flash-cards .swiper-button-next {
+  -webkit-transform: translateY(-50%) scaleX(-1);
+  -ms-transform: translateY(-50%) scaleX(-1);
+  transform: translateY(-50%) scaleX(-1);
+  right: 0px; }
+
+.games-flash-cards .swiper-button-prev {
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0px; }
+
+.games-flash-cards .swiper-button-disabled {
+  display: none; }
+
+.flash-card {
+  position: relative;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+  min-height: 400px;
+  height: 100%; }
+  .flash-card.active > *:nth-child(2) {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg); }
+  .flash-card.active > *:nth-child(1) {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg); }
+  .flash-card__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .flash-card__translation {
+    -webkit-transform: rotateY(180deg) scaleX(-1);
+    transform: rotateY(180deg) scaleX(-1); }
+  .flash-card__translation, .flash-card__word {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    transition: -webkit-transform 0.5s linear;
+    -o-transition: transform 0.5s linear;
+    transition: transform 0.5s linear;
+    transition: transform 0.5s linear, -webkit-transform 0.5s linear;
+    background-image: url("../images/games/games-quiz-title.jpg");
+    -webkit-box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; }
+  .flash-card__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 15px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .flash-card__dragon {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 98px;
+    flex: 0 0 98px; }
+    @media (max-width: 767.98px) {
+      .flash-card__dragon {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 60px;
+        flex: 0 0 60px; } }
+    .flash-card__dragon img {
+      max-width: 100%;
+      width: 100%; }
+  .flash-card__gear {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 56px;
+    flex: 0 0 56px;
+    -webkit-filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.7));
+    -webkit-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    transition: all 0.4s linear; }
+    @media (min-width: 767.98px) {
+      .flash-card__gear:hover {
+        -webkit-filter: drop-shadow(0px -6px 4px rgba(0, 0, 0, 0.7));
+        filter: drop-shadow(0px -6px 4px rgba(0, 0, 0, 0.7));
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg); } }
+    @media (max-width: 767.98px) {
+      .flash-card__gear {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 48px;
+        flex: 0 0 48px; } }
+    .flash-card__gear img {
+      max-width: 100%;
+      width: 100%; }
+  .flash-card__text {
+    position: relative;
+    z-index: 1;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.22917;
+    text-align: center;
+    color: #eef6ff;
+    text-shadow: 0px 0px 15px #000000;
+    overflow-wrap: anywhere;
+    padding: 55px 15px 20px 15px; }
+    @media (max-width: 767.98px) {
+      .flash-card__text {
+        padding: 95px 15px 20px 15px; } }
 
 /*------------------------------Dialogs------------------------------------*/
 .dialog_left {

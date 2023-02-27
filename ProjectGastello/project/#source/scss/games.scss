@@ -5,6 +5,27 @@
 }
 .games {
    padding: 40px 0 100px 0;
+
+   // .games__scroll
+
+   &__scroll{
+      &::-webkit-scrollbar {
+         width: 7px;
+      }
+   
+      &::-webkit-scrollbar-track {
+         background: rgba(0, 0, 0, 0);
+         background: #00000084;
+      }
+   
+      &::-webkit-scrollbar-thumb {
+         border-radius: 10px;
+         background: linear-gradient(180deg, #747776 0%, #4c4e4d 100%);
+      }
+   }
+
+   // .games__cards
+
    &__cards {
       display: flex;
       justify-content: center;
@@ -15,6 +36,9 @@
          align-items: center;
       }
    }
+   
+   // .games__card
+
    &__card {
       position: relative;
       width: 283px;
@@ -51,6 +75,9 @@
          height: 280px;
       }
    }
+
+   // .games__dialogs
+
    &__dialogs {
       & > *:not(:last-child) {
          margin-bottom: 40px;
@@ -68,7 +95,9 @@
    animation: 3s ease-in-out 0s infinite alternate dragon-anim-flipped;
 }
 
-.games-learning {
+.games-learning,
+.games-true-false,
+.games-flash-cards {
    padding-bottom: 40px;
 }
 .quiz {
@@ -122,9 +151,9 @@
       }
    }
 
-   // .quiz__answer
+   // .quiz__question
 
-   &__answer {
+   &__question {
       font-weight: 400;
       font-size: 32px;
       line-height: 59/48 * 1;
@@ -248,20 +277,7 @@
       height: 334px;
       @media (max-width: 767.98px) {
          padding: 0 10px;
-      }
-      &::-webkit-scrollbar {
-         width: 7px;
-      }
-
-      &::-webkit-scrollbar-track {
-         background: rgba(0, 0, 0, 0);
-         background: #00000084;
-      }
-
-      &::-webkit-scrollbar-thumb {
-         border-radius: 10px;
-         background: linear-gradient(180deg, #747776 0%, #4c4e4d 100%);
-      }
+      } 
       & > *:not(:last-child) {
          margin-bottom: 20px;
       }
@@ -283,35 +299,35 @@
    &__false {
       font-family: "Metal Mania";
       font-size: 24px;
-      line-height: 30/24 * 1; 
+      line-height: 30/24 * 1;
       text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.7);
       padding: 8px 15px;
       box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
       border-radius: 21px;
       max-width: 459px;
-      width: 100%;  
-      transition: all .7s linear;
+      width: 100%;
+      transition: all 0.7s linear;
    }
 
    &__true {
       color: #9ede76;
       background: rgba(17, 44, 1, 0.5);
       @media (min-width: 767.98px) {
-         &:hover{
+         &:hover {
             filter: drop-shadow(0px 0px 15px #9ede76c3);
             background: rgba(17, 44, 1, 0.55);
          }
-      } 
+      }
    }
    &__false {
       color: #df6868;
-      background: rgba(52, 4, 4, 0.5); 
+      background: rgba(52, 4, 4, 0.5);
       @media (min-width: 767.98px) {
-         &:hover{
+         &:hover {
             filter: drop-shadow(0px 0px 15px #df6868d7);
             background: rgba(52, 4, 4, 0.55);
          }
-      } 
+      }
    }
 }
 .result-quiz {
@@ -388,6 +404,155 @@
       }
       .result-quiz__image {
          background: url("../icons/red-magic-potion.svg") no-repeat;
+      }
+   }
+}
+
+.games-flash-cards {
+   .swiper_4 {
+      max-width: 710px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 0;
+   }
+   .swiper-button-prev,
+   .swiper-button-next {
+      width: 75px;
+      height: 75px;
+      position: absolute;
+      top: 50%;
+      img {
+         max-width: 100%;
+      }
+      
+      &::after {
+         content: "";
+         background: url("../icons/swiper-arrow.svg") center no-repeat;
+         background-size: contain;
+         width: 75px;
+         height: 75px;
+
+         @media (max-width: 374.98px) {
+            width: 50px;
+            height: 50px;
+         }
+      }
+   }
+
+   .swiper-button-next {
+      transform: translateY(-50%) scaleX(-1);
+      right: 0px;
+   }
+
+   .swiper-button-prev {
+      transform: translateY(-50%);
+      left: 0px;
+   }
+
+   .swiper-button-disabled {
+      display: none;
+   }
+}
+.flash-card {
+   position: relative;
+   margin: 0 auto;
+   max-width: 400px;
+   width: 100%;
+   min-height: 400px;
+   height: 100%; 
+
+   &.active {
+      & > *:nth-child(2) {
+         transform: rotateY(0deg);
+      }
+      & > *:nth-child(1) {
+         transform: rotateY(180deg);
+      }
+   }
+
+   // .flash-card__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+   }
+
+   // .flash-card__translation .flash-card__word
+   &__translation {
+      transform: rotateY(180deg) scaleX(-1);
+   }
+   &__translation,
+   &__word { 
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      overflow-y: auto;
+      backface-visibility: hidden;
+      transition: transform 0.5s linear; 
+      background-image: url("../images/games/games-quiz-title.jpg");
+      box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5); 
+      border-radius: 10px; 
+   }
+   
+   // .flash-card__header
+
+   &__header {  
+      display: flex; 
+      padding: 15px;
+      justify-content: space-between; 
+   }
+
+   // .flash-card__dragon
+
+   &__dragon {
+      flex: 0 0 98px;
+      @media (max-width: 767.98px) {
+         flex: 0 0 60px;
+      }
+      img {
+         max-width: 100%;
+         width: 100%;
+      }
+   }
+
+   // .flash-card__gear
+
+   &__gear {
+      flex: 0 0 56px;
+      filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.7));
+      transition: all 0.4s linear;
+      @media (min-width: 767.98px) {
+         &:hover {
+            filter: drop-shadow(0px -6px 4px rgba(0, 0, 0, 0.7));
+            transform: rotate(180deg);
+         }
+      }
+      @media (max-width: 767.98px) {
+         flex: 0 0 48px;
+      }
+      img {
+         max-width: 100%;
+         width: 100%;
+      }
+   }
+
+   // .flash-card__text
+
+   &__text {
+      position: relative;
+      z-index: 1;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 59/48 * 1;
+      text-align: center;
+      color: #eef6ff;
+      text-shadow: 0px 0px 15px #000000;
+      overflow-wrap: anywhere;  
+      padding: 55px 15px 20px 15px;
+      @media (max-width: 767.98px) {
+         padding: 95px 15px 20px 15px;
       }
    }
 }
