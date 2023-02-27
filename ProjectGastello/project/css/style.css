@@ -2249,6 +2249,10 @@ body.lock {
   height: 75px;
   position: absolute;
   top: 50%; }
+  @media (max-width: 649.98px) {
+    .games-flash-cards .swiper-button-prev,
+    .games-flash-cards .swiper-button-next {
+      display: none; } }
   .games-flash-cards .swiper-button-prev img,
   .games-flash-cards .swiper-button-next img {
     max-width: 100%; }
@@ -2259,11 +2263,6 @@ body.lock {
     background-size: contain;
     width: 75px;
     height: 75px; }
-    @media (max-width: 374.98px) {
-      .games-flash-cards .swiper-button-prev::after,
-      .games-flash-cards .swiper-button-next::after {
-        width: 50px;
-        height: 50px; } }
 
 .games-flash-cards .swiper-button-next {
   -webkit-transform: translateY(-50%) scaleX(-1);
@@ -2313,11 +2312,11 @@ body.lock {
     overflow-y: auto;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-transition: -webkit-transform 0.5s linear;
-    transition: -webkit-transform 0.5s linear;
-    -o-transition: transform 0.5s linear;
-    transition: transform 0.5s linear;
-    transition: transform 0.5s linear, -webkit-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.3s linear;
+    transition: -webkit-transform 0.3s linear;
+    -o-transition: transform 0.3s linear;
+    transition: transform 0.3s linear;
+    transition: transform 0.3s linear, -webkit-transform 0.3s linear;
     background-image: url("../images/games/games-quiz-title.jpg");
     -webkit-box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);

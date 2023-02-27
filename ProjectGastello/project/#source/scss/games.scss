@@ -421,21 +421,18 @@
       height: 75px;
       position: absolute;
       top: 50%;
+      @media (max-width: 649.98px) {
+        display: none;
+      }
       img {
          max-width: 100%;
-      }
-      
+      } 
       &::after {
          content: "";
          background: url("../icons/swiper-arrow.svg") center no-repeat;
          background-size: contain;
          width: 75px;
-         height: 75px;
-
-         @media (max-width: 374.98px) {
-            width: 50px;
-            height: 50px;
-         }
+         height: 75px; 
       }
    }
 
@@ -490,7 +487,7 @@
       height: 100%;
       overflow-y: auto;
       backface-visibility: hidden;
-      transition: transform 0.5s linear; 
+      transition: transform 0.3s linear; 
       background-image: url("../images/games/games-quiz-title.jpg");
       box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5); 
       border-radius: 10px; 
