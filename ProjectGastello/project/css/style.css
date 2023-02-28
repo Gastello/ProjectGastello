@@ -119,8 +119,9 @@ img {
   min-width: 100px;
   font-family: "Metal Mania"; }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible; }
+@media (min-width: 767.98px) {
+  .tooltip:hover .tooltiptext {
+    visibility: visible; } }
 
 .tooltip .tooltiptext::after {
   content: "";

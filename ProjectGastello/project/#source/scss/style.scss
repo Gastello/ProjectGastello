@@ -44,9 +44,12 @@ img{
    font-family: $fontFamily;
  }
   
- .tooltip:hover .tooltiptext {
-   visibility: visible; 
- }
+ @media (min-width: 767.98px) {
+   .tooltip:hover .tooltiptext {
+      visibility: visible; 
+    }
+ } 
+ 
  .tooltip .tooltiptext::after {
    content: "";
    position: absolute;   
