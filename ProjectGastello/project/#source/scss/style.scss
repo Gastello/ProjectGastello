@@ -17,6 +17,46 @@
 *::selection {
    background: #224281;
 }
+img{
+   user-select: none;
+}
+
+/*--------------------------------Tooltip----------------------------------*/
+.tooltip {
+   position: relative;
+   display: inline-block; 
+ }
+  
+ .tooltip .tooltiptext {
+   visibility: hidden; 
+   background-color: #3F547D;
+   color: #fff;
+   text-align: center;
+   padding: 5px;
+   border-radius: 6px; 
+   position: absolute; 
+   z-index: 1;
+   font-size: 18px;
+   filter: drop-shadow(0px 0px 15px #24365a);
+   top: 50%;
+   transform: translateX(10px) translateY(-50%);
+   min-width: 100px;
+   font-family: $fontFamily;
+ }
+  
+ .tooltip:hover .tooltiptext {
+   visibility: visible; 
+ }
+ .tooltip .tooltiptext::after {
+   content: "";
+   position: absolute;   
+   top: 50%;
+   right: 100%; 
+   transform: translateY(-50%);
+   border-width: 10px;
+   border-style: solid;
+   border-color: transparent #3F547D  transparent transparent; 
+ }
 /*--------------------------------Cursor----------------------------------*/
 
 body {

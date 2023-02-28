@@ -89,6 +89,51 @@ h6 {
 *::selection {
   background: #224281; }
 
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/*--------------------------------Tooltip----------------------------------*/
+.tooltip {
+  position: relative;
+  display: inline-block; }
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #3F547D;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  font-size: 18px;
+  -webkit-filter: drop-shadow(0px 0px 15px #24365a);
+  filter: drop-shadow(0px 0px 15px #24365a);
+  top: 50%;
+  -webkit-transform: translateX(10px) translateY(-50%);
+  -ms-transform: translateX(10px) translateY(-50%);
+  transform: translateX(10px) translateY(-50%);
+  min-width: 100px;
+  font-family: "Metal Mania"; }
+
+.tooltip:hover .tooltiptext {
+  visibility: visible; }
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #3F547D  transparent transparent; }
+
 /*--------------------------------Cursor----------------------------------*/
 body {
   cursor: url("../icons/cursor.svg"), auto; }
@@ -2148,9 +2193,9 @@ body.lock {
     border-radius: 21px;
     max-width: 459px;
     width: 100%;
-    -webkit-transition: all 0.7s linear;
-    -o-transition: all 0.7s linear;
-    transition: all 0.7s linear; }
+    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   .quiz__true {
     color: #9ede76;
     background: rgba(17, 44, 1, 0.5); }
@@ -2167,6 +2212,9 @@ body.lock {
         -webkit-filter: drop-shadow(0px 0px 15px #df6868d7);
         filter: drop-shadow(0px 0px 15px #df6868d7);
         background: rgba(52, 4, 4, 0.55); } }
+
+.answer-quiz__translation {
+  font-family: "Poiret One"; }
 
 .result-quiz {
   display: -webkit-box;
@@ -2280,6 +2328,10 @@ body.lock {
   display: none; }
 
 .flash-card {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   position: relative;
   margin: 0 auto;
   max-width: 400px;
@@ -2287,11 +2339,11 @@ body.lock {
   min-height: 400px;
   height: 100%; }
   .flash-card.active > *:nth-child(2) {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg); }
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg); }
   .flash-card.active > *:nth-child(1) {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg); }
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg); }
   .flash-card__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2301,8 +2353,9 @@ body.lock {
     -ms-flex-direction: column;
     flex-direction: column; }
   .flash-card__translation {
-    -webkit-transform: rotateY(180deg) scaleX(-1);
-    transform: rotateY(180deg) scaleX(-1);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(mirror=1);
     font-family: "Poiret One"; }
   .flash-card__translation, .flash-card__word {
     position: absolute;
@@ -2360,6 +2413,10 @@ body.lock {
       max-width: 100%;
       width: 100%; }
   .flash-card__text {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
     position: relative;
     z-index: 1;
     font-weight: 400;

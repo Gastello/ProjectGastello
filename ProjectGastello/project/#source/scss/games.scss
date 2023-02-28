@@ -306,7 +306,7 @@
       border-radius: 21px;
       max-width: 459px;
       width: 100%;
-      transition: all 0.7s linear;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
    }
 
    &__true {
@@ -329,6 +329,9 @@
          }
       }
    }
+}
+.answer-quiz__translation{
+   font-family: "Poiret One";
 }
 .result-quiz {
    display: flex;
@@ -367,7 +370,7 @@
       overflow-wrap: anywhere;
    }
    &__question {
-      text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.7);
+      text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.7); 
       @media (max-width: 767.98px) {
          order: 3;
       }
@@ -407,6 +410,8 @@
       }
    }
 }
+
+// ========================== FLASH-CARDS ==========================
 
 .games-flash-cards {
    .swiper_4 {
@@ -451,6 +456,7 @@
    }
 }
 .flash-card {
+   user-select: none;
    position: relative;
    margin: 0 auto;
    max-width: 400px;
@@ -460,10 +466,10 @@
 
    &.active {
       & > *:nth-child(2) {
-         transform: rotateY(0deg);
+         transform: rotateX(0deg);
       }
       & > *:nth-child(1) {
-         transform: rotateY(180deg);
+         transform: rotateX(180deg);
       }
    }
 
@@ -476,11 +482,12 @@
 
    // .flash-card__translation .flash-card__word
    &__translation {
-      transform: rotateY(180deg) scaleX(-1);
-      font-family: "Poiret One";
+      transform: rotateX(180deg) ; 
+      filter: progid:DXImageTransform.Microsoft.BasicImage(mirror=1);
+      font-family: "Poiret One"; 
    }
    &__translation,
-   &__word { 
+   &__word {   
       position: absolute;
       top: 0;
       left: 0;
@@ -535,6 +542,7 @@
    // .flash-card__text
 
    &__text {
+      user-select: text;
       position: relative;
       z-index: 1;
       font-weight: 400;
@@ -547,3 +555,4 @@
       padding: 55px 15px 20px 15px; 
    }
 }
+
