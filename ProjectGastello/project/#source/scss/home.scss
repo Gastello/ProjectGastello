@@ -93,7 +93,12 @@
          width: 150px;
          margin: 0 auto 20px auto;
       }
-
+      @media (min-width: 767.98px){
+         &:hover{
+            transform: scale(1.1);
+            transition: all .1s linear;
+         }
+      }
       img {
          max-width: 100%;
          width: 100%;
@@ -102,11 +107,11 @@
 }
 
 .slide_home {
-   margin-bottom: 40px;
+   padding-bottom: 40px;
    // .slide_home__image
 
    @media (max-width: 767.98px) {
-      margin-bottom: 20px;
+      padding-bottom: 20px;
    }
 
    &__image {

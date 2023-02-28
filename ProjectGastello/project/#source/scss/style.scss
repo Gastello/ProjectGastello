@@ -146,20 +146,31 @@ body {
 
 /*-----------------------------Scroll-bar---------------------------------*/
 
+// ::-webkit-scrollbar {
+//    width: 7px;
+// }
+
+// ::-webkit-scrollbar-track {
+//    background: rgba(0, 0, 0, 0);
+//    background: #90aaec;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//    border-radius: 10px;
+//    background: #cedeff;
+// }
 ::-webkit-scrollbar {
-   width: 7px;
+   width: 8px;
 }
 
-::-webkit-scrollbar-track {
-   background: rgba(0, 0, 0, 0);
-   background: #90aaec;
+::-webkit-scrollbar-track { 
+   background: #000000b2;
 }
 
 ::-webkit-scrollbar-thumb {
    border-radius: 10px;
-   background: #cedeff;
+   background: linear-gradient(180deg, #808180 0%, #1d1e1e 100%);
 }
-
 /*-----------------------------Custom text----------------------------------*/
 .text_convert {
    display: inline-block;
@@ -207,6 +218,7 @@ body {
    display: flex;
    align-items: center;
    justify-content: center;
+   user-select: none;
    // .dialog_left__img
 
    &__img {
@@ -264,7 +276,7 @@ body {
    display: flex;
    align-items: center;
    justify-content: center;
-
+   user-select: none;
    // .dialog_right__img
 
    &__img {

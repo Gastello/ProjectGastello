@@ -662,7 +662,8 @@
 }
 .user_header {
    &__music,
-   &__logout {
+   &__logout,
+   &__words {
       position: relative;
       width: 75px;
       z-index: 1;
@@ -670,6 +671,7 @@
       line-height: 15/12 * 1;
       color: #819fea;
       text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+      padding: 4px 0;
       @media (min-width: 767.98px) {
          &:hover {
             transform: scale(1.1);
@@ -680,7 +682,6 @@
    // .user_header__music
 
    &__music {
-      margin-bottom: 10px;
    }
 
    // .user_header__logout
@@ -713,10 +714,13 @@
       left: 50%;
       transform: translate(-50%, 0);
       border-radius: 10px;
-      width: 90px;
-      height: 140px;
+      width: 95px;
+      height: 175px;
       background-color: #333345;
       border: 4px solid #819fea;
+      @media (max-width: 767.98px) {   
+         height: 165px;
+      }
    }
 }
 
