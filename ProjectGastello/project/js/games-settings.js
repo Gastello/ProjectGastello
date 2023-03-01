@@ -1,4 +1,4 @@
-let gearsArray = document.querySelectorAll('.flash-card__gear');
+let gearsArray = document.querySelectorAll('.db-gear');
 let gamesSettingsCross = document.querySelector('.games-settings__cross');
 let gamesSettingsWrapper = document.querySelector('.games-settings__wrapper');
 let gamesSettingsFolders = document.querySelector('.games-settings__folders').children;
