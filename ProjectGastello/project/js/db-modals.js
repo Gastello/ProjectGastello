@@ -21,7 +21,7 @@ dbFoldersCross.onclick = () => {
     closeModalWindow(dbFoldersWrapper);
 }
 
-let dbFoldersArray = document.querySelectorAll('.db-folder');
+let dbFoldersArray = document.querySelector('.db-folders__container').children;
 let dbWordsCross = document.querySelector('.db-words__cross');
 let dbWordsWrapper = document.querySelector('.db-words__wrapper');
 

@@ -242,10 +242,39 @@ body {
   background: linear-gradient(180deg, #808180 0%, #1d1e1e 100%); }
 
 /*-----------------------------DB----------------------------------*/
+.db-title {
+  font-family: "Metal Mania", "Poiret One";
+  margin-bottom: 30px;
+  font-size: 26px;
+  line-height: 1.53846;
+  color: #eef6ff;
+  text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 100px; }
+  @media (max-width: 767.98px) {
+    .db-title {
+      font-size: 22px; } }
+  @media (max-width: 649.98px) {
+    .db-title {
+      padding: 0 80px; } }
+  @media (max-width: 424.98px) {
+    .db-title {
+      padding: 0 65px; } }
+
 .db__cross {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 40px;
-  flex: 0 0 40px; }
+  position: absolute;
+  right: 50px;
+  top: 30px; }
+  @media (max-width: 649.98px) {
+    .db__cross {
+      right: 30px; } }
+  @media (max-width: 424.98px) {
+    .db__cross {
+      right: 15px; } }
   @media (min-width: 767.98px) {
     .db__cross:hover {
       -webkit-filter: drop-shadow(0px 0px 5px #e0e0e03b);
@@ -259,13 +288,6 @@ body {
   .db__cross img {
     max-width: 100%;
     width: 100%; }
-  .db__cross_wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end; }
 
 .db__nav {
   display: -webkit-box;
@@ -383,7 +405,8 @@ body {
           padding: 5px 0; } }
 
 .db-words,
-.db-folders {
+.db-folders,
+.games-settings {
   position: relative;
   margin: auto;
   max-width: 750px;
@@ -398,7 +421,8 @@ body {
   padding: 30px 0px;
   overflow-y: auto; }
   .db-words__wrapper,
-  .db-folders__wrapper {
+  .db-folders__wrapper,
+  .games-settings__wrapper {
     display: none;
     position: absolute;
     z-index: 99999;
@@ -409,41 +433,32 @@ body {
     background: rgba(0, 0, 0, 0.5);
     padding: 15px; }
     .db-words__wrapper.active-modal,
-    .db-folders__wrapper.active-modal {
+    .db-folders__wrapper.active-modal,
+    .games-settings__wrapper.active-modal {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
 
-.db-folders__cross_wrapper {
-  margin-bottom: 30px;
-  padding: 0 50px; }
-  @media (max-width: 649.98px) {
-    .db-folders__cross_wrapper {
-      padding: 0 30px; } }
-  @media (max-width: 424.98px) {
-    .db-folders__cross_wrapper {
-      padding: 0 15px; } }
-
-.db-folders__form {
-  padding: 0 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px; }
-  @media (max-width: 649.98px) {
-    .db-folders__form {
-      padding: 0 30px; } }
-  @media (max-width: 424.98px) {
-    .db-folders__form {
-      padding: 0 15px; } }
-
-.db-folders__input {
-  width: 100%; }
-
-.db-folders__container {
-  height: 410px;
-  overflow-y: scroll;
-  margin-bottom: 20px; }
+.db-folders {
+  padding: 100px 0px 30px 0px; }
+  .db-folders__form {
+    padding: 0 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px; }
+    @media (max-width: 649.98px) {
+      .db-folders__form {
+        padding: 0 30px; } }
+    @media (max-width: 424.98px) {
+      .db-folders__form {
+        padding: 0 15px; } }
+  .db-folders__input {
+    width: 100%; }
+  .db-folders__container {
+    height: 410px;
+    overflow-y: scroll;
+    margin-bottom: 20px; }
 
 .db-folder {
   display: -webkit-box;
@@ -498,41 +513,30 @@ body {
       .db-folder__edit, .db-folder__delete {
         font-size: 18px; } }
 
-.db-words__cross_wrapper {
-  margin-bottom: 30px;
-  padding: 0 50px; }
-  @media (max-width: 649.98px) {
-    .db-words__cross_wrapper {
-      padding: 0 30px; } }
-  @media (max-width: 424.98px) {
-    .db-words__cross_wrapper {
-      padding: 0 15px; } }
-
-.db-words__container {
-  height: 410px;
-  overflow-y: scroll;
-  margin-bottom: 20px; }
-
-.db-words__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 14px;
-  padding: 0 50px; }
-  @media (max-width: 649.98px) {
-    .db-words__form {
-      padding: 0 30px; } }
-  @media (max-width: 424.98px) {
-    .db-words__form {
-      padding: 0 15px; } }
-
-.db-words__translation-input, .db-words__word-input {
-  width: 100%; }
-
-.db-words__button {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 45px;
-  flex: 0 0 45px; }
+.db-words {
+  position: relative; }
+  .db-words__container {
+    height: 410px;
+    overflow-y: scroll;
+    margin-bottom: 20px; }
+  .db-words__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 14px;
+    padding: 0 50px; }
+    @media (max-width: 649.98px) {
+      .db-words__form {
+        padding: 0 30px; } }
+    @media (max-width: 424.98px) {
+      .db-words__form {
+        padding: 0 15px; } }
+  .db-words__translation-input, .db-words__word-input {
+    width: 100%; }
+  .db-words__button {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 45px;
+    flex: 0 0 45px; }
 
 .db-word {
   display: -webkit-box;
@@ -587,6 +591,14 @@ body {
     -ms-flex: 0 0 57px;
     flex: 0 0 57px;
     margin-left: auto; }
+
+/*-----------------------------Game Settings----------------------------------*/
+.games-settings__folders {
+  height: 460px; }
+  .games-settings__folders > .db-folder {
+    opacity: 0.5; }
+    .games-settings__folders > .db-folder.active-folder {
+      opacity: 1; }
 
 /*-----------------------------Custom text----------------------------------*/
 .text_convert {
