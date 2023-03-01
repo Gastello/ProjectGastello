@@ -145,6 +145,10 @@ button,
 .cursorPointer {
   cursor: url("../icons/cursor-pointer.svg") 6 0, auto; }
 
+/*---------------------------Swiper-----------------------------------*/
+.swiper-notification {
+  display: none; }
+
 /*---------------------------Loading-----------------------------------*/
 .container {
   opacity: 0; }
@@ -2748,7 +2752,9 @@ body.lock {
   max-width: 400px;
   width: 100%;
   min-height: 400px;
-  height: 100%; }
+  height: 100%;
+  -webkit-filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(6px 6px 4px rgba(0, 0, 0, 0.6)); }
   .flash-card.active > *:nth-child(2) {
     -webkit-transform: rotateX(0deg);
     transform: rotateX(0deg); }
