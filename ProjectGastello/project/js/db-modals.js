@@ -24,11 +24,17 @@ dbFoldersCross.onclick = () => {
 let dbFoldersArray = document.querySelector('.db-folders__container').children;
 let dbWordsCross = document.querySelector('.db-words__cross');
 let dbWordsWrapper = document.querySelector('.db-words__wrapper');
-
-for (const el of dbFoldersArray) {
-    el.onclick = () => {
-        openModalWindow(dbWordsWrapper);
+let checkIsNotNav = (e) => {
+    let targetClassList = e.target.classList;
+    if (targetClassList.contains('db__edit') ||
+        targetClassList.contains('db__save') ||
+        targetClassList.contains('db__delete')) {
+        return;
     }
+    openModalWindow(dbWordsWrapper);
+};
+for (const el of dbFoldersArray) {
+    el.onclick = checkIsNotNav;
 }
 dbWordsCross.onclick = () => {
     closeModalWindow(dbWordsWrapper);

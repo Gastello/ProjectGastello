@@ -71,6 +71,10 @@ button,
 .cursorPointer {
    cursor: url("../icons/cursor-pointer.svg") 6 0, auto;
 }
+
+/*--------------------------------input textarea----------------------------------*/
+input, textarea{font-family: "Metal Mania", "Poiret One";}
+
 /*---------------------------Swiper-----------------------------------*/
 .swiper-notification {
    display: none;
@@ -404,12 +408,12 @@ body {
    // .db-folder__nav
 
    &__nav {
-      flex: 0 0 57px;
+      flex: 0 0 110px;
       margin-left: auto;
    }
 
-   // .db-folder__edit .db-folder__delete
-
+   // .db-folder__edit .db-folder__delete .db-folder__edit
+   &__save,
    &__edit,
    &__delete {
       font-size: 20px;
@@ -426,6 +430,12 @@ body {
       @media (max-width: 424.98px) {
          font-size: 18px;
       }
+   } 
+
+   &__save{
+      display: none;
+      flex: 1 0 auto;
+      text-align: end;
    }
 }
 
