@@ -128,8 +128,8 @@ textarea {
 
 /*--------------------------Content wrappers------------------------------*/
 
-body {
-   font-family: $fontFamily;
+body { 
+   font-family: "Metal Mania", "Poiret One";
    font-style: normal;
    font-weight: 400;
    font-size: 16px;
@@ -234,6 +234,9 @@ body {
    display: flex;
    gap: 20px;
 }
+
+// .db__edit .db__delete .db__edit 
+.db__save,
 .db__edit,
 .db__delete {
    font-size: 20px;
@@ -250,7 +253,7 @@ body {
    @media (max-width: 424.98px) {
       font-size: 18px;
    }
-}
+} 
 
 .db__input {
    background: rgba(56, 56, 56, 0.5);
@@ -416,26 +419,9 @@ body {
       margin-left: auto;
    }
 
-   // .db-folder__edit .db-folder__delete .db-folder__edit
-   &__save,
-   &__edit,
-   &__delete {
-      font-size: 20px;
-      line-height: 25/20 * 1;
-      color: #b7b8b8;
-      text-shadow: 0px 0px 15px #000000;
-      @media (min-width: 767.98px) {
-         &:hover {
-            color: #e0e0e0;
-            transform: scale(1.1);
-            transition: all 0.15s linear;
-         }
-      }
-      @media (max-width: 424.98px) {
-         font-size: 18px;
-      }
-   }
+   
 
+   // .db-folder__save
    &__save {
       display: none;
       flex: 1 0 auto;
@@ -447,12 +433,11 @@ body {
       flex: 1 1 auto;
       font-size: 20px;
       line-height: 25/20 * 1;
-      color: #eef6ff;
-      text-shadow: 0px 0px 15px #000000;
-      overflow-wrap: anywhere;
-      font-family: "Metal Mania", "Poiret One";
+      color: #eef6ff; 
+      overflow-wrap: anywhere; 
       background-color: transparent;
       resize: none;
+      text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
       @media (max-width: 424.98px) {
          font-size: 18px;
       }
@@ -519,6 +504,7 @@ body {
       display: flex;
       align-items: center;
       gap: 20px;
+      flex: 1 1 auto;
       @media (max-width: 767.98px) {
          flex-direction: column;
          align-items: start;
@@ -528,30 +514,57 @@ body {
 
    // .db-word__word
 
-   &__word {
+   &__word { 
       overflow-wrap: anywhere;
       font-size: 20px;
       line-height: 23/20 * 1;
       color: #eef6ff;
-      text-shadow: 0px 0px 15px #000000;
+      // text-shadow: 0px 0px 15px #000000;
    }
 
    // .db-word__translation
 
-   &__translation {
+   &__translation { 
       overflow-wrap: anywhere;
       font-family: "Poiret One";
       font-size: 20px;
       line-height: 23/20 * 1;
       color: #eef6ff;
-      text-shadow: 0px 0px 15px #000000;
+      // text-shadow: 0px 0px 15px #000000;
    }
    // .db-word__nav
 
    &__nav {
-      flex: 0 0 57px;
+      flex: 0 0 110px;
       margin-left: auto;
    }
+
+   // .db-word__save
+   &__save {
+      display: none;
+      flex: 1 0 auto;
+      text-align: end;
+   }
+
+   // .db-word__word-textarea .db-word__translation-textarea
+   &__word-textarea, &__translation-textarea {
+      flex-grow: 1;
+      flex-shrink: 1;  
+      overflow-wrap: anywhere;
+      font-size: 20px;
+      line-height: 23/20 * 1;
+      color: #eef6ff; 
+      background-color: transparent;
+      resize: none;
+      // text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2); 
+      @media (max-width: 424.98px) {
+         font-size: 18px;
+      }
+   }
+   &__translation-textarea{
+      font-family: "Poiret One";
+   }
+   
 }
 /*-----------------------------Game Settings----------------------------------*/
 .games-settings {
