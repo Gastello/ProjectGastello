@@ -73,7 +73,10 @@ button,
 }
 
 /*--------------------------------input textarea----------------------------------*/
-input, textarea{font-family: "Metal Mania", "Poiret One";}
+input,
+textarea {
+   font-family: "Metal Mania", "Poiret One";
+}
 
 /*---------------------------Swiper-----------------------------------*/
 .swiper-notification {
@@ -182,8 +185,8 @@ body {
 }
 
 /*-----------------------------DB----------------------------------*/
-.db-title{
-   font-family: "Metal Mania", "Poiret One"; 
+.db-title {
+   font-family: "Metal Mania", "Poiret One";
    margin-bottom: 30px;
    font-size: 26px;
    line-height: 40/26 * 1;
@@ -192,23 +195,23 @@ body {
    text-align: center;
    overflow: hidden;
    text-overflow: ellipsis;
-   white-space:nowrap;
+   white-space: nowrap;
    padding: 0 100px;
    @media (max-width: 767.98px) {
       font-size: 22px;
    }
-   @media (max-width: 649.98px) { 
+   @media (max-width: 649.98px) {
       padding: 0 80px;
    }
    @media (max-width: 424.98px) {
       padding: 0 65px;
-   } 
+   }
 }
 .db__cross {
    position: absolute;
    right: 50px;
    top: 30px;
-   @media (max-width: 649.98px) { 
+   @media (max-width: 649.98px) {
       right: 30px;
    }
    @media (max-width: 424.98px) {
@@ -248,6 +251,7 @@ body {
       font-size: 18px;
    }
 }
+
 .db__input {
    background: rgba(56, 56, 56, 0.5);
    box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
@@ -430,17 +434,33 @@ body {
       @media (max-width: 424.98px) {
          font-size: 18px;
       }
-   } 
+   }
 
-   &__save{
+   &__save {
       display: none;
       flex: 1 0 auto;
       text-align: end;
    }
+
+   // .db-folder__textarea
+   &__textarea {
+      flex: 1 1 auto;
+      font-size: 20px;
+      line-height: 25/20 * 1;
+      color: #eef6ff;
+      text-shadow: 0px 0px 15px #000000;
+      overflow-wrap: anywhere;
+      font-family: "Metal Mania", "Poiret One";
+      background-color: transparent;
+      resize: none;
+      @media (max-width: 424.98px) {
+         font-size: 18px;
+      }
+   }
 }
 
 .db-words {
-   position: relative; 
+   position: relative;
 
    // .db-words__container
 
@@ -538,19 +558,18 @@ body {
    // .games-settings__wrapper
 
    &__wrapper {
-   } 
+   }
 
    // .games-settings__folders
 
    &__folders {
       height: 460px;
-      & > .db-folder{
+      & > .db-folder {
          opacity: 0.5;
-         &.active-folder{
+         &.active-folder {
             opacity: 1;
          }
       }
-      
    }
 }
 /*-----------------------------Custom text----------------------------------*/

@@ -146,7 +146,8 @@ button,
   cursor: url("../icons/cursor-pointer.svg") 6 0, auto; }
 
 /*--------------------------------input textarea----------------------------------*/
-input, textarea {
+input,
+textarea {
   font-family: "Metal Mania", "Poiret One"; }
 
 /*---------------------------Swiper-----------------------------------*/
@@ -522,6 +523,21 @@ body {
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
     text-align: end; }
+  .db-folder__textarea {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    font-size: 20px;
+    line-height: 1.25;
+    color: #eef6ff;
+    text-shadow: 0px 0px 15px #000000;
+    overflow-wrap: anywhere;
+    font-family: "Metal Mania", "Poiret One";
+    background-color: transparent;
+    resize: none; }
+    @media (max-width: 424.98px) {
+      .db-folder__textarea {
+        font-size: 18px; } }
 
 .db-words {
   position: relative; }
