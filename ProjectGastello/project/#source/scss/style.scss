@@ -506,9 +506,11 @@ body {
       gap: 20px;
       flex: 1 1 auto;
       @media (max-width: 767.98px) {
-         flex-direction: column;
-         align-items: start;
+         display: block;
          gap: 10px;
+         &>*:not(:last-child){
+            margin-bottom: 10px;
+         }
       }
    }
 
@@ -518,8 +520,10 @@ body {
       overflow-wrap: anywhere;
       font-size: 20px;
       line-height: 23/20 * 1;
-      color: #eef6ff;
-      // text-shadow: 0px 0px 15px #000000;
+      color: #eef6ff; 
+      @media (max-width: 424.98px) {
+         font-size: 18px;
+      }
    }
 
    // .db-word__translation
@@ -529,8 +533,10 @@ body {
       font-family: "Poiret One";
       font-size: 20px;
       line-height: 23/20 * 1;
-      color: #eef6ff;
-      // text-shadow: 0px 0px 15px #000000;
+      color: #eef6ff; 
+      @media (max-width: 424.98px) {
+         font-size: 18px;
+      }
    }
    // .db-word__nav
 
@@ -555,8 +561,8 @@ body {
       line-height: 23/20 * 1;
       color: #eef6ff; 
       background-color: transparent;
-      resize: none;
-      // text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2); 
+      resize: none; 
+      text-shadow: 0px 0px 5px rgb(255 255 255 / 20%);
       @media (max-width: 424.98px) {
          font-size: 18px;
       }

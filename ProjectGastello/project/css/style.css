@@ -579,25 +579,27 @@ body {
     flex: 1 1 auto; }
     @media (max-width: 767.98px) {
       .db-word__info {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: start;
-        gap: 10px; } }
+        display: block;
+        gap: 10px; }
+        .db-word__info > *:not(:last-child) {
+          margin-bottom: 10px; } }
   .db-word__word {
     overflow-wrap: anywhere;
     font-size: 20px;
     line-height: 1.15;
     color: #eef6ff; }
+    @media (max-width: 424.98px) {
+      .db-word__word {
+        font-size: 18px; } }
   .db-word__translation {
     overflow-wrap: anywhere;
     font-family: "Poiret One";
     font-size: 20px;
     line-height: 1.15;
     color: #eef6ff; }
+    @media (max-width: 424.98px) {
+      .db-word__translation {
+        font-size: 18px; } }
   .db-word__nav {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 110px;

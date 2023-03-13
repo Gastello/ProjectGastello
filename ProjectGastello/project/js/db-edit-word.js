@@ -38,9 +38,9 @@ for (const btn of wordEditBtns) {
             'beforebegin',
             `<textarea class="db-word__translation-textarea">${translationText}</textarea>`
         )
-        let translatTextarea = word.querySelector('.db-word__translation-textarea');
-        translatTextarea.style.height = `${translationTextContainerHeight}px`;
-        translatTextarea.style.flexBasis = `${translationTextContainerWidth}px`;
+        let translateTextarea = word.querySelector('.db-word__translation-textarea');
+        translateTextarea.style.height = `${translationTextContainerHeight}px`;
+        translateTextarea.style.flexBasis = `${translationTextContainerWidth}px`;
 
         word.onclick = null; 
     }
