@@ -1,12 +1,12 @@
-let gearsArray = document.querySelectorAll('.db-gear');
+let gear = document.querySelector('.db-gear');
 let gamesSettingsCross = document.querySelector('.games-settings__cross');
 let gamesSettingsWrapper = document.querySelector('.games-settings__wrapper');
 let gamesSettingsFolders = document.querySelector('.games-settings__folders').children;
-for (let gear of gearsArray) {
-    gear.onclick = () => {
-        openModalWindow(gamesSettingsWrapper);
-    }
+
+gear.onclick = () => {
+    openModalWindow(gamesSettingsWrapper);
 }
+
 const allPacks = document.querySelector('#all-packs');
 for (let folder of gamesSettingsFolders) {
     folder.onclick = (e) => {

@@ -165,40 +165,46 @@
    max-width: 300px;
    width: 100%;
 
+   & > *:not(:last-child) {
+      margin-bottom: 20px;
+   }
+
    @media (max-width: 1199.98px) {
       max-width: 200px;
    }
 
    &__username,
    &__password,
-   &__password_repeat {
+   &__email {
       input {
          width: 100%;
          padding: 7px 15px;
          background: #ffffff;
          box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
          border-radius: 21px;
-         color: #5475b7;
-
+         color: #5475b7; 
          &::placeholder {
             color: #5475b7;
+         }
+         @media (min-width: 767.98px) {
+            font-size: 18px;
          }
       }
    }
 
-   // .inputs_login__username
+   // .inputs_login__email
 
-   &__username {
+   &__email {
       position: relative;
-      margin-bottom: 20px;
 
       &::before {
          content: url("../icons/steel-helm.svg");
          position: absolute;
          height: 30px;
-         width: 21px;
-         top: 0;
+         width: 21px; 
          left: -36px;
+         top: 50%; 
+         transform: translateY(-50%);
       }
    }
 
@@ -211,9 +217,10 @@
          content: url("../icons/magic-scroll.svg");
          position: absolute;
          height: 30px;
-         width: 31px;
-         top: 0;
+         width: 31px; 
          left: -41px;
+         top: 50%; 
+         transform: translateY(-50%);
       }
    }
 }

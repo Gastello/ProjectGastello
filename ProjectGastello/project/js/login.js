@@ -2,16 +2,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import {
     getAuth,
-    createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    onAuthStateChanged,
-    signOut,
     setPersistence,
     browserLocalPersistence 
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -42,7 +38,7 @@ setPersistence(auth, browserLocalPersistence)
   }); 
 
 const loginForm = document.querySelector('#login'); 
-const loginRegisterEmail = loginForm['input_login'];
+const loginRegisterEmail = loginForm['input_email'];
 const loginRegisterPassword = loginForm['input_password'];  
 
 loginForm.onsubmit = login; 

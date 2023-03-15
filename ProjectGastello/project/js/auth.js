@@ -2,16 +2,16 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import {
     getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
-    setPersistence,
-    browserSessionPersistence 
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+ 
+import {
+    getFirestore,
+    collection, 
+    addDoc,
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -26,14 +26,17 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
- 
+
+ // Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
 onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
       console.log(user)
       console.log(uid)
     } else {
-        console.log('sign out')
+        window.location = 'index.html';
     }
   });
 
@@ -45,4 +48,18 @@ function logOut(){
       }).catch((error) => {
         alert(error.message)
       });
+}
+
+const home__logoButton = document.querySelector('.home__logo');
+home__logoButton.onclick = addData;
+async function addData(){
+    try {
+        const docRef = await addDoc(collection(db, "users"), {
+          first: "Ada",
+          last: "Lovelace",
+          born: 1815
+        }); 
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
 }

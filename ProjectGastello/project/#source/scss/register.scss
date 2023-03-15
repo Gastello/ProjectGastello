@@ -4,17 +4,18 @@
    padding: 40px 0 20px 0;
 }
 
-.inputs_login__password_repeat {
+.inputs_login__username {
    position: relative;
    margin-top: 20px;
 
    &::before {
-      content: url('../icons/magic-scroll.svg');
+      content: url('../icons/crown.svg');
       position: absolute;
-      height: 30px;
+      height: 19px;
       width: 31px;
-      top: 0;
-      left: -41px;
+      top: 50%;
+      left: -41px; 
+      transform: translateY(-50%);
    }
 }
 

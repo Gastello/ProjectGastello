@@ -3,13 +3,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebas
 import {
     getAuth,
     createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    onAuthStateChanged,
-    signOut
+    updateProfile
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -27,19 +22,23 @@ const auth = getAuth(app);
 
 const registerForm = document.querySelector('#register');
 
-const userRegisterEmail = registerForm['input_login'];
+const userRegisterEmail = registerForm['input_email'];
 const userRegisterPassword = registerForm['input_password'];
-const userRegisterPasswordRepeat = registerForm['input_password_repeat'];
+const userRegisterName = registerForm['input_username'];
 
+const userRegisterImage = document.querySelector('.swiper-slide-active').children[0].src.split('/');
 registerForm.onsubmit = register;
 
-function register(e){
+function register(e) {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, userRegisterEmail.value, userRegisterPassword.value)
-        .then((userCredential) => { 
-            window.location = 'index.html'; 
+        .then((user) => {
+            // updateProfile(user, { userRegisterName, photoURL: `./icons/avatars/${userRegisterImage[userRegisterImage.length - 1]}` })
+            
+            window.location = 'index.html';
         })
         .catch(error => {
             alert(error.message)
         })
 } 
+
