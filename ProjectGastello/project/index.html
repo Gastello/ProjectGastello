@@ -21,29 +21,30 @@
             </div>
          </div>
          <div class="container">
-            <div class="login">
+            <form class="login" id="login">
                <div class="login__inner">
                   <div class="login__logo">
                      <img src="./icons/logo.svg" alt="Project Gastello Logo">
                   </div>
                   <div class="login__inputs inputs_login">
                      <div class="inputs_login__username">
-                        <input id="input_login" type="text" placeholder="Enter your login"></input>
+                        <input required id="input_login" type="text" placeholder="Enter your login"></input>
                      </div>
                      <div class="inputs_login__password">
-                        <input id="input_password" type="password" placeholder="Enter your password"></input>
+                        <input required id="input_password" type="password" placeholder="Enter your password"></input>
                      </div>
                   </div>
-                  <a href="home.html" class="login__button">
+                  <button class="login__button">
                      Click to enter!
-                  </a>
+                  </button>
                   <a class="login__link" href="register.html">not registred yet?</a>
                </div>
-            </div>
+            </form>
          </div>
       </main>
    </div>
-   <!-- <script src="./js/inputs.js"></script> -->
+   <!-- <script src="./js/inputs.js"></script> --> 
+   <script src="./js/login.js" type="module"></script>
 </body>
 
 </html>

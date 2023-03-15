@@ -22,20 +22,20 @@
             </div>
          </div>
          <div class="container">
-            <div class="login">
+            <form class="login" id="register">
                <div class="login__inner reg__inner">
                   <div class="login__logo">
                      <img src="./icons/logo.svg" alt="Project Gastello Logo">
                   </div>
                   <div class="login__inputs inputs_login">
                      <div class="inputs_login__username">
-                        <input id="input_login" type="text" placeholder="Enter your login"></input>
+                        <input required id="input_login" type="text" placeholder="Enter your login"></input>
                      </div>
                      <div class="inputs_login__password">
-                        <input id="input_password" type="password" placeholder="Enter your password"></input>
+                        <input required id="input_password" type="password" placeholder="Enter your password"></input>
                      </div>
                      <div class="inputs_login__password_repeat">
-                        <input id="input_password_repeat" type="password" placeholder="Repeat your password"></input>
+                        <input required id="input_password_repeat" type="password" placeholder="Repeat your password"></input>
                      </div>
                   </div>
                   <div class="swiper">
@@ -77,14 +77,15 @@
                   </button>
                   <a class="login__link" href="index.html">already registred?</a>
                </div>
-            </div>
+            </form>
          </div>
       </main>
    </div>
    <!-- <script src="./js/inputs.js"></script> -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
    <script src="./js/avatars_slider.js"></script>
-
+ 
+   <script src="js/register.js" type="module"></script>
 </body>
 
 </html>
