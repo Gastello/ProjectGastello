@@ -549,6 +549,7 @@
    &__nav {
       display: flex;
       align-items: center;
+      user-select: none;
    }
 
    // .header__burger

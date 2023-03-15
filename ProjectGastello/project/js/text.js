@@ -1,7 +1,7 @@
 let textsForConvert = document.querySelectorAll(`.text_convert`);
 
 for (let el of textsForConvert) {
-   let strConvertBuffer = el.innerText;
+   let strConvertBuffer = el.innerHTML;
    el.innerHTML = "";
    el.insertAdjacentHTML(
       `beforeend`,

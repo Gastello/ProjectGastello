@@ -5,12 +5,13 @@ import {
     onAuthStateChanged,
     signOut,
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
- 
+
 import {
     getFirestore,
-    collection, 
+    collection,
     addDoc,
-
+    getDoc,
+    doc
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"
 
 // Your web app's Firebase configuration
@@ -27,39 +28,42 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
- // Initialize Cloud Firestore and get a reference to the service
+// Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
+
+let userCredential = undefined;
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-      const uid = user.uid;
-      console.log(user)
-      console.log(uid)
+        setUserImage(user);
     } else {
         window.location = 'index.html';
     }
-  });
+});
 
 const logOutButton = document.querySelector('.user_header__logout');
 logOutButton.onclick = logOut;
-function logOut(){
+function logOut() {
     signOut(auth).then(() => {
-        window.location = 'index.html';  
-      }).catch((error) => {
+        window.location = 'index.html';
+    }).catch((error) => {
         alert(error.message)
-      });
+    });
 }
 
-const home__logoButton = document.querySelector('.home__logo');
-home__logoButton.onclick = addData;
-async function addData(){
-    try {
-        const docRef = await addDoc(collection(db, "users"), {
-          first: "Ada",
-          last: "Lovelace",
-          born: 1815
-        }); 
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
+async function setUserImage(userCredential) {
+    const docRef = doc(db, "users", userCredential.uid);
+    const docSnap = await getDoc(docRef);
+    let headerIco = document.querySelector('.header__ico');
+    let userNameArray = document.querySelectorAll('#user-name');
+    console.log(userNameArray)
+    for (const user of userNameArray) {
+        user.innerText = docSnap.data().name;
+    }
+    if (docSnap.exists()) {
+        // console.log(docSnap.data());
+        headerIco.src = docSnap.data().photoURL;
+    } else { 
+        console.log("No such document!");
+    } 
 }

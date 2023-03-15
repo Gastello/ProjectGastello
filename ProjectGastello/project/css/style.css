@@ -1090,7 +1090,11 @@ body {
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
   .header__burger {
     display: block;
     width: 86px;

@@ -3,8 +3,17 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebas
 import {
     getAuth,
     createUserWithEmailAndPassword,
-    updateProfile
+    updateProfile,
+    onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+
+import {
+    getFirestore,
+    collection,
+    setDoc,
+    addDoc,
+    doc,
+} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,25 +29,48 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
 const registerForm = document.querySelector('#register');
 
 const userRegisterEmail = registerForm['input_email'];
 const userRegisterPassword = registerForm['input_password'];
 const userRegisterName = registerForm['input_username'];
 
-const userRegisterImage = document.querySelector('.swiper-slide-active').children[0].src.split('/');
 registerForm.onsubmit = register;
 
 function register(e) {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, userRegisterEmail.value, userRegisterPassword.value)
-        .then((user) => {
-            // updateProfile(user, { userRegisterName, photoURL: `./icons/avatars/${userRegisterImage[userRegisterImage.length - 1]}` })
-            
-            window.location = 'index.html';
+        .then(() => { 
+            setUser().then(()=>{
+                window.location = 'home.html';
+            }) 
         })
         .catch(error => {
             alert(error.message)
         })
-} 
+}
+let userCredential = undefined;
 
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        userCredential = user;
+    }
+});
+
+async function setUser() {
+    // Add a new document in collection "users" 
+    const userRegisterImage = document.querySelector('.swiper-slide-active').children[0].src.split('/'); 
+    try {
+        await setDoc(doc(db, "users", `${userCredential.uid}`), {
+            email: userRegisterEmail.value,
+            name: userRegisterName.value,
+            photoURL: `./icons/avatars/${userRegisterImage[userRegisterImage.length - 1]}`
+        });
+        console.log('data added!');
+    } catch (e) {
+        console.error("Error adding document: ", e);
+    }
+} 
