@@ -1837,19 +1837,24 @@ body.lock {
     .translator_dictionary__text textarea {
       padding: 0px 5px 0px 40px;
       font-size: 26px;
-      text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+      text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+      font-family: 'Marck Script', cursive; }
       .translator_dictionary__text textarea::-webkit-input-placeholder {
         font-size: 26px;
-        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+        font-family: 'Marck Script', cursive; }
       .translator_dictionary__text textarea:-ms-input-placeholder {
         font-size: 26px;
-        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+        font-family: 'Marck Script', cursive; }
       .translator_dictionary__text textarea::-ms-input-placeholder {
         font-size: 26px;
-        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+        font-family: 'Marck Script', cursive; }
       .translator_dictionary__text textarea::placeholder {
         font-size: 26px;
-        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+        font-family: 'Marck Script', cursive; }
     @media (max-width: 767.98px) {
       .translator_dictionary__text {
         margin-right: 0px;
@@ -1861,19 +1866,24 @@ body.lock {
     .translator_dictionary__translate textarea {
       padding: 0px 5px 0px 15px;
       font-size: 26px;
-      text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+      text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+      font-family: 'Marck Script', cursive; }
       .translator_dictionary__translate textarea::-webkit-input-placeholder {
         font-size: 26px;
-        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+        font-family: 'Marck Script', cursive; }
       .translator_dictionary__translate textarea:-ms-input-placeholder {
         font-size: 26px;
-        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+        font-family: 'Marck Script', cursive; }
       .translator_dictionary__translate textarea::-ms-input-placeholder {
         font-size: 26px;
-        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+        font-family: 'Marck Script', cursive; }
       .translator_dictionary__translate textarea::placeholder {
         font-size: 26px;
-        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); }
+        text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+        font-family: 'Marck Script', cursive; }
     @media (max-width: 767.98px) {
       .translator_dictionary__translate {
         margin-right: 0px; }

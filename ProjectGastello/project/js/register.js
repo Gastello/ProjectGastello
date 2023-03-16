@@ -34,15 +34,15 @@ const db = getFirestore(app);
 
 const registerForm = document.querySelector('#register');
 
-const userRegisterEmail = registerForm['input_email'];
-const userRegisterPassword = registerForm['input_password'];
-const userRegisterName = registerForm['input_username'];
+const userRegisterEmailInput = registerForm['input-email'];
+const userRegisterPasswordInput = registerForm['input-password'];
+const userRegisterNameInput = registerForm['input-username'];
 
 registerForm.onsubmit = register;
 
 function register(e) {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, userRegisterEmail.value, userRegisterPassword.value)
+    createUserWithEmailAndPassword(auth, userRegisterEmailInput.value, userRegisterPasswordInput.value)
         .then(() => { 
             setUser().then(()=>{
                 window.location = 'home.html';
@@ -64,12 +64,12 @@ async function setUser() {
     // Add a new document in collection "users" 
     const userRegisterImage = document.querySelector('.swiper-slide-active').children[0].src.split('/'); 
     try {
-        await setDoc(doc(db, "users", `${userCredential.uid}`), {
-            email: userRegisterEmail.value,
-            name: userRegisterName.value,
-            photoURL: `./icons/avatars/${userRegisterImage[userRegisterImage.length - 1]}`
+        const docRef = await setDoc(doc(db, "users", userCredential.uid), {
+            email: userRegisterEmailInput.value,
+            name: userRegisterNameInput.value,
+            photoURL: `${userRegisterImage[userRegisterImage.length - 1]}`
         });
-        console.log('data added!');
+        console.log("User written with ID: ", docRef.id);
     } catch (e) {
         console.error("Error adding document: ", e);
     }

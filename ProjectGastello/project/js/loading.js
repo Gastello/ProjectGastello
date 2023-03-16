@@ -7,7 +7,7 @@ function onReady(callback) {
             window.clearInterval(intervalId);
             callback.call(this);
          }
-      }, 500);
+      }, 700);
    });
 }
 

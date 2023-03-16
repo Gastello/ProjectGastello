@@ -32,20 +32,18 @@ setPersistence(auth, browserLocalPersistence)
     return signInWithEmailAndPassword(auth, email, password);
   })
   .catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    console.log(error.message);
   }); 
 
 const loginForm = document.querySelector('#login'); 
-const loginRegisterEmail = loginForm['input_email'];
-const loginRegisterPassword = loginForm['input_password'];  
+const loginRegisterEmailInput = loginForm['input-email'];
+const loginRegisterPasswordInput = loginForm['input-password'];  
 
 loginForm.onsubmit = login; 
 
 function login(e){
     e.preventDefault();
-    signInWithEmailAndPassword(auth, loginRegisterEmail.value, loginRegisterPassword.value)
+    signInWithEmailAndPassword(auth, loginRegisterEmailInput.value, loginRegisterPasswordInput.value)
         .then((userCredential) => { 
             window.location = 'home.html';  
         })

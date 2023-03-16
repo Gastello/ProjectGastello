@@ -139,9 +139,11 @@
          padding: 0px 5px 0px 40px;
          font-size: 26px;
          text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+         font-family: 'Marck Script', cursive;
          &::placeholder{
             font-size: 26px;
             text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+            font-family: 'Marck Script', cursive;
          }
       }
       @media (max-width: 767.98px) {
@@ -161,9 +163,11 @@
          padding: 0px 5px 0px 15px;
          font-size: 26px;
          text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+         font-family: 'Marck Script', cursive;
          &::placeholder{
             font-size: 26px;
             text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+            font-family: 'Marck Script', cursive;
          }
       }
       @media (max-width: 767.98px) {

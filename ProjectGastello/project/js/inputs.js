@@ -1,5 +1,5 @@
 let inputLogin = document.getElementById('input_login');
-let inputPassword = document.getElementById('input_password');
+let inputPassword = document.getElementById('input-password');
 let loginInner = document.querySelector('.login__inner');
 inputLogin.onfocus = loginScreenAnimation;
 inputPassword.onfocus = loginScreenAnimation;
