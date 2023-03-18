@@ -183,9 +183,20 @@ function renderUserFolders(userCredential, folderName, folderId) {
 async function deleteUserFolder(userCredential, folderId, folderName, folderContainer) {
     if (confirm(`Delete folder ${folderName}?`)) {
         try {
-            await deleteDoc(doc(db, "users", userCredential.uid, "word-folders", folderId));
-            folderContainer.remove();
-            console.log("Folder deleted with ID: ", folderId);
+            const q = query(collection(db, "users", userCredential.uid, "word-folders", folderId, "word"));
+            const querySnapshot = await getDocs(q);
+
+            const deleteOps = [];
+
+            querySnapshot.forEach((doc) => {
+                deleteOps.push(deleteDoc(doc.ref));
+            });
+            Promise.all(deleteOps).then(() => {
+                deleteDoc(doc(db, "users", userCredential.uid, "word-folders", folderId));
+                folderContainer.remove();
+                console.log("Folder deleted with ID: ", folderId);
+            });
+
         } catch (e) {
             console.error("Error deleting Folder: ", e);
         }
