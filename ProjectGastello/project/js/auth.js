@@ -11,8 +11,7 @@ import {
     collection,
     addDoc,
     getDoc,
-    getDocs,
-    setDoc,
+    getDocs, 
     doc,
     deleteDoc,
     updateDoc,
@@ -47,8 +46,7 @@ onAuthStateChanged(auth, (user) => {
         getUserFolders(user);
         foldersForm.onsubmit = (e) => {
             e.preventDefault();
-            setUserFolder(user);
-            foldersFolderNameInput.focus();
+            setUserFolder(user); 
         }
     } else {
         window.location = 'index.html';
