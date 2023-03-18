@@ -209,6 +209,7 @@ body {
 }
 .db__cross {
    position: absolute;
+   filter: drop-shadow(0px 0px 10px white);
    right: 50px;
    top: 30px;
    @media (max-width: 649.98px) {
@@ -218,10 +219,9 @@ body {
       right: 15px;
    }
    @media (min-width: 767.98px) {
-      &:hover {
-         filter: drop-shadow(0px 0px 5px #e0e0e03b);
-         transform: rotate(90deg);
-         transition: all 0.1s linear;
+      &:hover { 
+         transform: scale(1.1);
+         transition: transform 0.1s linear;
       }
    }
    img {

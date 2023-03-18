@@ -36,6 +36,10 @@ const auth = getAuth(app);
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
+const foldersForm = document.querySelector('#folders-form');
+const foldersFolderNameInput = foldersForm['folders-input'];
+const foldersContainer = document.querySelector('.db-folders__container');
+
 onAuthStateChanged(auth, (user) => {
     if (user) {
         setUserImage(user);
@@ -44,6 +48,7 @@ onAuthStateChanged(auth, (user) => {
         foldersForm.onsubmit = (e) => {
             e.preventDefault();
             setUserFolder(user);
+            foldersFolderNameInput.focus();
         }
     } else {
         window.location = 'index.html';
@@ -75,9 +80,7 @@ async function setUserName(userCredential) {
         user.innerText = docSnap.data().name;
     }
 }
-const foldersForm = document.querySelector('#folders-form');
-const foldersFolderNameInput = foldersForm['folders-input'];
-const foldersContainer = document.querySelector('.db-folders__container');
+
 
 async function setUserFolder(userCredential) {
     try {
@@ -232,6 +235,7 @@ function openUserWordsFromFolder(e, userCredential, folder, folderId) {
     wordsForm.onsubmit = (e) => {
         e.preventDefault();
         setUserWord(userCredential, folderId)
+        wordsWordInput.focus();
     };
 };
 

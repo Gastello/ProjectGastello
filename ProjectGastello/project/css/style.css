@@ -272,6 +272,8 @@ body {
 
 .db__cross {
   position: absolute;
+  -webkit-filter: drop-shadow(0px 0px 10px white);
+  filter: drop-shadow(0px 0px 10px white);
   right: 50px;
   top: 30px; }
   @media (max-width: 649.98px) {
@@ -282,14 +284,14 @@ body {
       right: 15px; } }
   @media (min-width: 767.98px) {
     .db__cross:hover {
-      -webkit-filter: drop-shadow(0px 0px 5px #e0e0e03b);
-      filter: drop-shadow(0px 0px 5px #e0e0e03b);
-      -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      transform: rotate(90deg);
-      -webkit-transition: all 0.1s linear;
-      -o-transition: all 0.1s linear;
-      transition: all 0.1s linear; } }
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transition: -webkit-transform 0.1s linear;
+      transition: -webkit-transform 0.1s linear;
+      -o-transition: transform 0.1s linear;
+      transition: transform 0.1s linear;
+      transition: transform 0.1s linear, -webkit-transform 0.1s linear; } }
   .db__cross img {
     max-width: 100%;
     width: 100%; }

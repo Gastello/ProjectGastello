@@ -35,4 +35,12 @@ let checkIsNotNav = (e) => {
 
 dbWordsCross.onclick = () => {
     closeModalWindow(dbWordsWrapper);
+}
+document.onkeyup = function (e) {
+    if (e.code == "Escape" && dbFoldersWrapper.classList.contains('active-modal') && dbWordsWrapper.classList.contains('active-modal')) { 
+        closeModalWindow(dbWordsWrapper);
+    }
+    else if (e.code == "Escape" && dbFoldersWrapper.classList.contains('active-modal')) { 
+        closeModalWindow(dbFoldersWrapper);
+    }
 } 
