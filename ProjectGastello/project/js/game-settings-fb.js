@@ -3,18 +3,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebas
 import {
     getAuth,
     onAuthStateChanged,
-    signOut,
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
 import {
     getFirestore,
     collection,
-    addDoc,
-    getDoc,
     getDocs,
-    doc,
-    deleteDoc,
-    updateDoc,
     query
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"
 
@@ -71,7 +65,7 @@ let allPacks = document.querySelector('#all-packs');
 let wordsFromAllFolders = {};
 let chosenWords = [];
 
-function folderActive(e, folder) {
+function folderActiveOnClick(e, folder) {
     if (e.currentTarget == allPacks && e.currentTarget.classList.contains('active-folder')) {
         for (const el of gamesSettingsFolders) {
             el.classList.remove('active-folder');
@@ -108,16 +102,15 @@ gear.onclick = () => {
     </div>`;
     allPacks = document.querySelector('#all-packs');
     allPacks.onclick = (e) => {
-        folderActive(e, allPacks);
+        folderActiveOnClick(e, allPacks);
     }
     getSettingsFolders(userCredential);
 }
 
 gamesSettingsCross.onclick = () => {
     closeModalWindow(gamesSettingsWrapper);
-    getActiveFoldersFromSettings(); 
+    getActiveFoldersFromSettings();
     chosenWords = shuffle(chosenWords);
-    console.log(chosenWords);
 }
 
 async function getSettingsFolders(userCredential) {
@@ -125,27 +118,35 @@ async function getSettingsFolders(userCredential) {
 
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach(async (folderDoc) => {
-        await renderSettingsFolders(folderDoc.data().folderName, folderDoc.id);
-        wordsFromAllFolders[folderDoc.id] = {
-            folderName: folderDoc.data().folderName,
-            isActive: false,
-        };
+        if (!wordsFromAllFolders.hasOwnProperty(folderDoc.id)) {
+            wordsFromAllFolders[folderDoc.id] = {
+                folderName: folderDoc.data().folderName,
+                isActive: false,
+            };
 
-        const qWords = query(collection(db, "users", userCredential.uid, "word-folders", folderDoc.id, "word"));
-        const querySnapshotWords = await getDocs(qWords);
-        querySnapshotWords.forEach(async (wordDoc) => {
-            wordsFromAllFolders[folderDoc.id][wordDoc.id] = {
-                word: wordDoc.data().word,
-                translation: wordDoc.data().translation
-            }
-        });
+            const qWords = query(collection(db, "users", userCredential.uid, "word-folders", folderDoc.id, "word"));
+            const querySnapshotWords = await getDocs(qWords);
+            querySnapshotWords.forEach(async (wordDoc) => {
+                wordsFromAllFolders[folderDoc.id][wordDoc.id] = {
+                    word: wordDoc.data().word,
+                    translation: wordDoc.data().translation
+                }
+            });
+        }
+
+
+        await renderSettingsFolders(folderDoc.data().folderName, folderDoc.id);
     });
 }
 
 function renderSettingsFolders(folderName, folderId) {
+    let isFolderActive = false;
+    if (wordsFromAllFolders[folderId].isActive == true) {
+        isFolderActive = true;
+    }
     gamesSettingsFolder.insertAdjacentHTML(
         'beforeend',
-        `<div class="db-folder" id="${folderId}">
+        `<div class="db-folder ${isFolderActive ? "active-folder" : ''}" id="${folderId}">
         <div class="db-folder__image">
            <img src="./icons/magic-scroll.svg" alt="magic-scroll">
         </div>
@@ -157,7 +158,7 @@ function renderSettingsFolders(folderName, folderId) {
     const folder = gamesSettingsFolder.querySelector(`[id='${folderId}']`);
 
     folder.onclick = (e) => {
-        folderActive(e, folder);
+        folderActiveOnClick(e, folder);
     }
 }
 
@@ -170,13 +171,8 @@ function getActiveFoldersFromSettings() {
                         word: wordsFromAllFolders[folderKey][wordObjKey].word,
                         translation: wordsFromAllFolders[folderKey][wordObjKey].translation
                     }
-                )
+                );
             }
         }
     }
-}
-
-
-
-
-
+} 
