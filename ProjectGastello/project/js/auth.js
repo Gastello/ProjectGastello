@@ -11,7 +11,7 @@ import {
     collection,
     addDoc,
     getDoc,
-    getDocs, 
+    getDocs,
     doc,
     deleteDoc,
     updateDoc,
@@ -35,18 +35,29 @@ const auth = getAuth(app);
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
-const foldersForm = document.querySelector('#folders-form');
-const foldersFolderNameInput = foldersForm['folders-input'];
-const foldersContainer = document.querySelector('.db-folders__container');
+// Get data from localStorage
+let userFolders;
+let userData;
+
+function getDataFromLocalStorage() {
+    userFolders = JSON.parse(localStorage.getItem("folders"));
+    userData = JSON.parse(localStorage.getItem("user"));
+
+    console.log(userFolders)
+    console.log(userData)
+
+    console.log('Data has been got!')
+}
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        setUserImage(user);
-        setUserName(user);
+        getDataFromLocalStorage();
+        setUserImage();
+        setUserName();
         getUserFolders(user);
         foldersForm.onsubmit = (e) => {
             e.preventDefault();
-            setUserFolder(user); 
+            setUserFolder(user);
         }
     } else {
         window.location = 'index.html';
@@ -55,6 +66,7 @@ onAuthStateChanged(auth, (user) => {
 
 const logOutButton = document.querySelector('.user_header__logout');
 logOutButton.onclick = logOut;
+
 function logOut() {
     signOut(auth).then(() => {
         window.location = 'index.html';
@@ -63,46 +75,56 @@ function logOut() {
     });
 }
 
-async function setUserImage(userCredential) {
-    const docRef = doc(db, "users", userCredential.uid);
-    const docSnap = await getDoc(docRef);
+// =========================FOLDERS=========================
+
+const foldersForm = document.querySelector('#folders-form');
+const foldersFolderNameInput = foldersForm['folders-input'];
+const foldersContainer = document.querySelector('.db-folders__container');
+
+function setUserImage() {
     let headerIco = document.querySelector('.header__ico');
-    headerIco.src = `./icons/avatars/${docSnap.data().photoURL}`;
+    headerIco.src = userData.userImage;
 }
 
-async function setUserName(userCredential) {
-    const docRef = doc(db, "users", userCredential.uid);
-    const docSnap = await getDoc(docRef);
+function setUserName() {
     let userNameArray = document.querySelectorAll('#user-name');
     for (const user of userNameArray) {
-        user.innerText = docSnap.data().name;
+        user.innerText = userData.userName;
     }
 }
-
 
 async function setUserFolder(userCredential) {
     try {
         const foldersFolderNameInputValue = foldersFolderNameInput.value.trim();
         if (foldersFolderNameInputValue != '') {
+            // add data to db
             const docRef = await addDoc(collection(db, "users", userCredential.uid, "word-folders"), {
                 folderName: foldersFolderNameInputValue
             });
+            const docRefId = docRef.id;
 
-            renderUserFolders(userCredential, foldersFolderNameInput.value, docRef.id);
+            // add data to localStorage
+            userFolders[docRefId] = {
+                folderName: foldersFolderNameInputValue,
+                isActive: false
+            };  
+            let userFoldersJSON = JSON.stringify(userFolders);
+            localStorage.setItem("folders", userFoldersJSON);
+
+            // add data to DOM
+            renderUserFolders(userCredential, foldersFolderNameInput.value, docRefId);
             foldersFolderNameInput.value = '';
-            console.log("Folder written with ID: ", docRef.id);
+
+            console.log("Folder written with ID: ", docRefId);
         }
     } catch (e) {
         console.error("Error adding Folder: ", e);
     }
 }
 async function getUserFolders(userCredential) {
-    const q = query(collection(db, "users", userCredential.uid, "word-folders"));
-
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach(async (doc) => {
-        await renderUserFolders(userCredential, doc.data().folderName, doc.id);
-    });
+    for (const key in userFolders) { 
+        renderUserFolders(userCredential, userFolders[key].folderName, key);
+    } 
 }
 
 function renderUserFolders(userCredential, folderName, folderId) {
@@ -184,11 +206,10 @@ function renderUserFolders(userCredential, folderName, folderId) {
 async function deleteUserFolder(userCredential, folderId, folderName, folderContainer) {
     if (confirm(`Delete folder ${folderName}?`)) {
         try {
+            // delete from db
             const q = query(collection(db, "users", userCredential.uid, "word-folders", folderId, "word"));
             const querySnapshot = await getDocs(q);
-
             const deleteOps = [];
-
             querySnapshot.forEach((doc) => {
                 deleteOps.push(deleteDoc(doc.ref));
             });
@@ -198,6 +219,10 @@ async function deleteUserFolder(userCredential, folderId, folderName, folderCont
                 console.log("Folder deleted with ID: ", folderId);
             });
 
+            // delete from localStorage
+            delete userFolders[folderId];
+            let userFoldersJSON = JSON.stringify(userFolders);
+            localStorage.setItem("folders", userFoldersJSON); 
         } catch (e) {
             console.error("Error deleting Folder: ", e);
         }
@@ -206,17 +231,24 @@ async function deleteUserFolder(userCredential, folderId, folderName, folderCont
 
 async function updateUserFolder(userCredential, folderId, newFolderName) {
     try {
+        // update in db
         const docRef = doc(db, "users", userCredential.uid, "word-folders", folderId);
         await updateDoc(docRef, {
             folderName: newFolderName
         });
+
+        // update in localStorage 
+        userFolders[folderId].folderName = newFolderName;
+        let userFoldersJSON = JSON.stringify(userFolders);
+        localStorage.setItem("folders", userFoldersJSON);
+        console.log(userFolders)
         console.log("Folder updated with ID: ", folderId);
     } catch (e) {
         console.error("Error updating Folder: ", e.message);
     }
 }
 
-
+// =========================WORDS=========================
 
 const wordsForm = document.querySelector('#words-form');
 const wordsWordInput = wordsForm['words-word-input'];
@@ -246,7 +278,7 @@ async function setUserWord(userCredential, folderId) {
                 word: wordsWordInputValue,
                 translation: wordsTranslationInputValue,
             });
-
+            
             renderUserWords(userCredential, wordsWordInput.value, wordsTranslationInput.value, folderId, docRef.id);
             wordsWordInput.value = '';
             wordsTranslationInput.value = '';
