@@ -1,3 +1,5 @@
+console.log('localStorage file')
+import initAuth from "../js/auth.js"
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import {
@@ -35,18 +37,36 @@ let userFolders = {};
 let userData = {};
 
 onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        userCredential = user;
-        if (localStorage.getItem("folders") === null) {
-            await waitWordsFromAllFolders();
-            let wordsFromAllFoldersJSON = JSON.stringify(userFolders);
+    if (!user) {
+        window.location = 'index.html';
+        return;
+    }
+    let localStorageFoldersPromise, localStorageUsersPromise;
+    userCredential = user;
+    if (localStorage.getItem("folders") === null) {
+        await waitWordsFromAllFolders();
+        let wordsFromAllFoldersJSON = JSON.stringify(userFolders);
+        localStorageFoldersPromise = new Promise((resolve, reject) => {
             localStorage.setItem("folders", wordsFromAllFoldersJSON);
-        }
-        if (localStorage.getItem("user") === null) {
-            await getUserData();
-            let userJSON = JSON.stringify(userData);
+            resolve();
+        });
+    }
+    if (localStorage.getItem("user") === null) {
+        await getUserData();
+        let userJSON = JSON.stringify(userData);
+        localStorageUsersPromise = new Promise((resolve, reject) => {
             localStorage.setItem("user", userJSON);
-        }
+            resolve();
+        });
+    }
+
+    if (localStorageFoldersPromise != undefined && localStorageUsersPromise != undefined) {
+        Promise.all([localStorageFoldersPromise, localStorageUsersPromise]).then(() => {
+            initAuth();
+        })
+    }
+    else {
+        initAuth();
     }
 });
 
@@ -95,6 +115,6 @@ async function getQuerySnapshotWords(folderDoc, querySnapshotWords) {
 async function getUserData() {
     const docRef = doc(db, "users", userCredential.uid);
     const docSnap = await getDoc(docRef);
-    userData.userImage = `./icons/avatars/${docSnap.data().photoURL}`;
+    userData.userImage = docSnap.data().photoURL;
     userData.userName = docSnap.data().name;
 }

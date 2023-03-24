@@ -1,3 +1,4 @@
+console.log('auth file')
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import {
@@ -38,11 +39,10 @@ const db = getFirestore(app);
 // Get data from localStorage
 let userFolders;
 let userData;
-
+let userCredential;
 function getDataFromLocalStorage() {
     userFolders = JSON.parse(localStorage.getItem("folders"));
     userData = JSON.parse(localStorage.getItem("user"));
-
     console.log(userFolders)
     console.log(userData)
 
@@ -50,19 +50,22 @@ function getDataFromLocalStorage() {
 }
 
 onAuthStateChanged(auth, (user) => {
-    if (user) {
-        getDataFromLocalStorage();
-        setUserImage();
-        setUserName();
-        getUserFolders(user);
-        foldersForm.onsubmit = (e) => {
-            e.preventDefault();
-            setUserFolder(user);
-        }
-    } else {
-        window.location = 'index.html';
+    if (!user) {
+        return;
     }
+    userCredential = user;
 });
+
+function initAuth() {
+    getDataFromLocalStorage();
+    setUserImage();
+    setUserName();
+    getUserFolders(userCredential);
+    foldersForm.onsubmit = (e) => {
+        e.preventDefault();
+        setUserFolder(userCredential);
+    }
+}
 
 const logOutButton = document.querySelector('.user_header__logout');
 logOutButton.onclick = logOut;
@@ -75,15 +78,9 @@ function logOut() {
     });
 }
 
-// =========================FOLDERS=========================
-
-const foldersForm = document.querySelector('#folders-form');
-const foldersFolderNameInput = foldersForm['folders-input'];
-const foldersContainer = document.querySelector('.db-folders__container');
-
 function setUserImage() {
     let headerIco = document.querySelector('.header__ico');
-    headerIco.src = userData.userImage;
+    headerIco.src = `./icons/avatars/${userData.userImage}`;
 }
 
 function setUserName() {
@@ -92,6 +89,11 @@ function setUserName() {
         user.innerText = userData.userName;
     }
 }
+// =========================FOLDERS=========================
+
+const foldersForm = document.querySelector('#folders-form');
+const foldersFolderNameInput = foldersForm['folders-input'];
+const foldersContainer = document.querySelector('.db-folders__container');
 
 async function setUserFolder(userCredential) {
     try {
@@ -107,7 +109,7 @@ async function setUserFolder(userCredential) {
             userFolders[docRefId] = {
                 folderName: foldersFolderNameInputValue,
                 isActive: false
-            };  
+            };
             let userFoldersJSON = JSON.stringify(userFolders);
             localStorage.setItem("folders", userFoldersJSON);
 
@@ -122,9 +124,9 @@ async function setUserFolder(userCredential) {
     }
 }
 async function getUserFolders(userCredential) {
-    for (const key in userFolders) { 
+    for (const key in userFolders) {
         renderUserFolders(userCredential, userFolders[key].folderName, key);
-    } 
+    }
 }
 
 function renderUserFolders(userCredential, folderName, folderId) {
@@ -222,7 +224,7 @@ async function deleteUserFolder(userCredential, folderId, folderName, folderCont
             // delete from localStorage
             delete userFolders[folderId];
             let userFoldersJSON = JSON.stringify(userFolders);
-            localStorage.setItem("folders", userFoldersJSON); 
+            localStorage.setItem("folders", userFoldersJSON);
         } catch (e) {
             console.error("Error deleting Folder: ", e);
         }
@@ -278,7 +280,7 @@ async function setUserWord(userCredential, folderId) {
                 word: wordsWordInputValue,
                 translation: wordsTranslationInputValue,
             });
-            
+
             renderUserWords(userCredential, wordsWordInput.value, wordsTranslationInput.value, folderId, docRef.id);
             wordsWordInput.value = '';
             wordsTranslationInput.value = '';
@@ -417,3 +419,5 @@ async function updateUserWord(userCredential, folderId, wordId, newWord, newTran
         console.error("Error updating Word: ", e.message);
     }
 }
+
+export default initAuth;
