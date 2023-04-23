@@ -1,22 +1,23 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import {
-    getAuth,
-    signInWithEmailAndPassword,
-    setPersistence,
-    browserLocalPersistence 
+  getAuth,
+  signInWithEmailAndPassword,
+  setPersistence,
+  browserLocalPersistence,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
 
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCW6-YuRBXWpBtY-Qfff9unpix7BIalTDc",
-    authDomain: "project-gastello.firebaseapp.com",
-    projectId: "project-gastello",
-    storageBucket: "project-gastello.appspot.com",
-    messagingSenderId: "797293045152",
-    appId: "1:797293045152:web:4d8beb34b707ee546370c5"
+  apiKey: "AIzaSyCW6-YuRBXWpBtY-Qfff9unpix7BIalTDc",
+  authDomain: "project-gastello.firebaseapp.com",
+  projectId: "project-gastello",
+  storageBucket: "project-gastello.appspot.com",
+  messagingSenderId: "797293045152",
+  appId: "1:797293045152:web:4d8beb34b707ee546370c5"
 };
 
 // Initialize Firebase
@@ -33,21 +34,29 @@ setPersistence(auth, browserLocalPersistence)
   })
   .catch((error) => {
     console.log(error.message);
-  }); 
+  });
 
-const loginForm = document.querySelector('#login'); 
+const loginForm = document.querySelector('#login');
 const loginRegisterEmailInput = loginForm['input-email'];
-const loginRegisterPasswordInput = loginForm['input-password'];  
+const loginRegisterPasswordInput = loginForm['input-password'];
 
-loginForm.onsubmit = login; 
+loginForm.onsubmit = login;
 
-function login(e){
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, loginRegisterEmailInput.value, loginRegisterPasswordInput.value)
-        .then((userCredential) => { 
-            window.location = 'home.html';  
-        })
-        .catch(error => {
-            alert(error.message)
-        })
-} 
+function login(e) {
+  e.preventDefault();
+  localStorage.removeItem("user");
+  localStorage.removeItem("folders");
+  signInWithEmailAndPassword(auth, loginRegisterEmailInput.value, loginRegisterPasswordInput.value)
+    .then((userCredential) => {
+      window.location = 'home.html';
+    })
+    .catch(error => {
+      alert(error.message)
+    })
+}
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location = 'home.html';
+  }
+});

@@ -42,6 +42,8 @@ registerForm.onsubmit = register;
 
 function register(e) {
     e.preventDefault();
+    localStorage.removeItem("user");
+  localStorage.removeItem("folders");
     createUserWithEmailAndPassword(auth, userRegisterEmailInput.value, userRegisterPasswordInput.value)
         .then(() => { 
             setUser().then(()=>{
@@ -74,3 +76,9 @@ async function setUser() {
         console.error("Error adding document: ", e);
     }
 } 
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      window.location = 'home.html';
+    }
+  });

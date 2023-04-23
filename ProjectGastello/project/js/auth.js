@@ -1,4 +1,3 @@
-console.log('auth file')
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import {
@@ -72,6 +71,8 @@ logOutButton.onclick = logOut;
 
 function logOut() {
     signOut(auth).then(() => {
+        localStorage.removeItem("user");
+        localStorage.removeItem("folders");
         window.location = 'index.html';
     }).catch((error) => {
         alert(error.message)
