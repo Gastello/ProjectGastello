@@ -243,8 +243,7 @@ async function updateUserFolder(userCredential, folderId, newFolderName) {
         // update in localStorage 
         userFolders[folderId].folderName = newFolderName;
         let userFoldersJSON = JSON.stringify(userFolders);
-        localStorage.setItem("folders", userFoldersJSON);
-        console.log(userFolders)
+        localStorage.setItem("folders", userFoldersJSON); 
         console.log("Folder updated with ID: ", folderId);
     } catch (e) {
         console.error("Error updating Folder: ", e.message);
@@ -277,11 +276,22 @@ async function setUserWord(userCredential, folderId) {
         const wordsWordInputValue = wordsWordInput.value.trim();
         const wordsTranslationInputValue = wordsTranslationInput.value.trim();
         if (wordsWordInputValue != '' && wordsTranslationInputValue != '') {
+            // add data to db
             const docRef = await addDoc(collection(db, "users", userCredential.uid, "word-folders", folderId, "word"), {
                 word: wordsWordInputValue,
                 translation: wordsTranslationInputValue,
             });
+            const docRefId = docRef.id;
 
+            // add data to localStorage
+            userFolders[folderId][docRefId] = {
+                word: wordsWordInputValue,
+                translation: wordsTranslationInputValue,
+            };
+            let userFoldersJSON = JSON.stringify(userFolders);
+            localStorage.setItem("folders", userFoldersJSON);
+
+            // add data to DOM
             renderUserWords(userCredential, wordsWordInput.value, wordsTranslationInput.value, folderId, docRef.id);
             wordsWordInput.value = '';
             wordsTranslationInput.value = '';
@@ -293,12 +303,13 @@ async function setUserWord(userCredential, folderId) {
 }
 
 async function getUserWords(userCredential, folderId) {
-    const q = query(collection(db, "users", userCredential.uid, "word-folders", folderId, "word"));
-
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach(async (doc) => {
-        await renderUserWords(userCredential, doc.data().word, doc.data().translation, folderId, doc.id);
-    });
+    let openedFolderArray = Object.entries(userFolders[folderId]).slice(2);
+    for (const wordData of openedFolderArray) {
+        let wordId = wordData[0];
+        let userWord = wordData[1].word;
+        let userTranslation = wordData[1].translation;
+        renderUserWords(userCredential, userWord, userTranslation, folderId, wordId);
+    }
 }
 
 function renderUserWords(userCredential, userWord, userTranslation, folderId, wordId) {
@@ -399,7 +410,14 @@ function renderUserWords(userCredential, userWord, userTranslation, folderId, wo
 async function deleteUserWord(userCredential, folderId, wordId, wordText, wordContainer) {
     if (confirm(`Delete word ${wordText}?`)) {
         try {
+            // delete from db
             await deleteDoc(doc(db, "users", userCredential.uid, "word-folders", folderId, "word", wordId));
+
+            // delete from localStorage
+            delete userFolders[folderId][wordId];
+            let userFoldersJSON = JSON.stringify(userFolders);
+            localStorage.setItem("folders", userFoldersJSON);
+
             wordContainer.remove();
             console.log("Word deleted with ID: ", wordId);
         } catch (e) {
@@ -410,11 +428,19 @@ async function deleteUserWord(userCredential, folderId, wordId, wordText, wordCo
 
 async function updateUserWord(userCredential, folderId, wordId, newWord, newTranslation) {
     try {
+        // update in db
         const docRef = doc(db, "users", userCredential.uid, "word-folders", folderId, "word", wordId);
         await updateDoc(docRef, {
             word: newWord,
             translation: newTranslation,
         });
+
+        // update in localStorage 
+        userFolders[folderId][wordId].word = newWord;
+        userFolders[folderId][wordId].translation = newTranslation;
+        let userFoldersJSON = JSON.stringify(userFolders);
+        localStorage.setItem("folders", userFoldersJSON);
+
         console.log("Word updated with ID: ", wordId);
     } catch (e) {
         console.error("Error updating Word: ", e.message);
