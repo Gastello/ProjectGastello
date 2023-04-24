@@ -43,12 +43,12 @@ registerForm.onsubmit = register;
 function register(e) {
     e.preventDefault();
     localStorage.removeItem("user");
-  localStorage.removeItem("folders");
+    localStorage.removeItem("folders");
     createUserWithEmailAndPassword(auth, userRegisterEmailInput.value, userRegisterPasswordInput.value)
-        .then(() => { 
-            setUser().then(()=>{
+        .then(() => {
+            setUser().then(() => {
                 window.location = 'home.html';
-            }) 
+            })
         })
         .catch(error => {
             alert(error.message)
@@ -70,15 +70,8 @@ async function setUser() {
             email: userRegisterEmailInput.value,
             name: userRegisterNameInput.value,
             photoURL: `${userRegisterImage[userRegisterImage.length - 1]}`
-        });
-        console.log("User written with ID: ", docRef.id);
+        });  
     } catch (e) {
         console.error("Error adding document: ", e);
     }
 } 
-
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-      window.location = 'home.html';
-    }
-  });
