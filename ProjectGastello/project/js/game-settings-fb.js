@@ -5,13 +5,6 @@ import {
     onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
-import {
-    getFirestore,
-    collection,
-    getDocs,
-    query
-} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCW6-YuRBXWpBtY-Qfff9unpix7BIalTDc",
@@ -26,14 +19,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
-let userCredential = null;
+
+let userFolders = JSON.parse(localStorage.getItem("folders"));
 
 onAuthStateChanged(auth, (user) => {
-    if (user) {
-        userCredential = user;
-    } else {
+    if (!user) {
         window.location = 'index.html';
     }
 });
@@ -62,31 +52,32 @@ const gamesSettingsWrapper = document.querySelector('.games-settings__wrapper');
 const gamesSettingsFolder = document.querySelector('.games-settings__folders');
 const gamesSettingsFolders = gamesSettingsFolder.children;
 let allPacks = document.querySelector('#all-packs');
-let wordsFromAllFolders = {};
 let chosenWords = [];
 
-function folderActiveOnClick(e, folder) {
+function folderActivateOnClick(e, folder) {
     if (e.currentTarget == allPacks && e.currentTarget.classList.contains('active-folder')) {
         for (const el of gamesSettingsFolders) {
             el.classList.remove('active-folder');
-            for (const folderKey in wordsFromAllFolders) {
-                wordsFromAllFolders[folderKey].isActive = false;
+            for (const folderKey in userFolders) {
+                userFolders[folderKey].isActive = false;
             }
         }
     }
     else if (e.currentTarget == allPacks) {
         for (const el of gamesSettingsFolders) {
             el.classList.add('active-folder');
-            for (const folderKey in wordsFromAllFolders) {
-                wordsFromAllFolders[folderKey].isActive = true;
+            for (const folderKey in userFolders) {
+                userFolders[folderKey].isActive = true;
             }
         }
     }
     else {
         folder.classList.toggle('active-folder');
         allPacks.classList.remove('active-folder');
-        wordsFromAllFolders[folder.id].isActive ? wordsFromAllFolders[folder.id].isActive = false : wordsFromAllFolders[folder.id].isActive = true;
+        userFolders[folder.id].isActive ? userFolders[folder.id].isActive = false : userFolders[folder.id].isActive = true;
     }
+    let userFoldersJSON = JSON.stringify(userFolders);
+    localStorage.setItem("folders", userFoldersJSON);
 }
 
 gear.onclick = () => {
@@ -102,51 +93,28 @@ gear.onclick = () => {
     </div>`;
     allPacks = document.querySelector('#all-packs');
     allPacks.onclick = (e) => {
-        folderActiveOnClick(e, allPacks);
+        folderActivateOnClick(e, allPacks);
     }
-    getSettingsFolders(userCredential);
+    renderAllFolders();
 }
 
 gamesSettingsCross.onclick = () => {
     closeModalWindow(gamesSettingsWrapper);
     getActiveFoldersFromSettings();
     chosenWords = shuffle(chosenWords);
+    console.log(chosenWords);
 }
 
-async function getSettingsFolders(userCredential) {
-    const q = query(collection(db, "users", userCredential.uid, "word-folders"));
-
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach(async (folderDoc) => {
-        if (!wordsFromAllFolders.hasOwnProperty(folderDoc.id)) {
-            wordsFromAllFolders[folderDoc.id] = {
-                folderName: folderDoc.data().folderName,
-                isActive: false,
-            };
-
-            const qWords = query(collection(db, "users", userCredential.uid, "word-folders", folderDoc.id, "word"));
-            const querySnapshotWords = await getDocs(qWords);
-            querySnapshotWords.forEach(async (wordDoc) => {
-                wordsFromAllFolders[folderDoc.id][wordDoc.id] = {
-                    word: wordDoc.data().word,
-                    translation: wordDoc.data().translation
-                }
-            });
-        }
-
-
-        await renderSettingsFolders(folderDoc.data().folderName, folderDoc.id);
-    });
+async function renderAllFolders() {
+    for (const key in userFolders) {
+        renderSettingsFolders(userFolders[key].folderName, key);
+    }
 }
 
 function renderSettingsFolders(folderName, folderId) {
-    let isFolderActive = false;
-    if (wordsFromAllFolders[folderId].isActive == true) {
-        isFolderActive = true;
-    }
     gamesSettingsFolder.insertAdjacentHTML(
         'beforeend',
-        `<div class="db-folder ${isFolderActive ? "active-folder" : ''}" id="${folderId}">
+        `<div class="db-folder ${userFolders[folderId].isActive ? "active-folder" : ''}" id="${folderId}">
         <div class="db-folder__image">
            <img src="./icons/magic-scroll.svg" alt="magic-scroll">
         </div>
@@ -158,18 +126,18 @@ function renderSettingsFolders(folderName, folderId) {
     const folder = gamesSettingsFolder.querySelector(`[id='${folderId}']`);
 
     folder.onclick = (e) => {
-        folderActiveOnClick(e, folder);
+        folderActivateOnClick(e, folder);
     }
 }
 
 function getActiveFoldersFromSettings() {
-    for (const folderKey in wordsFromAllFolders) {
-        for (const wordObjKey in wordsFromAllFolders[folderKey]) {
-            if (wordsFromAllFolders[folderKey].isActive == true && wordObjKey != 'isActive' && wordObjKey != 'folderName') {
+    for (const folderKey in userFolders) {
+        if (userFolders[folderKey].isActive == true) {
+            for (const wordObjKey in userFolders[folderKey].words) {
                 chosenWords.push(
                     {
-                        word: wordsFromAllFolders[folderKey][wordObjKey].word,
-                        translation: wordsFromAllFolders[folderKey][wordObjKey].translation
+                        word: userFolders[folderKey].words[wordObjKey].word,
+                        translation: userFolders[folderKey].words[wordObjKey].translation
                     }
                 );
             }

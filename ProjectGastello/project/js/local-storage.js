@@ -43,10 +43,10 @@ onAuthStateChanged(auth, async (user) => {
     let localStorageFoldersPromise, localStorageUsersPromise;
     userCredential = user;
     if (localStorage.getItem("folders") === null) {
-        await waitWordsFromAllFolders();
-        let wordsFromAllFoldersJSON = JSON.stringify(userFolders);
+        await waituserFolders();
+        let userFoldersJSON = JSON.stringify(userFolders);
         localStorageFoldersPromise = new Promise((resolve, reject) => {
-            localStorage.setItem("folders", wordsFromAllFoldersJSON);
+            localStorage.setItem("folders", userFoldersJSON);
             resolve();
         });
     }
@@ -69,17 +69,17 @@ onAuthStateChanged(auth, async (user) => {
     }
 });
 
-async function waitWordsFromAllFolders() {
+async function waituserFolders() {
     await getSettingsFolders(userCredential);
 }
 
 async function getSettingsFolders(userCredential) {
     const q = query(collection(db, "users", userCredential.uid, "word-folders"));
     const querySnapshot = await getDocs(q);
-    await prepareWordsFromAllFolders(querySnapshot);
+    await prepareuserFolders(querySnapshot);
 }
 
-async function prepareWordsFromAllFolders(data) {
+async function prepareuserFolders(data) {
     // some magic
     await Promise.all(data.docs.map(async (folderDoc) => {
         if (!userFolders.hasOwnProperty(folderDoc.id)) {

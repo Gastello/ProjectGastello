@@ -128,7 +128,7 @@ textarea {
 
 /*--------------------------Content wrappers------------------------------*/
 
-body { 
+body {
    font-family: "Metal Mania", "Poiret One";
    font-style: normal;
    font-weight: 400;
@@ -219,7 +219,7 @@ body {
       right: 15px;
    }
    @media (min-width: 767.98px) {
-      &:hover { 
+      &:hover {
          transform: scale(1.1);
          transition: transform 0.1s linear;
       }
@@ -235,7 +235,7 @@ body {
    gap: 20px;
 }
 
-// .db__edit .db__delete .db__edit 
+// .db__edit .db__delete .db__edit
 .db__save,
 .db__edit,
 .db__delete {
@@ -253,7 +253,7 @@ body {
    @media (max-width: 424.98px) {
       font-size: 18px;
    }
-} 
+}
 
 .db__input {
    background: rgba(56, 56, 56, 0.5);
@@ -419,8 +419,6 @@ body {
       margin-left: auto;
    }
 
-   
-
    // .db-folder__save
    &__save {
       display: none;
@@ -433,8 +431,8 @@ body {
       flex: 1 1 auto;
       font-size: 20px;
       line-height: 25/20 * 1;
-      color: #eef6ff; 
-      overflow-wrap: anywhere; 
+      color: #eef6ff;
+      overflow-wrap: anywhere;
       background-color: transparent;
       resize: none;
       text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
@@ -505,10 +503,11 @@ body {
       align-items: center;
       gap: 20px;
       flex: 1 1 auto;
+      align-items: stretch;
       @media (max-width: 767.98px) {
          display: block;
          gap: 10px;
-         &>*:not(:last-child){
+         & > *:not(:last-child) {
             margin-bottom: 10px;
          }
       }
@@ -516,7 +515,8 @@ body {
 
    // .db-word__word
 
-   &__word { 
+   &__word {
+      flex: 1 1 50%;
       overflow-wrap: anywhere;
       font-size: 20px;
       line-height: 23/20 * 1;
@@ -528,12 +528,14 @@ body {
 
    // .db-word__translation
 
-   &__translation { 
+   &__translation {
+      flex: 1 1 50%;
+
       overflow-wrap: anywhere;
       font-family: "Poiret One";
       font-size: 20px;
       line-height: 23/20 * 1;
-      color: #eef6ff; 
+      color: #eef6ff;
       @media (max-width: 424.98px) {
          font-size: 18px;
       }
@@ -553,24 +555,27 @@ body {
    }
 
    // .db-word__word-textarea .db-word__translation-textarea
-   &__word-textarea, &__translation-textarea {
+   &__word-textarea,
+   &__translation-textarea {
       flex-grow: 1;
-      flex-shrink: 1;  
+      flex-shrink: 1;
       overflow-wrap: anywhere;
       font-size: 20px;
       line-height: 23/20 * 1;
-      color: #eef6ff; 
+      color: #eef6ff;
       background-color: transparent;
-      resize: none; 
+      resize: none;
       text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
+      @media (max-width: 767.98px) {
+         width: 100%;
+      }
       @media (max-width: 424.98px) {
          font-size: 18px;
       }
    }
-   &__translation-textarea{
+   &__translation-textarea {
       font-family: "Poiret One";
    }
-   
 }
 /*-----------------------------Game Settings----------------------------------*/
 .games-settings {

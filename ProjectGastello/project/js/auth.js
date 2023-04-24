@@ -42,9 +42,9 @@ let userCredential;
 function getDataFromLocalStorage() {
     userFolders = JSON.parse(localStorage.getItem("folders"));
     userData = JSON.parse(localStorage.getItem("user"));
-    console.log(userFolders)
-    console.log(userData)
-    console.log('Data has been got!')
+    // console.log(userFolders)
+    // console.log(userData)
+    // console.log('Data has been got!')
 }
 
 onAuthStateChanged(auth, (user) => {
