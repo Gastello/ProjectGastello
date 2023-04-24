@@ -87,6 +87,7 @@ async function prepareWordsFromAllFolders(data) {
             userFolders[folderDoc.id] = {
                 folderName: folderDoc.data().folderName,
                 isActive: false,
+                words: {}
             };
             const qWords = query(collection(db, "users", userCredential.uid, "word-folders", folderDoc.id, "word"));
             const querySnapshotWords = await getDocs(qWords);
@@ -101,7 +102,7 @@ async function prepareWordsFromAllFolders(data) {
 async function getQuerySnapshotWords(folderDoc, querySnapshotWords) {
     await new Promise((resolve, rej) => {
         querySnapshotWords.forEach((wordDoc) => {
-            userFolders[folderDoc.id][wordDoc.id] = {
+            userFolders[folderDoc.id].words[wordDoc.id] = {
                 word: wordDoc.data().word,
                 translation: wordDoc.data().translation
             }

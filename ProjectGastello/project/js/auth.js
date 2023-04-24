@@ -44,7 +44,6 @@ function getDataFromLocalStorage() {
     userData = JSON.parse(localStorage.getItem("user"));
     console.log(userFolders)
     console.log(userData)
-
     console.log('Data has been got!')
 }
 
@@ -109,7 +108,8 @@ async function setUserFolder(userCredential) {
             // add data to localStorage
             userFolders[docRefId] = {
                 folderName: foldersFolderNameInputValue,
-                isActive: false
+                isActive: false,
+                words: {}
             };
             let userFoldersJSON = JSON.stringify(userFolders);
             localStorage.setItem("folders", userFoldersJSON);
@@ -170,7 +170,13 @@ function renderUserFolders(userCredential, folderName, folderId) {
 
         if (folderTextareaValue != '') {
             folderTextContainer.textContent = folderTextareaValue;
-            updateUserFolder(userCredential, folderId, folderTextareaValue);
+
+            if (userFolders[folderId].folderName == folderTextareaValue) {
+                console.log('Nothing edited!')
+            }
+            else {
+                updateUserFolder(userCredential, folderId, folderTextareaValue);
+            } 
         }
         folderTextarea.remove();
 
@@ -243,7 +249,7 @@ async function updateUserFolder(userCredential, folderId, newFolderName) {
         // update in localStorage 
         userFolders[folderId].folderName = newFolderName;
         let userFoldersJSON = JSON.stringify(userFolders);
-        localStorage.setItem("folders", userFoldersJSON); 
+        localStorage.setItem("folders", userFoldersJSON);
         console.log("Folder updated with ID: ", folderId);
     } catch (e) {
         console.error("Error updating Folder: ", e.message);
@@ -284,7 +290,7 @@ async function setUserWord(userCredential, folderId) {
             const docRefId = docRef.id;
 
             // add data to localStorage
-            userFolders[folderId][docRefId] = {
+            userFolders[folderId].words[docRefId] = {
                 word: wordsWordInputValue,
                 translation: wordsTranslationInputValue,
             };
@@ -303,11 +309,12 @@ async function setUserWord(userCredential, folderId) {
 }
 
 async function getUserWords(userCredential, folderId) {
-    let openedFolderArray = Object.entries(userFolders[folderId]).slice(2);
-    for (const wordData of openedFolderArray) {
-        let wordId = wordData[0];
-        let userWord = wordData[1].word;
-        let userTranslation = wordData[1].translation;
+    let openedFolderObj = userFolders[folderId].words;
+    for (const key in openedFolderObj) {
+        let wordId = key;
+        let userWord = openedFolderObj[key].word;
+        let userTranslation = openedFolderObj[key].translation;
+
         renderUserWords(userCredential, userWord, userTranslation, folderId, wordId);
     }
 }
@@ -367,7 +374,13 @@ function renderUserWords(userCredential, userWord, userTranslation, folderId, wo
         wordTextContainer.style.display = 'block';
         translationTextContainer.style.display = 'block';
 
-        updateUserWord(userCredential, folderId, wordId, wordTextareaValue, translationTextareaValue);
+        if (userFolders[folderId].words[wordId].word == wordTextareaValue &&
+            userFolders[folderId].words[wordId].translation == translationTextareaValue) {
+            console.log('Nothing edited!')
+        }
+        else {
+            updateUserWord(userCredential, folderId, wordId, wordTextareaValue, translationTextareaValue);
+        } 
     }
     wordEditBtn.onclick = () => {
         const wordText = wordTextContainer.textContent.replaceAll(/\s+/g, ' ').trim();
@@ -414,7 +427,7 @@ async function deleteUserWord(userCredential, folderId, wordId, wordText, wordCo
             await deleteDoc(doc(db, "users", userCredential.uid, "word-folders", folderId, "word", wordId));
 
             // delete from localStorage
-            delete userFolders[folderId][wordId];
+            delete userFolders[folderId].words[wordId];
             let userFoldersJSON = JSON.stringify(userFolders);
             localStorage.setItem("folders", userFoldersJSON);
 
@@ -436,8 +449,8 @@ async function updateUserWord(userCredential, folderId, wordId, newWord, newTran
         });
 
         // update in localStorage 
-        userFolders[folderId][wordId].word = newWord;
-        userFolders[folderId][wordId].translation = newTranslation;
+        userFolders[folderId].words[wordId].word = newWord;
+        userFolders[folderId].words[wordId].translation = newTranslation;
         let userFoldersJSON = JSON.stringify(userFolders);
         localStorage.setItem("folders", userFoldersJSON);
 
