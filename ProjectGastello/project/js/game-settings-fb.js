@@ -46,13 +46,16 @@ function shuffle(array) {
     return array;
 }
 
-const gear = document.querySelector('.db-gear');
-const gamesSettingsCross = document.querySelector('.games-settings__cross');
+const gears = document.querySelectorAll('.db-gear');
+
 const gamesSettingsWrapper = document.querySelector('.games-settings__wrapper');
 const gamesSettingsFolder = document.querySelector('.games-settings__folders');
 const gamesSettingsFolders = gamesSettingsFolder.children;
 let allPacks = document.querySelector('#all-packs');
-let chosenWords = [];
+
+for (const gear of gears) {
+    gear.onclick = gearClicked;
+}
 
 function folderActivateOnClick(e, folder) {
     if (e.currentTarget == allPacks && e.currentTarget.classList.contains('active-folder')) {
@@ -80,8 +83,7 @@ function folderActivateOnClick(e, folder) {
     localStorage.setItem("folders", userFoldersJSON);
 }
 
-gear.onclick = () => {
-    chosenWords = [];
+function gearClicked() {
     openModalWindow(gamesSettingsWrapper);
     gamesSettingsFolder.innerHTML = `<div class="db-folder" id="all-packs">
     <div class="db-folder__image">
@@ -96,13 +98,6 @@ gear.onclick = () => {
         folderActivateOnClick(e, allPacks);
     }
     renderAllFolders();
-}
-
-gamesSettingsCross.onclick = () => {
-    closeModalWindow(gamesSettingsWrapper);
-    getActiveFoldersFromSettings();
-    chosenWords = shuffle(chosenWords);
-    console.log(chosenWords);
 }
 
 async function renderAllFolders() {
@@ -130,17 +125,4 @@ function renderSettingsFolders(folderName, folderId) {
     }
 }
 
-function getActiveFoldersFromSettings() {
-    for (const folderKey in userFolders) {
-        if (userFolders[folderKey].isActive == true) {
-            for (const wordObjKey in userFolders[folderKey].words) {
-                chosenWords.push(
-                    {
-                        word: userFolders[folderKey].words[wordObjKey].word,
-                        translation: userFolders[folderKey].words[wordObjKey].translation
-                    }
-                );
-            }
-        }
-    }
-} 
+export { shuffle, gearClicked };
