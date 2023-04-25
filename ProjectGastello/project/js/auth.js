@@ -97,6 +97,7 @@ const foldersContainer = document.querySelector('.db-folders__container');
 
 async function setUserFolder(userCredential) {
     try {
+        userFolders = JSON.parse(localStorage.getItem("folders"));
         const foldersFolderNameInputValue = foldersFolderNameInput.value.trim();
         if (foldersFolderNameInputValue != '') {
             // add data to db
@@ -176,7 +177,7 @@ function renderUserFolders(userCredential, folderName, folderId) {
             }
             else {
                 updateUserFolder(userCredential, folderId, folderTextareaValue);
-            } 
+            }
         }
         folderTextarea.remove();
 
@@ -247,6 +248,7 @@ async function updateUserFolder(userCredential, folderId, newFolderName) {
         });
 
         // update in localStorage 
+        userFolders = JSON.parse(localStorage.getItem("folders"));
         userFolders[folderId].folderName = newFolderName;
         let userFoldersJSON = JSON.stringify(userFolders);
         localStorage.setItem("folders", userFoldersJSON);
@@ -380,7 +382,7 @@ function renderUserWords(userCredential, userWord, userTranslation, folderId, wo
         }
         else {
             updateUserWord(userCredential, folderId, wordId, wordTextareaValue, translationTextareaValue);
-        } 
+        }
     }
     wordEditBtn.onclick = () => {
         const wordText = wordTextContainer.textContent.replaceAll(/\s+/g, ' ').trim();
