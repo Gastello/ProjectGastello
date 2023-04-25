@@ -95,6 +95,7 @@ function gearClicked() {
     allPacks.onclick = (e) => {
         folderActivateOnClick(e, allPacks);
     }
+    userFolders = JSON.parse(localStorage.getItem("folders"));
     renderAllFolders();
 }
 
