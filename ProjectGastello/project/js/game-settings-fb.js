@@ -19,7 +19,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-
 let userFolders = JSON.parse(localStorage.getItem("folders"));
 
 onAuthStateChanged(auth, (user) => {
@@ -47,7 +46,6 @@ function shuffle(array) {
 }
 
 const gears = document.querySelectorAll('.db-gear');
-
 const gamesSettingsWrapper = document.querySelector('.games-settings__wrapper');
 const gamesSettingsFolder = document.querySelector('.games-settings__folders');
 const gamesSettingsFolders = gamesSettingsFolder.children;
@@ -125,4 +123,22 @@ function renderSettingsFolders(folderName, folderId) {
     }
 }
 
-export { shuffle, gearClicked };
+function getActiveFoldersFromSettings() {
+    let arr = []
+    let userFolders = JSON.parse(localStorage.getItem("folders"));
+    for (const folderKey in userFolders) {
+        if (userFolders[folderKey].isActive == true) {
+            for (const wordObjKey in userFolders[folderKey].words) {
+                arr.push(
+                    {
+                        word: userFolders[folderKey].words[wordObjKey].word,
+                        translation: userFolders[folderKey].words[wordObjKey].translation
+                    }
+                );
+            }
+        }
+    }
+    return arr;
+}
+
+export { shuffle, gearClicked, getActiveFoldersFromSettings };

@@ -1,4 +1,4 @@
-import { shuffle, gearClicked } from "./game-settings-fb.js";
+import { shuffle, gearClicked, getActiveFoldersFromSettings } from "./game-settings-fb.js";
 
 const gamesSettingsWrapper = document.querySelector('.games-settings__wrapper');
 const gamesSettingsCrosses = document.querySelectorAll('.games-settings__cross');
@@ -11,27 +11,9 @@ for (const gamesSettingsCross of gamesSettingsCrosses) {
 
 function crossSettingsClicked() {
     closeModalWindow(gamesSettingsWrapper);
-    chosenWords = [];
-    getActiveFoldersFromSettings();
+    chosenWords = getActiveFoldersFromSettings();
     chosenWords = shuffle(chosenWords);
     cardsCreate(chosenWords);
-}
-
-function getActiveFoldersFromSettings() {
-    let userFolders = JSON.parse(localStorage.getItem("folders"));
-
-    for (const folderKey in userFolders) {
-        if (userFolders[folderKey].isActive == true) {
-            for (const wordObjKey in userFolders[folderKey].words) {
-                chosenWords.push(
-                    {
-                        word: userFolders[folderKey].words[wordObjKey].word,
-                        translation: userFolders[folderKey].words[wordObjKey].translation
-                    }
-                );
-            }
-        }
-    }
 }
 
 function cardsCreate(array) {
