@@ -2764,22 +2764,12 @@ body.lock {
     -ms-flex: 1 1 50%;
     flex: 1 1 50%;
     text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.7); }
-    @media (max-width: 767.98px) {
-      .result-quiz__question {
-        -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-        order: 3; } }
   .result-quiz__answer {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 50%;
     flex: 1 1 50%;
     text-shadow: 0px 6px 4px black;
     font-family: "Poiret One"; }
-    @media (max-width: 767.98px) {
-      .result-quiz__answer {
-        -webkit-box-ordinal-group: 6;
-        -ms-flex-order: 5;
-        order: 5; } }
   .result-quiz__res {
     margin-left: auto; }
     @media (max-width: 767.98px) {
@@ -2808,6 +2798,18 @@ body.lock {
     display: -ms-flexbox;
     display: flex;
     gap: 10px; }
+    @media (max-width: 767.98px) {
+      .result-quiz__results {
+        -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+        order: 3;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start; } }
 
 .games-flash-cards .swiper_4 {
   max-width: 710px;
