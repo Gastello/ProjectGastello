@@ -27,24 +27,17 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
-
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
-
-        // Pick a remaining element.
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
+function shuffle(inputArr, percentage = 100) {
+    let arr = structuredClone(inputArr);
+    const length = arr.length;
+    const itemsToShuffle = Math.max(Math.floor(length * percentage / 100), 1);
+    const itemsToKeep = length - itemsToShuffle;
+    for (let i = length - 1; i > itemsToKeep - 1; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-
-    return array;
+    return arr;
 }
-
 const gears = document.querySelectorAll('.db-gear');
 const gamesSettingsWrapper = document.querySelector('.games-settings__wrapper');
 const gamesSettingsFolder = document.querySelector('.games-settings__folders');
