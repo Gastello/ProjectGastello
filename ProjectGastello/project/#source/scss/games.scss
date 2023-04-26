@@ -276,9 +276,6 @@
       overflow-y: scroll;
       overflow-x: hidden;
       height: 334px;
-      @media (max-width: 767.98px) {
-         padding: 0 10px;
-      }
       & > *:not(:last-child) {
          margin-bottom: 20px;
       }
@@ -345,6 +342,7 @@
    box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.5);
    @media (max-width: 767.98px) {
       flex-wrap: wrap;
+      padding: 10px 30px;
    }
    @media (max-width: 424.98px) {
       font-size: 18px;
@@ -382,11 +380,14 @@
    // .result-quiz__res
 
    &__res {
+      flex: 0 0 96px;
       margin-left: auto;
+      text-align: right;
       @media (max-width: 767.98px) {
          margin: 0;
          order: 2;
-         width: calc(100% - 31px);
+         flex: 0 0 calc(100% - 41px);
+         text-align: left;
       }
    }
 

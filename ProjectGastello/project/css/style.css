@@ -2671,9 +2671,6 @@ body.lock {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 334px; }
-    @media (max-width: 767.98px) {
-      .quiz__results {
-        padding: 0 10px; } }
     .quiz__results > *:not(:last-child) {
       margin-bottom: 20px; }
   .quiz__true-false {
@@ -2740,7 +2737,8 @@ body.lock {
   @media (max-width: 767.98px) {
     .result-quiz {
       -ms-flex-wrap: wrap;
-      flex-wrap: wrap; } }
+      flex-wrap: wrap;
+      padding: 10px 30px; } }
   @media (max-width: 424.98px) {
     .result-quiz {
       font-size: 18px; } }
@@ -2771,14 +2769,21 @@ body.lock {
     text-shadow: 0px 6px 4px black;
     font-family: "Poiret One"; }
   .result-quiz__res {
-    margin-left: auto; }
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 96px;
+    flex: 0 0 96px;
+    margin-left: auto;
+    text-align: right; }
     @media (max-width: 767.98px) {
       .result-quiz__res {
         margin: 0;
         -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
         order: 2;
-        width: calc(100% - 31px); } }
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% - 41px);
+        flex: 0 0 calc(100% - 41px);
+        text-align: left; } }
   .result-quiz_correct .result-quiz__res {
     color: #9ede76; }
   .result-quiz_correct .result-quiz__image {
