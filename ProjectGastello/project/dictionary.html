@@ -92,10 +92,11 @@
                <button class="db-folders__cross db__cross">
                   <img src="./icons/cross.svg" alt="cross">
                </button>
-               <div class="db-folders__container"> 
+               <div class="db-folders__container">
                </div>
                <form class="db-folders__form" id="folders-form">
-                  <input class="db-folders__input db__input" id="folders-input" placeholder="Add new word pack" required></input>
+                  <input class="db-folders__input db__input" id="folders-input" placeholder="Add new word pack"
+                     required></input>
                   <button class="db-folders__button db__button">
                      <img src="./icons/plus-btn.svg" alt="plus-btn">
                   </button>
@@ -109,11 +110,13 @@
                </button>
                <div class="db-words__folder-name db-title"></div>
                <div class="db-words__container">
-                  
+
                </div>
                <form class="db-words__form" id="words-form">
-                  <input class="db-words__word-input db__input" placeholder="Word" id="words-word-input" required></input>
-                  <input class="db-words__translation-input db__input" placeholder="Translation" id="words-translation-input" required></input>
+                  <input class="db-words__word-input db__input" placeholder="Word" id="words-word-input"
+                     required></input>
+                  <input class="db-words__translation-input db__input" placeholder="Translation"
+                     id="words-translation-input" required></input>
                   <button class="db-words__button db__button">
                      <img src="./icons/plus-btn.svg" alt="plus-btn">
                   </button>
@@ -127,16 +130,15 @@
                   <div class="dictionary__translator translator_dictionary">
                      <div class="translator_dictionary__row">
                         <div class="translator_dictionary__text">
-                           <textarea class="cursorPointer" name="" id=""
-                              placeholder="Centaurs, or centaurs - in ancient Greek mythology - whimsical creatures, half-human, half-horse."></textarea>
+                           <textarea class="cursorPointer" id="translator-text" placeholder="Ваш текст..."></textarea>
                         </div>
                         <div class="translator_dictionary__translate">
-                           <textarea class="cursorPointer" name="" id=""
-                              placeholder="Кента́ври, або цента́ври — у давньогрецькій міфології — химерні істоти, напівлюди-напівконі."></textarea>
+                           <textarea class="cursorPointer" disabled id="translator-result"
+                              placeholder="Your translation..."></textarea>
                         </div>
                      </div>
                      <div class="translator_dictionary__switch">
-                        <button id="translator_switch">Switch languages</button>
+                        <button id="translator-switch">Switch languages</button>
                      </div>
                   </div>
                </div>
@@ -176,7 +178,8 @@
                   <div class="dialog_right">
                      <div class="dialog_right__text">
                         <div class="text_convert">
-                           He-he, it's a <span id="user-name">user</span>! And he is one of those annoying people. He is here recently, so be more
+                           He-he, it's a <span id="user-name">user</span>! And he is one of those annoying people. He is
+                           here recently, so be more
                            lenient with him.
                         </div>
                      </div>
@@ -250,6 +253,7 @@
    <script src="./js/music.js"></script>
    <script src="./js/db-modals.js"></script>
    <script src="./js/fullscreen.js"></script>
+   <script src="./js/google-translate.js"></script>
    <script src="./js/auth.js" type="module"></script>
 </body>
 
