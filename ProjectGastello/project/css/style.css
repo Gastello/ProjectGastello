@@ -2290,6 +2290,7 @@ body.lock {
     justify-content: center; }
 
 .session_timer__left, .session_timer__right {
+  font-size: 30px;
   position: relative; }
   .session_timer__left:hover, .session_timer__right:hover {
     -webkit-transition: all 0.1s linear;
@@ -2309,7 +2310,16 @@ body.lock {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
 
+.session_timer__time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
 .break_timer__left, .break_timer__right {
+  font-size: 30px;
   position: relative; }
   .break_timer__left:hover, .break_timer__right:hover {
     -webkit-transition: all 0.1s linear;
@@ -2328,6 +2338,14 @@ body.lock {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+
+.break_timer__time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .swiper_4 {
   overflow: hidden; }

@@ -17,7 +17,7 @@
       <source src="./music/track1.mp3" />
    </audio>
    <div class="wrapper wrapper_timer">
-       <header class="header">
+      <header class="header">
          <div class="container">
             <div class="header__body">
                <button class="header__logo">
@@ -92,10 +92,11 @@
                <button class="db-folders__cross db__cross">
                   <img src="./icons/cross.svg" alt="cross">
                </button>
-               <div class="db-folders__container"> 
+               <div class="db-folders__container">
                </div>
                <form class="db-folders__form" id="folders-form">
-                  <input class="db-folders__input db__input" id="folders-input" placeholder="Add new word pack" required></input>
+                  <input class="db-folders__input db__input" id="folders-input" placeholder="Add new word pack"
+                     required></input>
                   <button class="db-folders__button db__button">
                      <img src="./icons/plus-btn.svg" alt="plus-btn">
                   </button>
@@ -109,11 +110,13 @@
                </button>
                <div class="db-words__folder-name db-title"></div>
                <div class="db-words__container">
-                  
+
                </div>
                <form class="db-words__form" id="words-form">
-                  <input class="db-words__word-input db__input" placeholder="Word" id="words-word-input" required></input>
-                  <input class="db-words__translation-input db__input" placeholder="Translation" id="words-translation-input" required></input>
+                  <input class="db-words__word-input db__input" placeholder="Word" id="words-word-input"
+                     required></input>
+                  <input class="db-words__translation-input db__input" placeholder="Translation"
+                     id="words-translation-input" required></input>
                   <button class="db-words__button db__button">
                      <img src="./icons/plus-btn.svg" alt="plus-btn">
                   </button>
@@ -124,43 +127,43 @@
             <div class="timer">
                <div class="timer__tomb tomb_timer">
                   <div class="tomb_timer__nav">
-                     <div class="tomb_timer__play cursorPointer">
+                     <button class="tomb_timer__play cursorPointer">
                         <img src="./images/timer/play-tomb.png" alt="Tomb play button">
-                     </div>
-                     <div class="tomb_timer__restart cursorPointer">
+                     </button>
+                     <button class="tomb_timer__restart cursorPointer">
                         <img src="./images/timer/restart-tomb.png" alt="Tomb restart button">
-                     </div>
+                     </button>
                   </div>
                   <div class="tomb_timer__time">
-                     25:00
+                     60:00
                   </div>
                   <div class="tomb_timer__label1">
-                     Session length
+                     Session duration
                   </div>
                   <div class="tomb_timer__session session_timer">
-                     <div class="session_timer__left cursorPointer">
+                     <button class="session_timer__left cursorPointer">
                         &#60;
-                     </div>
+                     </button>
                      <div class="session_timer__time">
-                        25
+                        60
                      </div>
-                     <div class="session_timer__right cursorPointer">
+                     <button class="session_timer__right cursorPointer">
                         &#62;
-                     </div>
+                     </button>
                   </div>
                   <div class="tomb_timer__label2">
-                     Break length
+                     Break duration
                   </div>
                   <div class="tomb_timer__break break_timer">
-                     <div class="break_timer__left cursorPointer">
+                     <button class="break_timer__left cursorPointer">
                         &#60;
-                     </div>
+                     </button>
                      <div class="break_timer__time">
-                        5
+                        10
                      </div>
-                     <div class="break_timer__right cursorPointer">
+                     <button class="break_timer__right cursorPointer">
                         &#62;
-                     </div>
+                     </button>
                   </div>
                </div>
                <div class="timer__dialogs">
@@ -396,7 +399,8 @@
    <script src="./js/timer-slider.js"></script>
    <script src="./js/user.js"></script>
    <script src="./js/music.js"></script>
-   <script src="./js/db-modals.js"></script> 
+   <script src="./js/db-modals.js"></script>
+   <script src="./js/timer.js"></script>
    <script src="./js/fullscreen.js"></script>
    <script src="./js/auth.js" type="module"></script>
 </body>

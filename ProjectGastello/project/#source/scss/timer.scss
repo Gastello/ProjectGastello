@@ -146,6 +146,8 @@
    // .tomb_timer__session
 
    &__session {
+      // display: flex;
+      // align-items: center;
       font-size: 36px;
       line-height: 83%;
       display: flex;
@@ -169,6 +171,8 @@
    // .tomb_timer__break
 
    &__break {
+      // display: flex;
+      // align-items: center;
       font-size: 36px;
       line-height: 83%;
       display: flex;
@@ -183,6 +187,7 @@
 
    &__left,
    &__right {
+      font-size: 30px;
       &:hover {
          transition: all 0.1s linear;
          transform: scale(1.1);
@@ -198,13 +203,18 @@
          transform: translate(-50%, -50%);
       }
    }
+   // .session_timer__time
+   &__time {
+      display: flex;
+      align-items: center;
+   }
 }
 .break_timer {
    // .break_timer__left
    // .break_timer__right
-
    &__left,
    &__right {
+      font-size: 30px;
       &:hover {
          transition: all 0.1s linear;
          transform: scale(1.1);
@@ -219,6 +229,11 @@
          height: 50px;
          transform: translate(-50%, -50%);
       }
+   }
+   // .break_timer__time
+   &__time{
+      display: flex;
+      align-items: center;
    }
 }
 
