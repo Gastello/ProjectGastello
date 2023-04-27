@@ -29,12 +29,20 @@ const bellMusicPlayer = document.querySelector('.bell');
 const timerSessionLabel = document.querySelector('.tomb_timer__label1');
 const timerBreakLabel = document.querySelector('.tomb_timer__label2');
 
+function changeTimeCallback(container, isSessionTime, isIncrease) {
+    if (isSessionTime) {
+        sessionSettingsTime = changeTime(container, sessionSettingsTime, isIncrease);
+    }
+    else {
+        breakSettingsTime = changeTime(container, breakSettingsTime, isIncrease);
+    }
+}
 function changeTime(container, time, isIncrease) {
     if (isIncrease && time != 999) {
-        time += 1
+        time++;
     }
     else if (!isIncrease && time != 1) {
-        time -= 1;
+        time--;
     }
     container.innerText = time;
     return time;
@@ -97,18 +105,29 @@ function timerAlarm() {
     isTimerActive = !isTimerActive;
     controlButtonClicked();
 }
-sessionTimerLeftButton.onclick = () => {
-    sessionSettingsTime = changeTime(sessionTimeContainer, sessionSettingsTime, false);
+function onHold(el, container, isSessionTime, isIncrease) {
+    let interval;
+    let timeout = 140;
+    el.addEventListener('mousedown', () => {
+        clearInterval(interval);
+        interval = setInterval(() => {
+            changeTimeCallback(container, isSessionTime, isIncrease);
+        }, timeout)
+    });
+
+    el.addEventListener('mouseup', () => setTimeout(() => {
+        clearInterval(interval);
+    }, timeout));
+
+    el.addEventListener('mouseleave', () => setTimeout(() => {
+        clearInterval(interval);
+    }, timeout));
 }
-sessionTimerRightButton.onclick = () => {
-    sessionSettingsTime = changeTime(sessionTimeContainer, sessionSettingsTime, true);
-}
-breakTimerLeftButton.onclick = () => {
-    breakSettingsTime = changeTime(breakTimeContainer, breakSettingsTime, false);
-}
-breakTimerRightButton.onclick = () => {
-    breakSettingsTime = changeTime(breakTimeContainer, breakSettingsTime, true);
-}
+
+onHold(sessionTimerLeftButton, sessionTimeContainer, true, false);
+onHold(sessionTimerRightButton, sessionTimeContainer, true, true);
+onHold(breakTimerLeftButton, breakTimeContainer, false, false);
+onHold(breakTimerRightButton, breakTimeContainer, false, true);
 
 timerControlButton.onclick = () => {
     controlButtonClicked();

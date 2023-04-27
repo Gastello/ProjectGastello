@@ -151,8 +151,6 @@
    // .tomb_timer__session
 
    &__session {
-      // display: flex;
-      // align-items: center;
       font-size: 36px;
       line-height: 83%;
       display: flex;
@@ -180,8 +178,6 @@
    // .tomb_timer__break
 
    &__break {
-      // display: flex;
-      // align-items: center;
       font-size: 36px;
       line-height: 83%;
       display: flex;
@@ -196,6 +192,7 @@
 
    &__left,
    &__right {
+      color: #4b4e49;
       font-size: 30px;
       &:hover {
          transition: all 0.1s linear;
@@ -223,6 +220,7 @@
    // .break_timer__right
    &__left,
    &__right {
+      color: #4b4e49;
       font-size: 30px;
       &:hover {
          transition: all 0.1s linear;

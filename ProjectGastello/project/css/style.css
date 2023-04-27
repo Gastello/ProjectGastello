@@ -2305,6 +2305,7 @@ body.lock {
     justify-content: center; }
 
 .session_timer__left, .session_timer__right {
+  color: #4b4e49;
   font-size: 30px;
   position: relative; }
   .session_timer__left:hover, .session_timer__right:hover {
@@ -2334,6 +2335,7 @@ body.lock {
   align-items: center; }
 
 .break_timer__left, .break_timer__right {
+  color: #4b4e49;
   font-size: 30px;
   position: relative; }
   .break_timer__left:hover, .break_timer__right:hover {
