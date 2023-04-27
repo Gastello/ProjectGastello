@@ -1,8 +1,7 @@
 let sessionSettingsTime = 60;
 let breakSettingsTime = 10;
 
-let sessionCurrentTime = 3600;
-let breakCurrentTime = 600;
+let timerCurrentTime = 3600;
 
 let isTimerActive = false;
 let isSession = true;
@@ -25,11 +24,16 @@ const breakTimerRightButton = document.querySelector('.break_timer__right');
 const timerStartButtonSrc = "./images/timer/play-tomb.png";
 const timerPauseButtonSrc = "./images/timer/pause-tomb.png";
 
+const bellMusicPlayer = document.querySelector('.bell');
+
+const timerSessionLabel = document.querySelector('.tomb_timer__label1');
+const timerBreakLabel = document.querySelector('.tomb_timer__label2');
+
 function changeTime(container, time, isIncrease) {
     if (isIncrease && time != 999) {
         time += 1
     }
-    else if (!isIncrease && time != 0) {
+    else if (!isIncrease && time != 1) {
         time -= 1;
     }
     container.innerText = time;
@@ -53,10 +57,13 @@ function timerStart() {
     timerInterval = setInterval(
         () => {
             if (isTimerActive) {
-                console.log('Time is', sessionCurrentTime--);
-                let leftTimerSide = Math.floor(sessionCurrentTime / 60);
-                let rightTimerSide = sessionCurrentTime % 60;
+                timerCurrentTime--;
+                let leftTimerSide = Math.floor(timerCurrentTime / 60);
+                let rightTimerSide = timerCurrentTime % 60;
                 currentTimeContainer.innerText = `${leftTimerSide < 10 ? "0" + leftTimerSide : leftTimerSide}:${rightTimerSide < 10 ? "0" + rightTimerSide : rightTimerSide}`;
+                if (timerCurrentTime == 0) {
+                    timerAlarm();
+                }
             }
         },
         1000
@@ -67,15 +74,29 @@ function timerPause() {
 
 }
 function timerRestart() {
-    sessionCurrentTime = sessionSettingsTime * 60;
-    breakCurrentTime = breakSettingsTime * 60;
+    timerCurrentTime = sessionSettingsTime * 60;
     currentTimeContainer.innerText = `${sessionSettingsTime < 10 ? "0" + sessionSettingsTime : sessionSettingsTime}:00`;
     timerControlButton.children[0].src = timerStartButtonSrc;
     isSession = true;
     isTimerActive = false;
     clearInterval(timerInterval);
 }
-
+function timerAlarm() {
+    if (isSession) {
+        timerCurrentTime = breakSettingsTime * 60;
+        bellMusicPlayer.play();
+        timerSessionLabel.classList.remove('active');
+        timerBreakLabel.classList.add('active');
+    } else {
+        timerCurrentTime = sessionSettingsTime * 60;
+        bellMusicPlayer.play();
+        timerSessionLabel.classList.add('active');
+        timerBreakLabel.classList.remove('active');
+    }
+    isSession = !isSession;
+    isTimerActive = !isTimerActive;
+    controlButtonClicked();
+}
 sessionTimerLeftButton.onclick = () => {
     sessionSettingsTime = changeTime(sessionTimeContainer, sessionSettingsTime, false);
 }
