@@ -58,25 +58,7 @@ function controlButtonClicked() {
         timerControlButton.children[0].src = timerStartButtonSrc;
         timerPause();
     }
-}
-// function timerStart() {
-//     isTimerActive = true;
-//     clearInterval(timerInterval);
-//     timerInterval = setInterval(
-//         () => {
-//             if (isTimerActive) {
-//                 timerCurrentTime--;
-//                 let leftTimerSide = Math.floor(timerCurrentTime / 60);
-//                 let rightTimerSide = timerCurrentTime % 60;
-//                 currentTimeContainer.innerText = `${leftTimerSide < 10 ? "0" + leftTimerSide : leftTimerSide}:${rightTimerSide < 10 ? "0" + rightTimerSide : rightTimerSide}`;
-//                 if (timerCurrentTime == 0) {
-//                     timerAlarm();
-//                 }
-//             }
-//         },
-//         1000
-//     )
-// }
+} 
 
 function timerStart() {
     let end = Date.now() + timerCurrentTime * 1000;

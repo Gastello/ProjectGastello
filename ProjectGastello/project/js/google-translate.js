@@ -18,14 +18,13 @@ translatorText.oninput = () => {
 function languagesSwitch() {
     [translatorResult.value, translatorText.value] = [translatorText.value, translatorResult.value];
     if (isEnglish) {
-        [targetLang, sourceLang] = ['en', 'uk'];
         translatorText.placeholder = "Ваш текст...";;
         translatorResult.placeholder = "Your translation...";
     } else {
-        [sourceLang, targetLang] = ['en', 'uk'];
         translatorText.placeholder = "Your text...";;
         translatorResult.placeholder = "Ваш переклад...";
     }
+    [targetLang, sourceLang] = [sourceLang, targetLang];
     isEnglish = !isEnglish;
     translate();
 }
