@@ -59,24 +59,49 @@ function controlButtonClicked() {
         timerPause();
     }
 }
+// function timerStart() {
+//     isTimerActive = true;
+//     clearInterval(timerInterval);
+//     timerInterval = setInterval(
+//         () => {
+//             if (isTimerActive) {
+//                 timerCurrentTime--;
+//                 let leftTimerSide = Math.floor(timerCurrentTime / 60);
+//                 let rightTimerSide = timerCurrentTime % 60;
+//                 currentTimeContainer.innerText = `${leftTimerSide < 10 ? "0" + leftTimerSide : leftTimerSide}:${rightTimerSide < 10 ? "0" + rightTimerSide : rightTimerSide}`;
+//                 if (timerCurrentTime == 0) {
+//                     timerAlarm();
+//                 }
+//             }
+//         },
+//         1000
+//     )
+// }
+
 function timerStart() {
+    let end = Date.now() + timerCurrentTime * 1000;
     isTimerActive = true;
     clearInterval(timerInterval);
     timerInterval = setInterval(
         () => {
             if (isTimerActive) {
-                timerCurrentTime--;
-                let leftTimerSide = Math.floor(timerCurrentTime / 60);
-                let rightTimerSide = timerCurrentTime % 60;
+                let timeLeft = Math.floor((end - Date.now()) / 1000);
+                let leftTimerSide = Math.floor(timeLeft / 60);
+                let rightTimerSide = timeLeft % 60;
+
                 currentTimeContainer.innerText = `${leftTimerSide < 10 ? "0" + leftTimerSide : leftTimerSide}:${rightTimerSide < 10 ? "0" + rightTimerSide : rightTimerSide}`;
-                if (timerCurrentTime == 0) {
+
+                console.log(`${leftTimerSide < 10 ? "0" + leftTimerSide : leftTimerSide}:${rightTimerSide < 10 ? "0" + rightTimerSide : rightTimerSide}`);
+
+                if (timeLeft <= 0) {
                     timerAlarm();
                 }
             }
         },
-        1000
+        10
     )
 }
+
 function timerPause() {
     isTimerActive = false;
 
@@ -87,20 +112,19 @@ function timerRestart() {
     timerControlButton.children[0].src = timerStartButtonSrc;
     isSession = true;
     isTimerActive = false;
+    timerSessionLabel.classList.add('active');
+    timerBreakLabel.classList.remove('active');
     clearInterval(timerInterval);
 }
 function timerAlarm() {
     if (isSession) {
         timerCurrentTime = breakSettingsTime * 60;
-        bellMusicPlayer.play();
-        timerSessionLabel.classList.remove('active');
-        timerBreakLabel.classList.add('active');
     } else {
         timerCurrentTime = sessionSettingsTime * 60;
-        bellMusicPlayer.play();
-        timerSessionLabel.classList.add('active');
-        timerBreakLabel.classList.remove('active');
     }
+    bellMusicPlayer.play();
+    timerSessionLabel.classList.toggle('active');
+    timerBreakLabel.classList.toggle('active');
     isSession = !isSession;
     isTimerActive = !isTimerActive;
     controlButtonClicked();

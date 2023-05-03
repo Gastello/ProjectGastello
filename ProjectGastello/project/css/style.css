@@ -1808,32 +1808,40 @@ body.lock {
       border-radius: 10px;
       background: #4a3931; }
     .translator_dictionary__text textarea,
-    .translator_dictionary__text textarea::-webkit-input-placeholder, .translator_dictionary__translate textarea,
-    .translator_dictionary__translate textarea::-webkit-input-placeholder {
+    .translator_dictionary__text textarea::-webkit-input-placeholder,
+    .translator_dictionary__text textarea:disabled, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea::-webkit-input-placeholder,
+    .translator_dictionary__translate textarea:disabled {
       background: transparent;
       font-weight: 400;
       font-size: 18px;
       line-height: 1.22222;
       color: #000000; }
     .translator_dictionary__text textarea,
-    .translator_dictionary__text textarea:-ms-input-placeholder, .translator_dictionary__translate textarea,
-    .translator_dictionary__translate textarea:-ms-input-placeholder {
+    .translator_dictionary__text textarea:-ms-input-placeholder,
+    .translator_dictionary__text textarea:disabled, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea:-ms-input-placeholder,
+    .translator_dictionary__translate textarea:disabled {
       background: transparent;
       font-weight: 400;
       font-size: 18px;
       line-height: 1.22222;
       color: #000000; }
     .translator_dictionary__text textarea,
-    .translator_dictionary__text textarea::-ms-input-placeholder, .translator_dictionary__translate textarea,
-    .translator_dictionary__translate textarea::-ms-input-placeholder {
+    .translator_dictionary__text textarea::-ms-input-placeholder,
+    .translator_dictionary__text textarea:disabled, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea::-ms-input-placeholder,
+    .translator_dictionary__translate textarea:disabled {
       background: transparent;
       font-weight: 400;
       font-size: 18px;
       line-height: 1.22222;
       color: #000000; }
     .translator_dictionary__text textarea,
-    .translator_dictionary__text textarea::placeholder, .translator_dictionary__translate textarea,
-    .translator_dictionary__translate textarea::placeholder {
+    .translator_dictionary__text textarea::placeholder,
+    .translator_dictionary__text textarea:disabled, .translator_dictionary__translate textarea,
+    .translator_dictionary__translate textarea::placeholder,
+    .translator_dictionary__translate textarea:disabled {
       background: transparent;
       font-weight: 400;
       font-size: 18px;

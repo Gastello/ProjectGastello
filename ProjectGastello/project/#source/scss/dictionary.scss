@@ -115,7 +115,8 @@
       }
 
       textarea,
-      textarea::placeholder {
+      textarea::placeholder,
+      textarea:disabled{
          background: transparent;
          font-weight: 400;
          font-size: 18px;
