@@ -154,53 +154,6 @@ textarea {
 .swiper-notification {
   display: none; }
 
-/*---------------------------Loading-----------------------------------*/
-.container {
-  opacity: 0; }
-
-#loading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); }
-  #loading .loading__text {
-    font-size: 32px;
-    color: #EEF6FF; }
-  #loading .loading__inner {
-    text-align: center; }
-  #loading img {
-    -webkit-animation: 1.2s linear 0s infinite alternate sword-loading;
-    animation: 1.2s linear 0s infinite alternate sword-loading;
-    margin-bottom: 10px; }
-
-@-webkit-keyframes sword-loading {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
-@keyframes sword-loading {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
 /*--------------------------Content wrappers------------------------------*/
 body {
   font-family: "Metal Mania", "Poiret One";
@@ -1816,7 +1769,8 @@ body.lock {
       font-weight: 400;
       font-size: 26px;
       line-height: 1.22222;
-      color: #000000; }
+      color: #000000;
+      opacity: 1; }
     .translator_dictionary__text textarea,
     .translator_dictionary__text textarea:-ms-input-placeholder,
     .translator_dictionary__text textarea:disabled, .translator_dictionary__translate textarea,
@@ -1826,7 +1780,8 @@ body.lock {
       font-weight: 400;
       font-size: 26px;
       line-height: 1.22222;
-      color: #000000; }
+      color: #000000;
+      opacity: 1; }
     .translator_dictionary__text textarea,
     .translator_dictionary__text textarea::-ms-input-placeholder,
     .translator_dictionary__text textarea:disabled, .translator_dictionary__translate textarea,
@@ -1836,7 +1791,8 @@ body.lock {
       font-weight: 400;
       font-size: 26px;
       line-height: 1.22222;
-      color: #000000; }
+      color: #000000;
+      opacity: 1; }
     .translator_dictionary__text textarea,
     .translator_dictionary__text textarea::placeholder,
     .translator_dictionary__text textarea:disabled, .translator_dictionary__translate textarea,
@@ -1846,7 +1802,8 @@ body.lock {
       font-weight: 400;
       font-size: 26px;
       line-height: 1.22222;
-      color: #000000; }
+      color: #000000;
+      opacity: 1; }
     .translator_dictionary__text textarea, .translator_dictionary__translate textarea {
       resize: none;
       width: 100%;
